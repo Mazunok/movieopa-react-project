@@ -9,18 +9,21 @@ import { Trands } from "../pages/Trands";
 import { Favorites } from "../pages/Favorites";
 import { Settings } from "../pages/Settings";
 import { Search } from "../pages/Search";
+import { MainTemplate } from "../components/MainTemplate";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path={routes.HOME} element={<Home />} />
-      <Route path={routes.TRANDS} element={<Trands />} />
-      <Route path={routes.FAVORITES} element={<Favorites />} />
-      <Route path={routes.SETTINGS} element={<Settings />} />
-      <Route path={routes.SEARCH} element={<Search />} />
-      <Route path={routes.SING_IN} element={<SignIn />} />
-      <Route path={routes.SING_UP} element={<SignUp />} />
-      <Route path={routes.NOT_FOUND} element={<NotFound />} />
+      <Route path={routes.HOME} element={<MainTemplate />}>
+        <Route index element={<Home />} />
+        <Route path={routes.TRANDS} element={<Trands />} />
+        <Route path={routes.FAVORITES} element={<Favorites />} />
+        <Route path={routes.SETTINGS} element={<Settings />} />
+        <Route path={routes.SEARCH} element={<Search />} />
+        <Route path={routes.SING_IN} element={<SignIn />} />
+        <Route path={routes.SING_UP} element={<SignUp />} />
+        <Route path={routes.NOT_FOUND} element={<NotFound />} />
+      </Route>
     </Routes>
   );
 };
