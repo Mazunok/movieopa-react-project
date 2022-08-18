@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { routes } from "../../router/routes";
-import { StyledNav } from "./styles";
+import { StyledLink, StyledNav } from "./styles";
 
 export const Nav = () => {
   return (
     <StyledNav>
-      <Link to={routes.HOME}>Home</Link>
-      <Link to={routes.TRANDS}>Trands</Link>
-      <Link to={routes.FAVORITES}>Favorites</Link>
-      <Link to={routes.SETTINGS}>Settings</Link>
+      <StyledLink to={routes.HOME}>Home</StyledLink>
+      <StyledLink to={routes.TRANDS}>Trands</StyledLink>
+      <StyledLink to={routes.FAVORITES}>Favorites</StyledLink>
+      <StyledLink to={routes.SETTINGS}>Settings</StyledLink>
     </StyledNav>
   );
 };

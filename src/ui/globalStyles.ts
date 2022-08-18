@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Color } from "./colors";
 
 export const GlobalStyles = createGlobalStyle`
 *{
@@ -9,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body{
     font-family:Arial, Helvetica, sans-serif;
+    background-color: black;
 }
 
 a{
