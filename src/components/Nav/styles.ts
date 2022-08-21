@@ -4,16 +4,21 @@ import { Color } from "../../ui/colors";
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
-  height: 100vh;
   width: 160px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 70px;
+  left: 50px;
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-items: start;
+  justify-content: start;
+  gap: 100px;
+`;
+
+const Img = styled.img`
+  margin: 0;
+  padding-right: 20px;
 `;
 
 const StyledLink = styled(Link)`
@@ -21,4 +26,4 @@ const StyledLink = styled(Link)`
   color: ${Color.secondary};
 `;
 
-export { StyledNav, StyledLink };
+export { StyledNav, StyledLink, Img };

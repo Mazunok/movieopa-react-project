@@ -1,14 +1,30 @@
 import React from "react";
 import { routes } from "../../router/routes";
-import { StyledLink, StyledNav } from "./styles";
+import { Img, StyledLink, StyledNav } from "./styles";
+import favorites from "../../assets/favorites.svg";
+import home from "../../assets/home.svg";
+import settings from "../../assets/settings.svg";
+import trends from "../../assets/trends.svg";
 
 export const Nav = () => {
   return (
     <StyledNav>
-      <StyledLink to={routes.HOME}>Home</StyledLink>
-      <StyledLink to={routes.TRANDS}>Trands</StyledLink>
-      <StyledLink to={routes.FAVORITES}>Favorites</StyledLink>
-      <StyledLink to={routes.SETTINGS}>Settings</StyledLink>
+      <StyledLink to={routes.HOME}>
+        <Img src={home} alt="favorites-logo" />
+        Home
+      </StyledLink>
+      <StyledLink to={routes.TRANDS}>
+        <Img src={trends} alt="trends-logo" />
+        Trands
+      </StyledLink>
+      <StyledLink to={routes.FAVORITES}>
+        <Img src={favorites} alt="favorites-logo" />
+        Favorites
+      </StyledLink>
+      <StyledLink to={routes.SETTINGS}>
+        <Img src={settings} alt="settings-logo" />
+        Settings
+      </StyledLink>
     </StyledNav>
   );
 };
