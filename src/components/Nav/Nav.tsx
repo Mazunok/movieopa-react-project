@@ -25,6 +25,8 @@ export const Nav = () => {
         <Img src={settings} alt="settings-logo" />
         Settings
       </StyledLink>
+      <StyledLink to={routes.SING_IN}>Sign in</StyledLink>
+      <StyledLink to={routes.SING_UP}>Sign Up </StyledLink>
     </StyledNav>
   );
 };

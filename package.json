@@ -14,7 +14,7 @@
     "@types/styled-components": "^5.1.26",
     "axios": "^0.27.2",
     "cra-template-typescript": "^1.2.0",
-    "firebase": "^9.9.2",
+    "firebase": "^9.9.3",
     "framer-motion": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

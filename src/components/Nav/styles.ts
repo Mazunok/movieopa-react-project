@@ -5,11 +5,15 @@ import styled from "styled-components";
 
 const StyledNav = styled.nav`
   width: 160px;
-  position: fixed;
-  top: 70px;
-  left: 50px;
+  height: 100%;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
   background-color: black;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: column;
   align-items: start;
   justify-content: start;

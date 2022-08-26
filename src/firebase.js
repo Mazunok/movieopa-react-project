@@ -1,4 +1,5 @@
-REACT_APP_BASE_URL_MOVIES_API = http://www.omdbapi.com/
+/* eslint-disable no-unused-vars */
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYLMRnRERR_Fi9d28DZHUZ4teQ1l-oaEQ",
@@ -8,3 +9,5 @@ const firebaseConfig = {
   messagingSenderId: "625990625134",
   appId: "1:625990625134:web:0a439db84590f24f42837f"
 };
+
+const app = initializeApp(firebaseConfig);

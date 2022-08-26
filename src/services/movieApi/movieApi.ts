@@ -37,7 +37,7 @@ class MovieAPI {
       s: "bat",
     };
 
-    const { data } = await this.API.get<any>("", {
+    const { data } = await this.API.get("", {
       params,
     });
 
