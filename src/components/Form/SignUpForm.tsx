@@ -2,6 +2,7 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { routes } from "../../router/routes";
+import { SignUp, Text, Input, Title, Button } from "./styles";
 
 type SignUpFormValues = {
   name: string;
@@ -30,28 +31,45 @@ export const SignUpForm = () => {
     console.log(name, email, password, confirmPassword);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <SignUp onSubmit={handleSubmit(onSubmit)}>
+      <Title>Sign Up</Title>
       <label>
-        Name:
-        <input type="name" {...register("name")}></input>
+        <Text>Name:</Text>
+        <Input
+          type="name"
+          placeholder="Your name"
+          {...register("name")}
+        ></Input>
       </label>
       <label>
-        Email:
-        <input type="email" {...register("email")}></input>
+        <Text>Email:</Text>
+        <Input
+          type="email"
+          placeholder="Your email"
+          {...register("email")}
+        ></Input>
       </label>
       <label>
-        Password:
-        <input type="password" {...register("password")}></input>
+        <Text>Password:</Text>
+        <Input
+          type="password"
+          placeholder="Your password"
+          {...register("password")}
+        ></Input>
       </label>
       <label>
-        Confirm password:
-        <input type="password" {...register("confirmPassword")}></input>
+        <Text>Confirm password:</Text>
+        <Input
+          type="password"
+          placeholder="Confirm password"
+          {...register("confirmPassword")}
+        ></Input>
       </label>
-      <p>
+      <Button type="submit">SingUp</Button>
+      <Text>
         Already have an acount
         <Link to={`/${routes.SING_IN}`}>Sign In</Link>
-      </p>
-      <button type="submit">SingUp</button>
-    </form>
+      </Text>
+    </SignUp>
   );
 };
