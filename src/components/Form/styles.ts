@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { H2, S3 } from "../../ui/typography";
 
-const SignUp = styled.form`
+const StyledForm = styled.form`
   width: 574px;
   height: 732px;
   display: flex;
@@ -27,6 +27,7 @@ const Text = styled.p`
 const Input = styled.input`
   background: ${Color.graphite};
   border-radius: 10px;
+  border: none;
   width: 494px;
   height: 56px;
   font-family: "Exo 2";
@@ -59,4 +60,4 @@ const Button = styled.button`
   color: ${Color.white};
 `;
 
-export { SignUp, Text, Input, Title, Button };
+export { StyledForm, Text, Input, Title, Button };

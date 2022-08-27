@@ -2,7 +2,7 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { routes } from "../../router/routes";
-import { SignUp, Text, Input, Title, Button } from "./styles";
+import { Text, Input, Title, Button, StyledForm } from "./styles";
 
 type SignUpFormValues = {
   name: string;
@@ -31,7 +31,7 @@ export const SignUpForm = () => {
     console.log(name, email, password, confirmPassword);
   };
   return (
-    <SignUp onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Title>Sign Up</Title>
       <label>
         <Text>Name:</Text>
@@ -68,8 +68,8 @@ export const SignUpForm = () => {
       <Button type="submit">SingUp</Button>
       <Text>
         Already have an acount
-        <Link to={`/${routes.SING_IN}`}>Sign In</Link>
+        <Link to={`/${routes.SIGN_IN}`}>Sign Up</Link>
       </Text>
-    </SignUp>
+    </StyledForm>
   );
 };

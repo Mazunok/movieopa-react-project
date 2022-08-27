@@ -4,7 +4,7 @@ export enum routes {
   FAVORITES = "favorites",
   SETTINGS = "settings",
   SEARCH = "search",
-  SING_IN = "singin",
-  SING_UP = "singup",
+  SIGN_IN = "signin",
+  SIGN_UP = "signup",
   NOT_FOUND = "*",
 }

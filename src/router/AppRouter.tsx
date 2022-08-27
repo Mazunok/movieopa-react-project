@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import { Home } from "../pages/Home";
-import { SignIn } from "../pages/SignIn";
+import {SignIn} from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
 import { NotFound } from "../pages/NotFound";
 import { routes } from "./routes";
@@ -22,8 +22,8 @@ export const AppRouter = () => {
         <Route path={routes.SEARCH} element={<Search />} />
         <Route path={routes.NOT_FOUND} element={<NotFound />} />
       </Route>
-      <Route path={routes.SING_IN} element={<SignIn />} />
-      <Route path={routes.SING_UP} element={<SignUp />} />
+      <Route path={routes.SIGN_IN} element={<SignIn />} />
+      <Route path={routes.SIGN_UP} element={<SignUp />} />
     </Routes>
   );
 };
