@@ -29,7 +29,7 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd {
+dd, span {
   margin: 0;
 }
 

@@ -4,15 +4,18 @@ import { H2, S3 } from "../../ui/typography";
 
 const StyledForm = styled.form`
   width: 574px;
-  height: 732px;
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  position: sticky;
-  left: 673px;
-  top: 110px;
+  gap: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: ${Color.dark};
   border-radius: 10px;
 `;
@@ -51,6 +54,7 @@ const Title = styled.h2`
 const Button = styled.button`
   border: none;
   background: ${Color.primary};
+  margin: 20px 0;
   border-radius: 10px;
   width: 494px;
   height: 56px;
@@ -60,4 +64,8 @@ const Button = styled.button`
   color: ${Color.white};
 `;
 
-export { StyledForm, Text, Input, Title, Button };
+const Span = styled.span`
+  color: red;
+`;
+
+export { StyledForm, Text, Input, Title, Button, Span };

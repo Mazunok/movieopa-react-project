@@ -1,7 +1,7 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { routes } from "../../router/routes";
+import { ROUTES } from "../../router/routes";
 import { StyledForm, Text, Input, Title, Button } from "./styles";
 
 type SignInFormValues = {
@@ -42,10 +42,10 @@ export const SignInForm = () => {
           {...register("password")}
         ></Input>
       </label>
-      <Button type="submit">Sign Up</Button>
+      <Button type="submit">Sign In</Button>
       <Text>
-        Already have an acount
-        <Link to={`/${routes.SIGN_IN}`}>Sign In</Link>
+        Don't have an account{" "}
+        <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
       </Text>
     </StyledForm>
   );

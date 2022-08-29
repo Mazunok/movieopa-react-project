@@ -1,8 +1,10 @@
-import React from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { routes } from "../../router/routes";
-import { Text, Input, Title, Button, StyledForm } from "./styles";
+import { ROUTES } from "../../router/routes";
+import { Spinner } from "../Spinner";
+import { Text, Input, Title, Button, StyledForm, Span } from "./styles";
 
 type SignUpFormValues = {
   name: string;
@@ -21,14 +23,27 @@ export const SignUpForm = () => {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
-
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const onSubmit: SubmitHandler<SignUpFormValues> = ({
     name,
     email,
     password,
     confirmPassword,
   }) => {
-    console.log(name, email, password, confirmPassword);
+    setIsLoading(true);
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        setErrorMessage(error.code);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        reset();
+      });
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -38,37 +53,49 @@ export const SignUpForm = () => {
         <Input
           type="name"
           placeholder="Your name"
-          {...register("name")}
+          {...register("name", { required: "Name is required" })}
         ></Input>
       </label>
+      {errors.name && <Span>{errors.name.message}</Span>}
       <label>
         <Text>Email:</Text>
         <Input
           type="email"
           placeholder="Your email"
-          {...register("email")}
+          {...register("email", { required: "Email is required" })}
         ></Input>
       </label>
+      {errors.email && <Span>{errors.email.message}</Span>}
       <label>
         <Text>Password:</Text>
         <Input
           type="password"
           placeholder="Your password"
-          {...register("password")}
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "password must be at least 6 characters",
+            },
+          })}
         ></Input>
       </label>
+      {errors.password && <Span>{errors.password.message}</Span>}
       <label>
         <Text>Confirm password:</Text>
         <Input
           type="password"
           placeholder="Confirm password"
-          {...register("confirmPassword")}
+          {...register("confirmPassword", {
+            required: "Confirm your password",
+          })}
         ></Input>
       </label>
-      <Button type="submit">SingUp</Button>
+      {errors.confirmPassword && <Span>{errors.confirmPassword.message}</Span>}
+      <Button type="submit">{isLoading ? <Spinner /> : "Sign Up"}</Button>
+      {errorMessage && <Span>{errorMessage}</Span>}
       <Text>
-        Already have an acount
-        <Link to={`/${routes.SIGN_IN}`}>Sign Up</Link>
+        Already have an acount <Link to={`/${ROUTES.SIGN_IN}`}>Sign Up</Link>
       </Text>
     </StyledForm>
   );
