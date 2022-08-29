@@ -1,6 +1,6 @@
 export enum Color {
   primary = "#7B61FF",
-  primary2 = "#917CFF",
+  primary_dark = "#917CFF",
   secondary = "#80858B",
   black = "#000000",
   dark = "#242426",

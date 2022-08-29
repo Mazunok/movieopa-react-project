@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.white};
+  cursor: pointer;
 `;
 
 export { StyledButton };

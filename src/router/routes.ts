@@ -4,7 +4,7 @@ export enum ROUTES {
   FAVORITES = "favorites",
   SETTINGS = "settings",
   SEARCH = "search",
-  SIGN_IN = "signin",
-  SIGN_UP = "signup",
+  SIGN_IN = "sign-in",
+  SIGN_UP = "sign-up",
   NOT_FOUND = "*",
 }

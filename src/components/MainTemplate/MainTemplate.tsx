@@ -5,11 +5,9 @@ import { Wrapper } from "./styles";
 
 export const MainTemplate = () => {
   return (
-    <>
-      <Wrapper>
-        <Nav />
-        <Outlet />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Nav />
+      <Outlet />
+    </Wrapper>
   );
 };

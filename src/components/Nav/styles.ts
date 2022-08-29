@@ -10,6 +10,7 @@ const StyledNav = styled.nav`
   z-index: 1;
   top: 0;
   left: 0;
+  padding: 30px;
   background-color: black;
   display: flex;
   justify-content: space-around;
@@ -26,6 +27,8 @@ const Img = styled.img`
 `;
 
 const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: row;
   ${S1};
   color: ${Color.secondary};
 `;

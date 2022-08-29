@@ -6,10 +6,12 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html, body {
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth
 }
 
 #root{

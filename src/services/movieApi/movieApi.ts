@@ -30,7 +30,7 @@ class MovieAPI {
     apikey: "2a1e8083",
   };
 
-  public async getAll(newParams?: MovieRequestParams): Promise<{}> {
+  public async getAll(newParams?: MovieRequestParams): Promise<IMovie[]> {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
       ...newParams,

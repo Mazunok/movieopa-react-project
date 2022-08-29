@@ -62,6 +62,7 @@ const Button = styled.button`
   font-style: normal;
   ${S3}
   color: ${Color.white};
+  cursor: pointer;
 `;
 
 const Span = styled.span`
