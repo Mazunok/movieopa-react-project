@@ -1,8 +1,11 @@
-import React from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
-import { StyledForm, Text, Input, Title, Button } from "./styles";
+import { getFirebaseeMessageError } from "../../utils/firebase-errors";
+import { Spinner } from "../Spinner";
+import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
 
 type SignInFormValues = {
   email: string;
@@ -19,9 +22,22 @@ export const SignInForm = () => {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
-
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
-    console.log(email, password);
+    setIsLoading(true);
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        setErrorMessage(getFirebaseeMessageError(error.code));
+      })
+      .finally(() => {
+        setIsLoading(false);
+        reset();
+      });
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -42,11 +58,14 @@ export const SignInForm = () => {
           {...register("password")}
         ></Input>
       </label>
-      <Button type="submit">Sign In</Button>
+      <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
+      {errorMessage && <Span>{errorMessage}</Span>}
       <Text>
-        Don't have an account{" "}
-        <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
+        Don't have an account <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
       </Text>
     </StyledForm>
   );
 };
+function setErrorMessage(arg0: any) {
+  throw new Error("Function not implemented.");
+}

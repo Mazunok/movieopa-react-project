@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
+import { getFirebaseeMessageError } from "../../utils/firebase-errors";
 import { Spinner } from "../Spinner";
 import { Text, Input, Title, Button, StyledForm, Span } from "./styles";
 
@@ -38,7 +39,7 @@ export const SignUpForm = () => {
         const user = userCredential.user;
       })
       .catch((error) => {
-        setErrorMessage(error.code);
+        setErrorMessage(getFirebaseeMessageError(error.code));
       })
       .finally(() => {
         setIsLoading(false);
