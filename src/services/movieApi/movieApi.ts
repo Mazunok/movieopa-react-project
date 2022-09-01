@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IMovie } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
@@ -11,17 +12,9 @@ export type MovieRequestParams = {
   poster?: string;
 };
 
-export interface IMovie {
-  id?: string;
-  title?: string;
-  type?: string;
-  year?: number;
-  page?: number;
-  poster?: string;
-}
-
 class MovieAPI {
-  private readonly BASE_URL = "http://www.omdbapi.com/";
+  private readonly BASE_URL = process.env
+    .REACT_APP_BASE_URL_MOVIES_API as string;
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });

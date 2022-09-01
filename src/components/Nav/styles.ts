@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { S1 } from "../../ui/typography";
 import { Color } from "../../ui/colors";
 import styled from "styled-components";
+import { MEDIA } from "../../ui/media";
 
 const StyledNav = styled.nav`
   width: 160px;
@@ -18,7 +19,10 @@ const StyledNav = styled.nav`
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  gap: 100px;
+  gap: 50px;
+  ${MEDIA.MD}{
+    display: none;
+  }
 `;
 
 const Img = styled.img`

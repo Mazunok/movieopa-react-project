@@ -1,56 +1,57 @@
 import { css } from "styled-components";
+import { MEDIA } from "./media";
 
 const level1 = css`
   padding: 64px;
-  @media (max-width: 768px) {
+  ${MEDIA.MD} {
     padding: 56px;
   }
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 48px;
   }
 `;
 
 const level2 = css`
   padding: 56px;
-  @media (max-width: 768px) {
+  ${MEDIA.MD} {
     padding: 48px;
   }
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 40px;
   }
 `;
 
 const level3 = css`
   padding: 48px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 40px;
   }
 `;
 
 const level4 = css`
   padding: 40px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 32px;
   }
 `;
 
 const level5 = css`
   padding: 32px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 24px;
   }
 `;
 
 const level6 = css`
   padding: 24px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 20px;
   }
 `;
 
 const level7 = css`
   padding: 20px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     padding: 16px;
   }
 `;

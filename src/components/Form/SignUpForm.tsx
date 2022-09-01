@@ -33,6 +33,10 @@ export const SignUpForm = () => {
     confirmPassword,
   }) => {
     setIsLoading(true);
+    if (password !== confirmPassword) {
+      setErrorMessage("Password is not the same");
+      return;
+    }
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

@@ -1,15 +1,16 @@
 import { css } from "styled-components";
+import { MEDIA } from "./media";
 
 const H1 = css`
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 60px;
-  @media (max-width: 768px) {
+  ${MEDIA.MD} {
     font-size: 32px;
     line-height: 48px;
   }
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     font-size: 28px;
     line-height: 42px;
   }
@@ -20,7 +21,7 @@ const H2 = css`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     font-size: 20px;
   }
 `;
@@ -30,7 +31,7 @@ const H3 = css`
   font-weight: 600;
   font-size: 20px;
   line-height: 32px;
-  @media (max-width: 568px) {
+  ${MEDIA.SM} {
     font-size: 18px;
     line-height: 28px;
   }
