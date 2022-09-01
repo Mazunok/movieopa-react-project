@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
+import { MEDIA } from "../../ui/media";
 import { H2, S3 } from "../../ui/typography";
 
 const StyledForm = styled.form`
@@ -18,6 +19,11 @@ const StyledForm = styled.form`
   transform: translate(-50%, -50%);
   background: ${Color.dark};
   border-radius: 10px;
+  ${MEDIA.SM} {
+    width: 320px;
+    gap: 5px;
+    padding: 20px 0;
+  }
 `;
 
 const Text = styled.p`
@@ -25,6 +31,10 @@ const Text = styled.p`
   ${S3};
   color: ${Color.white};
   padding-bottom: 5px;
+  ${MEDIA.SM} {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const Input = styled.input`
@@ -39,6 +49,9 @@ const Input = styled.input`
   padding-left: 20px;
   ${S3};
   color: ${Color.secondary};
+  ${MEDIA.SM} {
+    width: 224px;
+  }
 `;
 
 const Title = styled.h2`
@@ -63,10 +76,15 @@ const Button = styled.button`
   ${S3}
   color: ${Color.white};
   cursor: pointer;
+  ${MEDIA.SM} {
+    width: 225px;
+  }
 `;
 
 const Span = styled.span`
   color: red;
+  ${MEDIA.SM} {
+  }
 `;
 
 export { StyledForm, Text, Input, Title, Button, Span };

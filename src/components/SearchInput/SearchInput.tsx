@@ -7,5 +7,5 @@ interface IProps {
 }
 
 export const SearchInput = ({ placeholder, value }: IProps) => {
-  return <StyledInput type="text" placeholder={placeholder} />;
+  return <StyledInput type="text" placeholder={placeholder} value={value} />;
 };
