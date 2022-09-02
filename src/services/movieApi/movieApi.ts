@@ -3,7 +3,7 @@ import { IMovie } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
-  s?: string;
+  search?: string;
   id?: string;
   title?: string;
   type?: string;
