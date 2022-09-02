@@ -1,26 +1,32 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import { MovieList } from "../components/MovieList/MovieList";
-import { movieAPI } from "../services/movieApi/movieApi";
+import { movieAPI, MovieRequestParams } from "../services/movieApi/movieApi";
 import { IMovie } from "../types";
 
 export const Home = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [requestParams, setRequeastParams] = useState<MovieRequestParams>({})
 
   useEffect(() => {
-    movieAPI.getAll().then((movies) => {
-      setMovies(movies["Search"]);
-    });
-  }, []);
+    movieAPI
+      .getAll(requestParams)
+      .then((movies) => {
+        setMovies(movies);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setErrorMessage(err.message);
+      });
+  }, [requestParams]);
 
   return (
-    <StyledHomePage>
-      <MovieList movies={movies} />
-    </StyledHomePage>
+      <MovieList
+        movies={movies}
+        isLoading={isLoading}
+        errorMessage={errorMessage}
+      />
   );
 };
-
-const StyledHomePage = styled.div`
-width: 100%;
-height: 100%;
-`;
