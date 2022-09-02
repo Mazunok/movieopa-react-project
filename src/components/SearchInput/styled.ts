@@ -3,18 +3,20 @@ import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
 
 const StyledInput = styled.input`
-  width: 1184px;
   height: 56px;
   background: ${Color.graphite};
   border-radius: 10px;
   margin: 0;
   border: none;
-  ${MEDIA.MD} {
-    width: 360px;
-  }
+  flex-grow: 1;
   ${MEDIA.SM} {
-    width: 272px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
   }
+  
 `;
 
 export { StyledInput };

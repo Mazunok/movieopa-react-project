@@ -5,10 +5,12 @@ import favorites from "../../assets/favorites.svg";
 import home from "../../assets/home.svg";
 import settings from "../../assets/settings.svg";
 import trends from "../../assets/trends.svg";
+import movieopa from "../../assets/movieOpa.svg";
 
 export const Nav = () => {
   return (
     <StyledNav>
+      <Img src={movieopa} alt="logo" />
       <StyledLink to={ROUTES.HOME}>
         <Img src={home} alt="favorites logo" />
         <p>Home</p>

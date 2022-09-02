@@ -4,11 +4,17 @@ import { MEDIA } from "../../ui/media";
 import { S2, S3 } from "../../ui/typography";
 
 const StyledContainer = styled.div`
-  width: 300px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  width: 264px;
+  ${MEDIA.MD} {
+    width: 100px;
+  }
+  ${MEDIA.SM}{
+    justify-content: flex-end;
+  }
 `;
 
 const Avatar = styled.div`
@@ -83,6 +89,8 @@ const BurgerButton = styled.div`
   }
   ${MEDIA.MD} {
     display: block;
+  }
+  ${MEDIA.SM} {
   }
 `;
 

@@ -11,7 +11,7 @@ const StyledNav = styled.nav`
   z-index: 1;
   top: 0;
   left: 0;
-  padding: 30px;
+  padding: 50px 30px 0px 30px;
   background-color: black;
   display: flex;
   justify-content: space-around;
@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   align-items: start;
   justify-content: start;
   gap: 50px;
-  ${MEDIA.MD}{
+  ${MEDIA.MD} {
     display: none;
   }
 `;
@@ -37,4 +37,4 @@ const StyledLink = styled(Link)`
   color: ${Color.secondary};
 `;
 
-export { StyledNav, StyledLink, Img };
+export { StyledNav, StyledLink, Img};
