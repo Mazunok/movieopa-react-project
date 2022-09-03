@@ -7,7 +7,7 @@ export const Home = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [requestParams, setRequeastParams] = useState<MovieRequestParams>({})
+  const [requestParams, setRequestParams] = useState<MovieRequestParams>({});
 
   useEffect(() => {
     movieAPI
@@ -23,10 +23,10 @@ export const Home = () => {
   }, [requestParams]);
 
   return (
-      <MovieList
-        movies={movies}
-        isLoading={isLoading}
-        errorMessage={errorMessage}
-      />
+    <MovieList
+      movies={movies}
+      isLoading={isLoading}
+      errorMessage={errorMessage}
+    />
   );
 };

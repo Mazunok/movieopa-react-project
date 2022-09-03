@@ -1,4 +1,3 @@
-import React from "react";
 import { ProfileForm } from "../ProfileForm/ProfileForm";
 import { SearchInput } from "../SearchInput/SearchInput";
 import { Logo, StyledHeader } from "./styles";
@@ -8,7 +7,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <Logo src={movieopa} alt="logo" />
-      <SearchInput placeholder={"Search"} value={""} />
+      <SearchInput placeholder={"Search"} type="text" />
       <ProfileForm />
     </StyledHeader>
   );

@@ -3,7 +3,7 @@ import { IMovie } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
-  search?: string;
+  s?: string;
   id?: string;
   title?: string;
   type?: string;
@@ -23,14 +23,14 @@ class MovieAPI {
     apikey: "2a1e8083",
   };
 
-  public async getAll(newParams?: MovieRequestParams): Promise<IMovie[]> {
+  public async getAll(newParams: MovieRequestParams){
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
       ...newParams,
       s: "bat",
     };
 
-    const { data } = await this.API.get("", {
+    const { data } = await this.API.get<IMovie[]>("", {
       params,
     });
 
