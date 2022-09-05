@@ -8,6 +8,7 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 30px;
 `;
 
 export { Container };

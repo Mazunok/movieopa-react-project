@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
+import { MEDIA } from "../../ui/media";
 import { S2 } from "../../ui/typography";
 
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 20px;
   width: 230px;
-  height: 280px;
+  height: 300px;
+  ${MEDIA.MD}{
+    width: 200px;
+    height: 280px;
+  }
 `;
 
 const TextContainer = styled.div`

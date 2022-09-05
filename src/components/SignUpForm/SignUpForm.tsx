@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
 import { getFirebaseeMessageError } from "../../utils/firebase-errors";
 import { Spinner } from "../Spinner/Spinner";
-import { Text, Input, Title, Button, StyledForm, Span } from "../SignInForm/styles";
+import {
+  Text,
+  Input,
+  Title,
+  Button,
+  StyledForm,
+  Span,
+} from "../SignInForm/styles";
 
 type SignUpFormValues = {
   name: string;
@@ -59,7 +66,7 @@ export const SignUpForm = () => {
           type="name"
           placeholder="Your name"
           {...register("name", { required: "Name is required" })}
-        ></Input>
+        />
       </label>
       {errors.name && <Span>{errors.name.message}</Span>}
       <label>
@@ -68,7 +75,7 @@ export const SignUpForm = () => {
           type="email"
           placeholder="Your email"
           {...register("email", { required: "Email is required" })}
-        ></Input>
+        />
       </label>
       {errors.email && <Span>{errors.email.message}</Span>}
       <label>
@@ -83,7 +90,7 @@ export const SignUpForm = () => {
               message: "password must be at least 6 characters",
             },
           })}
-        ></Input>
+        />
       </label>
       {errors.password && <Span>{errors.password.message}</Span>}
       <label>
@@ -94,7 +101,7 @@ export const SignUpForm = () => {
           {...register("confirmPassword", {
             required: "Confirm your password",
           })}
-        ></Input>
+        />
       </label>
       {errors.confirmPassword && <Span>{errors.confirmPassword.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign Up"}</Button>

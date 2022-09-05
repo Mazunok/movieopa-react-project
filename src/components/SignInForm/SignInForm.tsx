@@ -47,17 +47,25 @@ export const SignInForm = () => {
         <Input
           type="email"
           placeholder="Your email"
-          {...register("email")}
-        ></Input>
+          {...register("email", { required: "Email is required" })}
+        />
       </label>
+      {errors.email && <Span>{errors.email.message}</Span>}
       <label>
         <Text>Password:</Text>
         <Input
           type="password"
           placeholder="Your password"
-          {...register("password")}
-        ></Input>
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "password must be at least 6 characters",
+            },
+          })}
+        />
       </label>
+      {errors.password && <Span>{errors.password.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
       {errorMessage && <Span>{errorMessage}</Span>}
       <Text>
@@ -66,6 +74,3 @@ export const SignInForm = () => {
     </StyledForm>
   );
 };
-function setErrorMessage(arg0: any) {
-  throw new Error("Function not implemented.");
-}

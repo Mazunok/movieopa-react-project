@@ -83,8 +83,6 @@ const Button = styled.button`
 
 const Span = styled.span`
   color: ${Color.Error};
-  ${MEDIA.SM} {
-  }
 `;
 
 export { StyledForm, Text, Input, Title, Button, Span };

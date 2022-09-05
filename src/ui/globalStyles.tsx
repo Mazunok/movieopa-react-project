@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Color } from "./colors";
 
 export const GlobalStyles = createGlobalStyle`
 *{
@@ -11,7 +12,8 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  background-color: ${Color.Black};
 }
 
 #root{
