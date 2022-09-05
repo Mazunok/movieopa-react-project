@@ -4,8 +4,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
 import { getFirebaseeMessageError } from "../../utils/firebase-errors";
-import { Spinner } from "../Spinner";
-import { Text, Input, Title, Button, StyledForm, Span } from "./styles";
+import { Spinner } from "../Spinner/Spinner";
+import { Text, Input, Title, Button, StyledForm, Span } from "../SignInForm/styles";
 
 type SignUpFormValues = {
   name: string;

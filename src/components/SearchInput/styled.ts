@@ -4,7 +4,7 @@ import { MEDIA } from "../../ui/media";
 
 const StyledInput = styled.input`
   height: 56px;
-  background: ${Color.graphite};
+  background: ${Color.Graphite};
   border-radius: 10px;
   margin: 0;
   border: none;

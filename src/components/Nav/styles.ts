@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   top: 0;
   left: 0;
   padding: 50px 30px 0px 30px;
-  background-color: black;
+  background-color: ${Color.Black};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -34,7 +34,7 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: row;
   ${S1};
-  color: ${Color.secondary};
+  color: ${Color.Secondary};
 `;
 
 export { StyledNav, StyledLink, Img};

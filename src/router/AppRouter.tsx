@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
-import { Home } from "../pages/Home";
-import {SignIn} from "../pages/SignIn";
-import { SignUp } from "../pages/SignUp";
-import { NotFound } from "../pages/NotFound";
+import { Home } from "../pages/Home/Home";
+import {SignIn} from "../pages/SignIn/SignIn";
+import { SignUp } from "../pages/SignUp/SignUp";
+import { NotFound } from "../pages/NotFound/NotFound";
 import { ROUTES } from "./routes";
-import { Trands } from "../pages/Trands";
-import { Favorites } from "../pages/Favorites";
-import { Settings } from "../pages/Settings";
-import { Search } from "../pages/Search";
+import { Trands } from "../pages/Trands/Trands";
+import { Favorites } from "../pages/Favorites/Favorites";
+import { Settings } from "../pages/Settings/Settings";
+import { Search } from "../pages/Search/Search";
 import { MainTemplate } from "../components/MainTemplate/MainTemplate";
 
 export const AppRouter = () => {

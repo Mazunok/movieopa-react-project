@@ -23,14 +23,18 @@ class MovieAPI {
     apikey: "2a1e8083",
   };
 
-  public async getAll(newParams: MovieRequestParams){
+  public async getAll(newParams: MovieRequestParams) {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
       ...newParams,
       s: "bat",
     };
 
-    const { data } = await this.API.get<IMovie[]>("", {
+    const { data } = await this.API.get<{
+      Response: "True" | "False";
+      TotalResults: string;
+      Search: IMovie[];
+    }>("", {
       params,
     });
 

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   height: 100%;
   display:flex;
   flex-direction: row;
-  background-color: ${Color.black};
+  background-color: ${Color.Black};
 `;
 
 const Container = styled.div`

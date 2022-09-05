@@ -1,7 +1,7 @@
 import React from "react";
 import { IMovie } from "../../types";
 import { MovieItem } from "../MovieItem/MovieItem";
-import { Spinner } from "../Spinner";
+import { Spinner } from "../Spinner/Spinner";
 import { Container } from "../MovieList/styles";
 
 interface IProps {

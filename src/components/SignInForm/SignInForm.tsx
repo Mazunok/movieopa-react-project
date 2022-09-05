@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
 import { getFirebaseeMessageError } from "../../utils/firebase-errors";
-import { Spinner } from "../Spinner";
+import { Spinner } from "../Spinner/Spinner";
 import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
 
 type SignInFormValues = {

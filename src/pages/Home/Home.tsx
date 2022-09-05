@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { MovieList } from "../components/MovieList/MovieList";
-import { movieAPI, MovieRequestParams } from "../services/movieApi/movieApi";
-import { IMovie } from "../types";
+import { MovieList } from "../../components/MovieList/MovieList";
+import { movieAPI, MovieRequestParams } from "../../services/movieApi/movieApi";
+import { IMovie } from "../../types";
 
 export const Home = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
@@ -12,8 +12,8 @@ export const Home = () => {
   useEffect(() => {
     movieAPI
       .getAll(requestParams)
-      .then((movies) => {
-        setMovies(movies);
+      .then((data) => {
+        setMovies(data.Search);
         setIsLoading(false);
       })
       .catch((err) => {

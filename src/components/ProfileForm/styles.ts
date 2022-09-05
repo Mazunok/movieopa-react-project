@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   ${MEDIA.MD} {
     width: 100px;
   }
-  ${MEDIA.SM}{
+  ${MEDIA.SM} {
     justify-content: flex-end;
   }
 `;
@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
 const Avatar = styled.div`
   width: 56px;
   height: 56px;
-  background: ${Color.primary};
+  background: ${Color.Primary};
   border-radius: 10px;
   position: relative;
   display: block;
@@ -32,7 +32,7 @@ const Avatar = styled.div`
 const AvatarName = styled.p`
   ${S2}
   font-size: 20;
-  color: ${Color.white};
+  color: ${Color.White};
   position: absolute;
   left: 13px;
   top: 16px;
@@ -45,7 +45,7 @@ const AvatarName = styled.p`
 const ProfileName = styled.p`
   display: block;
   ${S3};
-  color: ${Color.white};
+  color: ${Color.White};
   ${MEDIA.MD} {
     display: none;
   }
@@ -64,7 +64,7 @@ const BurgerContainer = styled.button`
   display: none;
   width: 56px;
   height: 56px;
-  background: ${Color.primary};
+  background: ${Color.Primary};
   border-radius: 10px;
   ${MEDIA.MD} {
     display: block;
@@ -77,21 +77,26 @@ const BurgerButton = styled.div`
   width: 24px;
   height: 24px;
   left: 15px;
-  border-top: 2px solid ${Color.white};
-  border-bottom: 2px solid ${Color.white};
+  border-top: 2px solid ${Color.White};
+  border-bottom: 2px solid ${Color.White};
   ::before {
     content: "";
     position: absolute;
     top: 9px;
     left: 0px;
     width: 100%;
-    border-top: 2px solid ${Color.white};
+    border-top: 2px solid ${Color.White};
   }
   ${MEDIA.MD} {
     display: block;
   }
   ${MEDIA.SM} {
   }
+`;
+
+const LinkContainer = styled.div`
+  width: 264px;
+  display: none;
 `;
 
 export {
@@ -102,4 +107,5 @@ export {
   ArrowBtn,
   BurgerButton,
   BurgerContainer,
+  LinkContainer,
 };

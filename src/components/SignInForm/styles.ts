@@ -17,7 +17,7 @@ const StyledForm = styled.form`
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background: ${Color.dark};
+  background: ${Color.Dark};
   border-radius: 10px;
   ${MEDIA.SM} {
     width: 320px;
@@ -29,7 +29,7 @@ const StyledForm = styled.form`
 const Text = styled.p`
   font-family: "Exo 2";
   ${S3};
-  color: ${Color.white};
+  color: ${Color.White};
   padding-bottom: 5px;
   ${MEDIA.SM} {
     font-size: 14px;
@@ -38,7 +38,7 @@ const Text = styled.p`
 `;
 
 const Input = styled.input`
-  background: ${Color.graphite};
+  background: ${Color.Graphite};
   border-radius: 10px;
   border: none;
   width: 494px;
@@ -48,7 +48,7 @@ const Input = styled.input`
   font-weight: 500;
   padding-left: 20px;
   ${S3};
-  color: ${Color.secondary};
+  color: ${Color.Secondary};
   ${MEDIA.SM} {
     width: 224px;
   }
@@ -58,7 +58,7 @@ const Title = styled.h2`
   font-family: "Exo 2";
   font-style: normal;
   ${H2};
-  color: ${Color.white};
+  color: ${Color.White};
   background: none;
   align-self: flex-start;
   padding-left: 40px;
@@ -66,7 +66,7 @@ const Title = styled.h2`
 
 const Button = styled.button`
   border: none;
-  background: ${Color.primary};
+  background: ${Color.Primary};
   margin: 20px 0;
   border-radius: 10px;
   width: 494px;
@@ -74,7 +74,7 @@ const Button = styled.button`
   font-family: "Exo 2";
   font-style: normal;
   ${S3}
-  color: ${Color.white};
+  color: ${Color.White};
   cursor: pointer;
   ${MEDIA.SM} {
     width: 225px;
@@ -82,7 +82,7 @@ const Button = styled.button`
 `;
 
 const Span = styled.span`
-  color: red;
+  color: ${Color.Error};
   ${MEDIA.SM} {
   }
 `;

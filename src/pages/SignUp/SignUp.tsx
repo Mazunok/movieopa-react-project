@@ -1,7 +1,7 @@
 import React from "react";
-import { SignUpForm } from "../components/Form/SignUpForm";
+import { SignUpForm } from "../../components/SignUpForm/SignUpForm";
 import styled from "styled-components";
-import signupbackground from "../assets/signupbackground.png";
+import signupbackground from "../../assets/signupbackground.png";
 
 export const SignUp = () => {
   return (
