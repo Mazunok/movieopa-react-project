@@ -1,20 +1,32 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
-import { S2, S3 } from "../../ui/typography";
+import { H2, S2, S3 } from "../../ui/typography";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   width: 264px;
+  background-color: ${Color.Graphite};
+  border-radius: 10px;
   ${MEDIA.MD} {
     width: 100px;
   }
   ${MEDIA.SM} {
     justify-content: flex-end;
   }
+`;
+
+const ProfileContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: 264px;
 `;
 
 const Avatar = styled.div`
@@ -95,8 +107,22 @@ const BurgerButton = styled.div`
 `;
 
 const LinkContainer = styled.div`
-  width: 264px;
-  display: none;
+  width: 260px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 100px;
+  z-index: 1;
+  background-color: ${Color.Graphite};
+  border-radius: 10px;
+`;
+
+const StyledLink = styled(Link)`
+  ${H2}
+  color: ${Color.Primary};
 `;
 
 export {
@@ -108,4 +134,6 @@ export {
   BurgerButton,
   BurgerContainer,
   LinkContainer,
+  ProfileContainer,
+  StyledLink,
 };
