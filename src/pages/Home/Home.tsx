@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { movieAPI, MovieRequestParams } from "../../services/movieApi/movieApi";
 import { IMovie } from "../../types";
+import { transformMovieData } from "../../utils/formatData";
 
 export const Home = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
@@ -13,7 +14,8 @@ export const Home = () => {
     movieAPI
       .getAll(requestParams)
       .then((data) => {
-        setMovies(data.Search);
+        const transwormedData = transformMovieData(data.Search)
+        setMovies(transwormedData)
         setIsLoading(false);
       })
       .catch((err) => {

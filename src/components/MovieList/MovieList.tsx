@@ -20,7 +20,7 @@ export const MovieList = ({ movies, isLoading, errorMessage }: IProps) => {
   return (
     <Container>
       {movies.map((movie) => {
-        return <MovieItem movie={movie} key={movie.id} />;
+        return <MovieItem movie={movie} key={movie.imdbID} />;
       })}
     </Container>
   );

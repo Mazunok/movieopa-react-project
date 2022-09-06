@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IMovie } from "../../types";
+import { IMovieSearch } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
@@ -30,11 +30,7 @@ class MovieAPI {
       s: "bat",
     };
 
-    const { data } = await this.API.get<{
-      Response: "True" | "False";
-      TotalResults: string;
-      Search: IMovie[];
-    }>("", {
+    const { data } = await this.API.get<IMovieSearch>("", {
       params,
     });
 

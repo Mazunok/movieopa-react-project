@@ -16,11 +16,11 @@ interface IProps {
 export const MovieItem = ({ movie }: IProps) => {
   return (
     <CardContainer>
-      <Poster src={movie.Poster} alt={`poster ${movie.Title}`}></Poster>
-      <Title>{movie.Title}</Title>
+      <Poster src={movie.poster} alt={`poster ${movie.title}`}></Poster>
+      <Title>{movie.title}</Title>
       <TextContainer>
-        <Type>{movie.Type}</Type>
-        <Year>{movie.Year}</Year>
+        <Type>{movie.type}</Type>
+        <Year>{movie.year}</Year>
       </TextContainer>
     </CardContainer>
   );
