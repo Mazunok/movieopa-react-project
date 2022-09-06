@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
-import { H2, S2, S3 } from "../../ui/typography";
+import { H2, H3, S2, S3 } from "../../ui/typography";
 import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
@@ -118,11 +118,17 @@ const LinkContainer = styled.div`
   z-index: 1;
   background-color: ${Color.Graphite};
   border-radius: 10px;
+  ${MEDIA.MD} {
+    width: 100px;
+  }
 `;
 
 const StyledLink = styled(Link)`
   ${H2}
   color: ${Color.Primary};
+  ${MEDIA.MD} {
+    ${H3}
+  }
 `;
 
 export {

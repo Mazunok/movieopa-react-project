@@ -18,6 +18,35 @@ class MovieAPI {
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });
+  private randomNameWord = "";
+
+  private getRandomWord = (): string => {
+    const randomWords = [
+      "cat",
+      "bat",
+      "spider",
+      "doll",
+      "woman",
+      "world",
+      "crazy",
+      "happiness",
+      "pet",
+      "icon",
+      "year",
+      "death",
+      "love",
+      "vampire",
+      "sun",
+      "diary",
+      "travel",
+      "forest",
+      "couple",
+      "unicorn",
+    ];
+    const random = Math.floor(Math.random() * randomWords.length);
+    const result = randomWords[random];
+    return result;
+  };
 
   private readonly DEFALUT_REQUEST_PARAMS: MovieRequestParams = {
     apikey: "2a1e8083",
@@ -27,7 +56,7 @@ class MovieAPI {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
       ...newParams,
-      s: "bat",
+      s: this.getRandomWord(),
     };
 
     const { data } = await this.API.get<IMovieSearch>("", {

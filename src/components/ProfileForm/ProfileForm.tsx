@@ -28,13 +28,13 @@ export const ProfileForm = () => {
           <img src={arrow} alt="arrow"></img>
         </ArrowBtn>
         <BurgerContainer>
-          <BurgerButton />
+          <BurgerButton onClick={toggleIsOpen} isOpen={isOpen} />
         </BurgerContainer>
       </ProfileContainer>
       {isOpen && (
         <LinkContainer>
           <StyledLink to={`/${ROUTES.SIGN_UP}`}>Sign Up</StyledLink>
-          <StyledLink to={`/${ROUTES.SIGN_UP}`}>Sign Up</StyledLink>
+          <StyledLink to={`/${ROUTES.SIGN_IN}`}>Sign In</StyledLink>
         </LinkContainer>
       )}
     </StyledContainer>

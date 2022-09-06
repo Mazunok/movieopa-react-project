@@ -1,4 +1,8 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -34,10 +38,20 @@ export const SignInForm = () => {
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));
       })
+
       .finally(() => {
         setIsLoading(false);
         reset();
       });
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        <Link to={`/${ROUTES.USER_INFO}`}></Link>;
+        const uid = user.uid;
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>

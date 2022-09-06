@@ -6,6 +6,7 @@ import home from "../../assets/home.svg";
 import settings from "../../assets/settings.svg";
 import trends from "../../assets/trends.svg";
 import movieopa from "../../assets/movieOpa.svg";
+import { UserInfo } from "../../pages/UserInfo/UserInfo";
 
 export const Nav = () => {
   return (
@@ -27,8 +28,8 @@ export const Nav = () => {
         <Img src={settings} alt="settings logo" />
         <p>Settings</p>
       </StyledLink>
-      <StyledLink to={ROUTES.SIGN_IN}>Sign in</StyledLink>
-      <StyledLink to={ROUTES.SIGN_UP}>Sign Up </StyledLink>
+      <StyledLink to={ROUTES.USER_INFO}> 
+      <p>User Info</p></StyledLink>
     </StyledNav>
   );
 };
