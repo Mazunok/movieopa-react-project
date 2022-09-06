@@ -1,35 +1,37 @@
 import React from "react";
 import { ROUTES } from "../../router/routes";
-import { Img, StyledLink, StyledNav } from "./styles";
+import { Img, StyledNav } from "./styles";
 import favorites from "../../assets/favorites.svg";
 import home from "../../assets/home.svg";
 import settings from "../../assets/settings.svg";
 import trends from "../../assets/trends.svg";
 import movieopa from "../../assets/movieOpa.svg";
 import { UserInfo } from "../../pages/UserInfo/UserInfo";
+import { CustomLink } from "../CustomLink/CustomLink";
 
 export const Nav = () => {
   return (
     <StyledNav>
       <Img src={movieopa} alt="logo" />
-      <StyledLink to={ROUTES.HOME}>
+      <CustomLink to={ROUTES.HOME}>
         <Img src={home} alt="favorites logo" />
         <p>Home</p>
-      </StyledLink>
-      <StyledLink to={ROUTES.TRANDS}>
+      </CustomLink>
+      <CustomLink to={ROUTES.TRANDS}>
         <Img src={trends} alt="trends logo" />
         <p>Trands</p>
-      </StyledLink>
-      <StyledLink to={ROUTES.FAVORITES}>
+      </CustomLink>
+      <CustomLink to={ROUTES.FAVORITES}>
         <Img src={favorites} alt="favorites logo" />
         <p>Favorites</p>
-      </StyledLink>
-      <StyledLink to={ROUTES.SETTINGS}>
+      </CustomLink>
+      <CustomLink to={ROUTES.SETTINGS}>
         <Img src={settings} alt="settings logo" />
         <p>Settings</p>
-      </StyledLink>
-      <StyledLink to={ROUTES.USER_INFO}> 
-      <p>User Info</p></StyledLink>
+      </CustomLink>
+      <CustomLink to={ROUTES.USER_INFO}>
+        <p>User Info</p>
+      </CustomLink>
     </StyledNav>
   );
 };

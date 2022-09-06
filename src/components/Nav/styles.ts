@@ -30,11 +30,4 @@ const Img = styled.img`
   padding-right: 20px;
 `;
 
-const StyledLink = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  ${S1};
-  color: ${Color.Secondary};
-`;
-
-export { StyledNav, StyledLink, Img};
+export { StyledNav, Img };
