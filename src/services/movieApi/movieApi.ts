@@ -22,6 +22,9 @@ class MovieAPI {
 
   private getRandomWord = (): string => {
     const randomWords = [
+      "star",
+      "wedding",
+      "wars",
       "cat",
       "bat",
       "spider",
@@ -65,6 +68,22 @@ class MovieAPI {
 
     return data;
   }
+
+  public async getTrands(newParams: MovieRequestParams) {
+    const params = {
+      ...this.DEFALUT_REQUEST_PARAMS,
+      ...newParams,
+      s: this.getRandomWord(),
+      y: 2022,
+    };
+
+    const { data } = await this.API.get<IMovieSearch>("", {
+      params,
+    });
+
+    return data;
+  }
+
 }
 
 export const movieAPI = new MovieAPI();

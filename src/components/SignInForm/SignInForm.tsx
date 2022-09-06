@@ -34,11 +34,13 @@ export const SignInForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        if(user){
+          <Link to={`/${ROUTES.USER_INFO}`}></Link>;
+        }
       })
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));
       })
-
       .finally(() => {
         setIsLoading(false);
         reset();
