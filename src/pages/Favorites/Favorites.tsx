@@ -13,9 +13,8 @@ export const Favorites = () => {
   useEffect(() => {
     movieAPI
       .getAll(requestParams)
-      .then((data) => {
-        const transwormedData = transformMovieData(data.Search);
-        setMovies(transwormedData);
+      .then(() => {
+        setMovies([]);
         setIsLoading(false);
       })
       .catch((err) => {

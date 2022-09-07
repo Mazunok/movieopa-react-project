@@ -11,12 +11,14 @@ import { Settings } from "../pages/Settings/Settings";
 import { Search } from "../pages/Search/Search";
 import { MainTemplate } from "../components/MainTemplate/MainTemplate";
 import { UserInfo } from "../pages/UserInfo/UserInfo";
+import { MovieDetails } from "../pages/MovieDetails/MovieDetails";
 
 export const AppRouter = () => {
   return (
     <Routes>
       <Route path={ROUTES.HOME} element={<MainTemplate />}>
         <Route index element={<Home />} />
+        <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
         <Route path={ROUTES.TRANDS} element={<Trands />} />
         <Route path={ROUTES.FAVORITES} element={<Favorites />} />
         <Route path={ROUTES.SETTINGS} element={<Settings />} />

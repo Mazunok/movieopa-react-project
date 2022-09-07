@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
 import { S2 } from "../../ui/typography";
 
-const CardContainer = styled.div`
+const StyledLink = styled(Link) `
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -46,4 +47,4 @@ const Year = styled.p`
   color: ${Color.Light};
 `;
 
-export { Title, Type, Poster, Year, CardContainer, TextContainer };
+export { Title, Type, Poster, Year, StyledLink, TextContainer };

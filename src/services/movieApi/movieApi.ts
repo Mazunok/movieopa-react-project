@@ -45,6 +45,10 @@ class MovieAPI {
       "forest",
       "couple",
       "unicorn",
+      "aladin",
+      "princess",
+      "lion",
+      "aquaman",
     ];
     const random = Math.floor(Math.random() * randomWords.length);
     const result = randomWords[random];
@@ -83,7 +87,6 @@ class MovieAPI {
 
     return data;
   }
-
 }
 
 export const movieAPI = new MovieAPI();

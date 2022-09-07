@@ -8,5 +8,5 @@ export enum ROUTES {
   SIGN_UP = "sign-up",
   NOT_FOUND = "*",
   USER_INFO = "user-info",
-  MOVIE_DETAILS = "movie-details",
+  MOVIE_DETAILS = "movie/:id",
 }

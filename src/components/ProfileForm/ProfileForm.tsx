@@ -8,11 +8,11 @@ import {
   BurgerContainer,
   LinkContainer,
   ProfileContainer,
-  StyledLink
 } from "./styles";
 import arrow from "../../assets/arrow.svg";
 import { ROUTES } from "../../router/routes"
 import { useToggle } from "../../hooks/useToggle";
+import { CustomLink } from "../CustomLink/CustomLink";
 
 export const ProfileForm = () => {
   const [isOpen, toggleIsOpen] = useToggle(false);
@@ -33,8 +33,8 @@ export const ProfileForm = () => {
       </ProfileContainer>
       {isOpen && (
         <LinkContainer>
-          <StyledLink to={`/${ROUTES.SIGN_UP}`}>Sign Up</StyledLink>
-          <StyledLink to={`/${ROUTES.SIGN_IN}`}>Sign In</StyledLink>
+          <CustomLink to={`/${ROUTES.SIGN_UP}`}>Sign Up</CustomLink>
+          <CustomLink to={`/${ROUTES.SIGN_IN}`}>Sign In</CustomLink>
         </LinkContainer>
       )}
     </StyledContainer>
