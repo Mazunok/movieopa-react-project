@@ -12,6 +12,7 @@ import { Search } from "../pages/Search/Search";
 import { MainTemplate } from "../components/MainTemplate/MainTemplate";
 import { UserInfo } from "../pages/UserInfo/UserInfo";
 import { MovieDetails } from "../pages/MovieDetails/MovieDetails";
+import { RequareAuth } from "../components/RequareAuth/RequareAuth";
 
 export const AppRouter = () => {
   return (
@@ -20,7 +21,9 @@ export const AppRouter = () => {
         <Route index element={<Home />} />
         <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
         <Route path={ROUTES.TRANDS} element={<Trands />} />
-        <Route path={ROUTES.FAVORITES} element={<Favorites />} />
+        <Route element={<RequareAuth/>}>
+          <Route path={ROUTES.FAVORITES} element={<Favorites />} />
+        </Route>
         <Route path={ROUTES.SETTINGS} element={<Settings />} />
         <Route path={ROUTES.SEARCH} element={<Search />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />

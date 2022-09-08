@@ -1,15 +1,16 @@
 import axios from "axios";
-import { IMovieSearch } from "../../types";
+import { IMovieSearch, IMovieApI, IMovie, IDetailsMovie } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
   s?: string;
-  id?: string;
+  i: string;
   title?: string;
   type?: string;
   year?: number;
   page?: number;
   poster?: string;
+  plot?: string;
 };
 
 class MovieAPI {
@@ -18,7 +19,6 @@ class MovieAPI {
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });
-  private randomNameWord = "";
 
   private getRandomWord = (): string => {
     const randomWords = [
@@ -87,6 +87,34 @@ class MovieAPI {
 
     return data;
   }
+
+  public async getDetails(id: string) {
+    const params = {
+      ...this.DEFALUT_REQUEST_PARAMS,
+      i: id,
+      plot: "full",
+    };
+
+    const { data } = await this.API.get<IDetailsMovie>("", {
+      params,
+    });
+
+    return data;
+  }
+
+  // public async getSearch(newParams:MovieRequestParams) {
+  //   const params = {
+  //     ...this.DEFALUT_REQUEST_PARAMS,
+  //     ...newParams,
+  //     s: this.getRandomWord(),
+  //   };
+
+  //   const { data } = await this.API.get<IMovieSearch>("", {
+  //     params,
+  //   });
+
+  //   return data;
+  // }
 }
 
 export const movieAPI = new MovieAPI();

@@ -10,7 +10,7 @@ const StyledWrapper = styled.div`
   align-items: flex-start;
   padding-left: 100px;
   padding-top: 30px;
-  gap: 40px;
+  gap: 30px;
 `;
 
 const PosterContainer = styled.div`
@@ -29,7 +29,8 @@ const LikeButton = styled.button`
   width: 250px;
   height: 56px;
   border-radius: 10px;
-  color: ${Color.Graphite};
+  border: none;
+  background-color: ${Color.Graphite};
   cursor: pointer;
 `;
 
@@ -38,7 +39,7 @@ const InfoContainer = styled.div`
   height: 492px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   align-items: flex-start;
 `;
 
