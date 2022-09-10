@@ -21,7 +21,7 @@ export const AppRouter = () => {
         <Route index element={<Home />} />
         <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
         <Route path={ROUTES.TRANDS} element={<Trands />} />
-        <Route element={<RequareAuth/>}>
+        <Route element={<RequareAuth />}>
           <Route path={ROUTES.FAVORITES} element={<Favorites />} />
         </Route>
         <Route path={ROUTES.SETTINGS} element={<Settings />} />

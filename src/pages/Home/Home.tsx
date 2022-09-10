@@ -1,34 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { MovieList } from "../../components/MovieList/MovieList";
-import { movieAPI, MovieRequestParams } from "../../services/movieApi/movieApi";
-import { IMovie } from "../../types";
+import { fetchMovies } from "../../store/features/moviesSlice/moviesSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { transformMovieData } from "../../utils/formatData";
 
 export const Home = () => {
-  const [movies, setMovies] = useState<IMovie[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [requestParams, setRequestParams] = useState<MovieRequestParams>({});
+  const dispatch = useAppDispatch();
+  const { results, isLoading, error } = useAppSelector(
+    (state) => state.persistedReducer.movies
+  );
 
   useEffect(() => {
-    movieAPI
-      .getAll(requestParams)
-      .then((data) => {
-        const transwormedData = transformMovieData(data.Search)
-        setMovies(transwormedData)
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        setErrorMessage(err.message);
-      });
-  }, [requestParams]);
+    dispatch(fetchMovies({}));
+  }, [dispatch]);
 
   return (
     <MovieList
-      movies={movies}
+      movies={transformMovieData(results.Search)}
       isLoading={isLoading}
-      errorMessage={errorMessage}
+      errorMessage={error}
     />
   );
 };

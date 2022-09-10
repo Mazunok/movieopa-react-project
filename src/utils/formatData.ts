@@ -1,6 +1,6 @@
 import { IMovie, IMovieApI } from "../types";
 
-export const transformMovieData = (movies: any): IMovieApI[] => {
+export const transformMovieData = (movies: IMovieApI[]): IMovie[] => {
   return movies.map((movie: any) => {
     return {
       imdbID: movie.imdbID,

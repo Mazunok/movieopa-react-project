@@ -7,8 +7,7 @@ const StyledHeader = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   gap: 20px;
-  padding-left: 100px;
-  padding-top: 40px;
+  padding: 40px 20px 0 100px;
   width: 100%;
   ${MEDIA.MD} {
     padding-left: 30px;

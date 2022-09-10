@@ -1,5 +1,7 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
+import { movieAPI } from "../../services/movieApi/movieApi";
 import { StyledInput } from "./styled";
+import { useInput } from "../../hooks/useInput";
 
 interface IProps {
   placeholder: string;
@@ -9,12 +11,10 @@ interface IProps {
 }
 
 export const SearchInput = ({ placeholder, value, onChange, type }: IProps) => {
-  return (
-    <StyledInput
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
-  );
+  const search = useInput("");
+  useEffect(() => {
+    movieAPI.getSearch(search.value);
+  });
+
+  return <StyledInput type={type} placeholder={placeholder} {...search} />;
 };

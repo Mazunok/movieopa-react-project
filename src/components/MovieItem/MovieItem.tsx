@@ -15,7 +15,7 @@ interface IProps {
 
 export const MovieItem = ({ movie }: IProps) => {
   return (
-    <StyledLink to={`movie/${movie.imdbID}`}>
+    <StyledLink to={`/movie/${movie.imdbID}`}>
       <Poster src={movie.poster} alt={`poster ${movie.title}`}></Poster>
       <Title>{movie.title}</Title>
       <TextContainer>

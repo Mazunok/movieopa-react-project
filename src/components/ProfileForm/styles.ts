@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 264px;
+  width: 260px;
   background-color: ${Color.Graphite};
   border-radius: 10px;
   ${MEDIA.MD} {

@@ -6,8 +6,8 @@ import { Container } from "../MovieList/styles";
 
 interface IProps {
   movies: IMovie[];
-  isLoading: boolean;
-  errorMessage: string;
+  isLoading?: boolean;
+  errorMessage?: string | null;
 }
 
 export const MovieList = ({ movies, isLoading, errorMessage }: IProps) => {

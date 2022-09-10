@@ -1,11 +1,10 @@
 import {
   getAuth,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
 import { getFirebaseeMessageError } from "../../utils/firebase-errors";
 import { Spinner } from "../Spinner/Spinner";
@@ -26,17 +25,17 @@ export const SignInForm = () => {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
     setIsLoading(true);
     const auth = getAuth();
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        if(user){
-          <Link to={`/${ROUTES.USER_INFO}`}></Link>;
-        }
+        const user = userCredential.user.email;
+        navigate(`/${ROUTES.USER_INFO}`)
       })
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));
@@ -45,15 +44,6 @@ export const SignInForm = () => {
         setIsLoading(false);
         reset();
       });
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        <Link to={`/${ROUTES.USER_INFO}`}></Link>;
-        const uid = user.uid;
-      } else {
-        // User is signed out
-        // ...
-      }
-    });
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>

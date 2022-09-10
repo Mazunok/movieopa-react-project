@@ -1,10 +1,10 @@
 import axios from "axios";
-import { IMovieSearch, IMovieApI, IMovie, IDetailsMovie } from "../../types";
+import { IMovieSearch, IDetailsMovie } from "../../types";
 
 export type MovieRequestParams = {
   apikey?: string;
   s?: string;
-  i: string;
+  i?: string;
   title?: string;
   type?: string;
   year?: number;
@@ -57,6 +57,7 @@ class MovieAPI {
 
   private readonly DEFALUT_REQUEST_PARAMS: MovieRequestParams = {
     apikey: "2a1e8083",
+    i: 'string',
   };
 
   public async getAll(newParams: MovieRequestParams) {
@@ -102,19 +103,18 @@ class MovieAPI {
     return data;
   }
 
-  // public async getSearch(newParams:MovieRequestParams) {
-  //   const params = {
-  //     ...this.DEFALUT_REQUEST_PARAMS,
-  //     ...newParams,
-  //     s: this.getRandomWord(),
-  //   };
+  public async getSearch(value: string) {
+    const params = {
+      ...this.DEFALUT_REQUEST_PARAMS,
+      s: value,
+    };
 
-  //   const { data } = await this.API.get<IMovieSearch>("", {
-  //     params,
-  //   });
+    const { data } = await this.API.get<IMovieSearch>("", {
+      params,
+    });
 
-  //   return data;
-  // }
+    return data;
+  }
 }
 
 export const movieAPI = new MovieAPI();
