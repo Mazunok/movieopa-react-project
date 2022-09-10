@@ -1,4 +1,3 @@
-
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
@@ -12,6 +11,7 @@ import {
 } from "redux-persist";
 import moviesReducer from "./features/moviesSlice/moviesSlice";
 import storage from "redux-persist/lib/storage";
+import favoritesReduser from "./features/favoritesSlice/favoritesSlice";
 
 const persistConfig = {
   key: "root",
@@ -21,6 +21,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
+  favorites: favoritesReduser,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

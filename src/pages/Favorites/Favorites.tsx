@@ -1,33 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { MovieList } from "../../components/MovieList/MovieList";
-import { movieAPI, MovieRequestParams } from "../../services/movieApi/movieApi";
-import { IMovie } from "../../types";
-import { transformMovieData } from "../../utils/formatData";
+import { useAppSelector } from "../../store/hooks";
 
 export const Favorites = () => {
-  const [movies, setMovies] = useState<IMovie[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [requestParams, setRequestParams] = useState<MovieRequestParams>({});
-
-  useEffect(() => {
-    movieAPI
-      .getAll(requestParams)
-      .then(() => {
-        setMovies([]);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        setErrorMessage(err.message);
-      });
-  }, [requestParams]);
-
-  return (
-    <MovieList
-      movies={movies}
-      isLoading={isLoading}
-      errorMessage={errorMessage}
-    />
+  const { favorites } = useAppSelector(
+    (state) => state.persistedReducer.favorites
   );
+
+  return <MovieList movies={favorites} />;
 };

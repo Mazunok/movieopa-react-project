@@ -13,6 +13,8 @@ import {
   Title,
   StyledText,
 } from "./styles";
+import { useDispatch } from "react-redux";
+import { addFavorite } from "../../store/features/favoritesSlice/favoritesSlice";
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -24,11 +26,13 @@ export const MovieDetails = () => {
     });
   }, [id]);
 
+  const dispatch = useDispatch();
+
   return (
     <StyledWrapper>
       <PosterContainer>
         <Poster src={movie && movie.Poster}></Poster>
-        <LikeButton>❤️</LikeButton>
+        <LikeButton onClick={() => dispatch(addFavorite(movie))}>❤️</LikeButton>
       </PosterContainer>
       <InfoContainer>
         <Subtitle>{movie && movie.Genre}</Subtitle>

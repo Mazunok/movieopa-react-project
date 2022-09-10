@@ -57,7 +57,7 @@ class MovieAPI {
 
   private readonly DEFALUT_REQUEST_PARAMS: MovieRequestParams = {
     apikey: "2a1e8083",
-    i: 'string',
+    i: "string",
   };
 
   public async getAll(newParams: MovieRequestParams) {
