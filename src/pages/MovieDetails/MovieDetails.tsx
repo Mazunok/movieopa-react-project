@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IDetailsMovie } from "../../types/index";
-import { movieAPI } from "../../services/movieApi/movieApi";
+import { movieAPI } from "../../services/index";
 import {
   Descriprion,
   InfoContainer,
@@ -14,7 +14,10 @@ import {
   StyledText,
 } from "./styles";
 import { useDispatch } from "react-redux";
-import { addFavorite } from "../../store/features/favoritesSlice/favoritesSlice";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../store/features/favoritesSlice/favoritesSlice";
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -33,6 +36,9 @@ export const MovieDetails = () => {
       <PosterContainer>
         <Poster src={movie && movie.Poster}></Poster>
         <LikeButton onClick={() => dispatch(addFavorite(movie))}>❤️</LikeButton>
+        <LikeButton onClick={() => dispatch(removeFavorite(movie))}>
+          💔
+        </LikeButton>
       </PosterContainer>
       <InfoContainer>
         <Subtitle>{movie && movie.Genre}</Subtitle>

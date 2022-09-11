@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { MovieList } from "../../components/index";
-import { movieAPI, MovieRequestParams } from "../../services/movieApi/movieApi";
+import { MovieRequestParams } from "../../types/index";
 import { IMovie } from "../../types";
-import { transformMovieData } from "../../utils/formatData";
+import { transformMovieData, movieAPI } from "../../services/index";
 
 export const Trands = () => {
   const [trands, setTrands] = useState<IMovie[]>([]);
@@ -14,8 +14,8 @@ export const Trands = () => {
     movieAPI
       .getTrands(requestParams)
       .then((data) => {
-        const transwormedData = transformMovieData(data.Search)
-        setTrands(transwormedData)
+        const transwormedData = transformMovieData(data.Search);
+        setTrands(transwormedData);
         setIsLoading(false);
       })
       .catch((err) => {

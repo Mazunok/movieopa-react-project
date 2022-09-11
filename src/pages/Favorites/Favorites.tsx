@@ -1,6 +1,6 @@
 import { MovieList } from "../../components/index";
 import { useAppSelector } from "../../store/hooks";
-import { transformMovieData } from "../../utils/formatData";
+import { transformMovieData } from "../../services/index";
 
 export const Favorites = () => {
   const { favorites } = useAppSelector(
