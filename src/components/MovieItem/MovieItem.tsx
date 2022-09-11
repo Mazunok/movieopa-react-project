@@ -1,13 +1,5 @@
-import React from "react";
 import { IMovie } from "../../types";
-import {
-  Poster,
-  StyledLink,
-  TextContainer,
-  Title,
-  Type,
-  Year,
-} from "./styles";
+import { Poster, StyledLink, TextContainer, Title, Type, Year } from "./styles";
 
 interface IProps {
   movie: IMovie;

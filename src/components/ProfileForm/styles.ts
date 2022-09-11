@@ -30,25 +30,24 @@ const ProfileContainer = styled.div`
 `;
 
 const Avatar = styled.div`
+  position: relative;
+  display: block;
   width: 56px;
   height: 56px;
   background: ${Color.Primary};
-  border-radius: 10px;
-  position: relative;
-  display: block;
-  ${MEDIA.MD} {
+  border-radius: 10px ${MEDIA.MD} {
     display: none;
   }
 `;
 
 const AvatarName = styled.p`
+  position: absolute;
+  top: 16px;
+  left: 13px;
+  display: block;
   ${S2}
   font-size: 20;
   color: ${Color.White};
-  position: absolute;
-  left: 13px;
-  top: 16px;
-  display: block;
   ${MEDIA.MD} {
     display: none;
   }
@@ -85,10 +84,10 @@ const BurgerContainer = styled.button`
 
 const BurgerButton = styled.div`
   position: relative;
+  left: 15px;
   display: none;
   width: 24px;
   height: 24px;
-  left: 15px;
   border-top: 2px solid ${Color.White};
   border-bottom: 2px solid ${Color.White};
   ::before {
@@ -102,20 +101,18 @@ const BurgerButton = styled.div`
   ${MEDIA.MD} {
     display: block;
   }
-  ${MEDIA.SM} {
-  }
 `;
 
 const LinkContainer = styled.div`
-  width: 260px;
-  height: 200px;
+  position: absolute;
+  top: 100px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  position: absolute;
-  top: 100px;
-  z-index: 1;
+  width: 260px;
+  height: 200px;
   background-color: ${Color.Graphite};
   border-radius: 10px;
   ${MEDIA.MD} {

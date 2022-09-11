@@ -1,4 +1,3 @@
-import React from "react";
 import { ROUTES } from "../../router/routes";
 import { Img, StyledNav } from "./styles";
 import favorites from "../../assets/favorites.svg";
@@ -6,7 +5,6 @@ import home from "../../assets/home.svg";
 import settings from "../../assets/settings.svg";
 import trends from "../../assets/trends.svg";
 import movieopa from "../../assets/movieOpa.svg";
-import { UserInfo } from "../../pages/UserInfo/UserInfo";
 import { CustomLink } from "../CustomLink/CustomLink";
 
 export const Nav = () => {

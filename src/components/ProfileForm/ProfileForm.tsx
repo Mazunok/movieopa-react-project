@@ -10,7 +10,7 @@ import {
   ProfileContainer,
 } from "./styles";
 import arrow from "../../assets/arrow.svg";
-import { ROUTES } from "../../router/routes"
+import { ROUTES } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
 

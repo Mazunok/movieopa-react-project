@@ -1,18 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import React from "react";
-import { Home } from "../pages/Home/Home";
-import { SignIn } from "../pages/SignIn/SignIn";
-import { SignUp } from "../pages/SignUp/SignUp";
-import { NotFound } from "../pages/NotFound/NotFound";
+import {
+  Home,
+  SignIn,
+  SignUp,
+  NotFound,
+  Trands,
+  Favorites,
+  Settings,
+  Search,
+  MovieDetails,
+  UserInfo,
+} from "../pages/index";
 import { ROUTES } from "./routes";
-import { Trands } from "../pages/Trands/Trands";
-import { Favorites } from "../pages/Favorites/Favorites";
-import { Settings } from "../pages/Settings/Settings";
-import { Search } from "../pages/Search/Search";
-import { MainTemplate } from "../components/MainTemplate/MainTemplate";
-import { UserInfo } from "../pages/UserInfo/UserInfo";
-import { MovieDetails } from "../pages/MovieDetails/MovieDetails";
-import { RequareAuth } from "../components/RequareAuth/RequareAuth";
+import { MainTemplate, RequareAuth } from "../components/index";
 
 export const AppRouter = () => {
   return (

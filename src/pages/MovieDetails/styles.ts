@@ -3,14 +3,14 @@ import { Color } from "../../ui/colors";
 import { H1, S3 } from "../../ui/typography";
 
 const StyledWrapper = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
   padding-left: 100px;
   padding-top: 30px;
-  gap: 30px;
 `;
 
 const PosterContainer = styled.div`
@@ -28,25 +28,25 @@ const Poster = styled.img`
 const LikeButton = styled.button`
   width: 250px;
   height: 56px;
+  background-color: ${Color.Graphite};
   border-radius: 10px;
   border: none;
-  background-color: ${Color.Graphite};
   cursor: pointer;
 `;
 
 const InfoContainer = styled.div`
-  width: 878px;
-  height: 492px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: flex-start;
+  gap: 20px;
+  width: 878px;
+  height: 492px;
 `;
 
 const Subtitle = styled.h2`
-  color: ${Color.Light};
   ${S3};
   font-weight: 500;
+  color: ${Color.Light};
 `;
 
 const Title = styled.h1`
@@ -61,8 +61,8 @@ const Descriprion = styled.p`
 `;
 
 const StyledText = styled.p`
-  color: ${Color.Light};
   ${S3}
+  color: ${Color.Light};
 `;
 
 export {

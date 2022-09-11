@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MovieList } from "../../components/MovieList/MovieList";
+import { MovieList } from "../../components/index";
 import { fetchMovies } from "../../store/features/moviesSlice/moviesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { transformMovieData } from "../../utils/formatData";

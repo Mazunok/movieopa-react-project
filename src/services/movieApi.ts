@@ -1,17 +1,5 @@
 import axios from "axios";
-import { IMovieSearch, IDetailsMovie } from "../../types";
-
-export type MovieRequestParams = {
-  apikey?: string;
-  s?: string;
-  i?: string;
-  title?: string;
-  type?: string;
-  year?: number;
-  page?: number;
-  poster?: string;
-  plot?: string;
-};
+import { IMovieSearch, IDetailsMovie, MovieRequestParams } from "../types/index";
 
 class MovieAPI {
   private readonly BASE_URL = process.env

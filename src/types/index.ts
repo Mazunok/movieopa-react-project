@@ -20,6 +20,18 @@ export interface IMovie {
   poster: string;
 }
 
+export type MovieRequestParams = {
+  apikey?: string;
+  s?: string;
+  i?: string;
+  title?: string;
+  type?: string;
+  year?: number;
+  page?: number;
+  poster?: string;
+  plot?: string;
+};
+
 export interface IDetailsMovie {
   Title: string;
   Year: number;

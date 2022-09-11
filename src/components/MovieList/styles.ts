@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 100%;
-  margin: 30px 100px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: row;
   gap: 30px;
+  height: 100%;
+  margin: 30px 100px;
 `;
 
 export { Container };

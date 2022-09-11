@@ -4,13 +4,13 @@ import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
 import { S2 } from "../../ui/typography";
 
-const StyledLink = styled(Link) `
+const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
-  padding: 20px;
   width: 230px;
   height: 300px;
-  ${MEDIA.MD}{
+  padding: 20px;
+  ${MEDIA.MD} {
     width: 200px;
     height: 280px;
   }
@@ -18,15 +18,15 @@ const StyledLink = styled(Link) `
 
 const TextContainer = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
+  flex-direction: row;
 `;
 
 const Poster = styled.img`
-  border-radius: 20px;
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
+  border-radius: 20px;
 `;
 
 const Title = styled.h1`
@@ -35,10 +35,10 @@ const Title = styled.h1`
 `;
 
 const Type = styled.p`
+  padding-right: 15px;
   ${S2}
   font-weight: 500;
   color: ${Color.Light};
-  padding-right: 15px;
 `;
 
 const Year = styled.p`

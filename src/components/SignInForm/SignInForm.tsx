@@ -1,7 +1,4 @@
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -35,7 +32,7 @@ export const SignInForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user.email;
-        navigate(`/${ROUTES.USER_INFO}`)
+        navigate(`/${ROUTES.USER_INFO}`);
       })
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));

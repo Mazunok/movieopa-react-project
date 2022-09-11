@@ -3,25 +3,25 @@ import { MEDIA } from "../../ui/media";
 
 const StyledHeader = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
   gap: 20px;
-  padding: 40px 20px 0 100px;
   width: 100%;
+  padding: 40px 20px 0 100px;
   ${MEDIA.MD} {
-    padding-left: 30px;
-    align-items: center;
     justify-content: space-around;
+    align-items: center;
+    padding-left: 30px;
   }
   ${MEDIA.SM} {
-    max-width: 275px;
     display: grid;
-    place-items: center;
-    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    place-items: center;
     align-items: center;
+    gap: 20px;
+    max-width: 275px;
     margin: 0 auto;
   }
 `;
