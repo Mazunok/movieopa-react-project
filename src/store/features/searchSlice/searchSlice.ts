@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { movieAPI, transformMovieData } from "../../../services/index";
+import { movieAPI } from "../../../services/index";
 import { IMovieSearch, MovieRequestParams } from "../../../types";
 
 interface SearchState {
@@ -13,9 +13,9 @@ export const fetchSearch = createAsyncThunk<
   IMovieSearch,
   MovieRequestParams,
   { rejectValue: string }
->("search/fetchSearch", async ({ s, page }, { rejectWithValue }) => {
+>("search/fetchSearch", async ({ s }, { rejectWithValue }) => {
   try {
-    return await movieAPI.getSearch(s, { page });
+    return await movieAPI.getSearch("value");
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);
@@ -29,7 +29,7 @@ const initialState: SearchState = {
 };
 
 const searchSlice = createSlice({
-  name: "movies",
+  name: "search",
   initialState,
   reducers: {},
   extraReducers(builder) {

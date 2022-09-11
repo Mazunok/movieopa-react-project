@@ -3,21 +3,24 @@ import { movieAPI } from "../../services/index";
 import { StyledInput } from "./styled";
 import { useInput } from "../../hooks/useInput";
 import { useAppDispatch } from "../../store/hooks";
+import { useDebounce } from "../../hooks/useDebounce";
+import { fetchSearch } from "../../store/features/searchSlice/searchSlice";
 
-interface IProps {
-  placeholder: string;
-  value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  type: string;
-}
+// interface IProps {
+//   placeholder: string;
+//   value?: string;
+//   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+//   type: string;
+// }
 
-export const SearchInput = ({ placeholder, value, onChange, type }: IProps) => {
+export const SearchInput = () => {
   const search = useInput("");
   const dispatch = useAppDispatch();
+  const debounceValue = useDebounce(search.value, 300);
 
   useEffect(() => {
-    movieAPI.getSearch(search.value);
-  }, []);
+    dispatch(fetchSearch({ s: debounceValue }));
+  }, [debounceValue, dispatch]);
 
-  return <StyledInput type={type} placeholder={placeholder} {...search} />;
+  return <StyledInput type="text" placeholder="Search" {...search} />;
 };

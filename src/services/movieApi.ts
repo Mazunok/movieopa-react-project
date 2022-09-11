@@ -95,13 +95,9 @@ class MovieAPI {
     return data;
   }
 
-  public async getSearch(
-    value: string | undefined,
-    newParams: MovieRequestParams
-  ) {
+  public async getSearch(s: string) {
     const params = {
-      ...newParams,
-      s: value,
+      s: "value",
     };
 
     const { data } = await this.API.get<IMovieSearch>("", {
