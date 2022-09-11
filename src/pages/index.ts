@@ -7,7 +7,6 @@ import { Settings } from "./Settings/index";
 import { SignIn } from "./SignIn/index";
 import { SignUp } from "./SignUp/index";
 import { Trands } from "./Trands/index";
-import { UserInfo } from "./UserInfo/index";
 
 export {
   Favorites,
@@ -19,5 +18,4 @@ export {
   SignIn,
   SignUp,
   Trands,
-  UserInfo,
 };

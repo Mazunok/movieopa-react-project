@@ -1,5 +1,9 @@
 import axios from "axios";
-import { IMovieSearch, IDetailsMovie, MovieRequestParams } from "../types/index";
+import {
+  IMovieSearch,
+  IDetailsMovie,
+  MovieRequestParams,
+} from "../types/index";
 
 class MovieAPI {
   private readonly BASE_URL = process.env
@@ -91,9 +95,12 @@ class MovieAPI {
     return data;
   }
 
-  public async getSearch(value: string) {
+  public async getSearch(
+    value: string | undefined,
+    newParams: MovieRequestParams
+  ) {
     const params = {
-      ...this.DEFALUT_REQUEST_PARAMS,
+      ...newParams,
       s: value,
     };
 

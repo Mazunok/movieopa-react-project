@@ -35,7 +35,8 @@ const Avatar = styled.div`
   width: 56px;
   height: 56px;
   background: ${Color.Primary};
-  border-radius: 10px ${MEDIA.MD} {
+  border-radius: 10px;
+   ${MEDIA.MD} {
     display: none;
   }
 `;

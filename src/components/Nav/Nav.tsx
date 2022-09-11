@@ -27,9 +27,6 @@ export const Nav = () => {
         <Img src={settings} alt="settings logo" />
         <p>Settings</p>
       </CustomLink>
-      <CustomLink to={ROUTES.USER_INFO}>
-        <p>User Info</p>
-      </CustomLink>
     </StyledNav>
   );
 };

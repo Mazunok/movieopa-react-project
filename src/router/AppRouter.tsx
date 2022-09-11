@@ -9,7 +9,6 @@ import {
   Settings,
   Search,
   MovieDetails,
-  UserInfo,
 } from "../pages/index";
 import { ROUTES } from "./routes";
 import { MainTemplate, RequareAuth } from "../components/index";
@@ -30,7 +29,6 @@ export const AppRouter = () => {
       </Route>
       <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
       <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
-      <Route path={ROUTES.USER_INFO} element={<UserInfo />} />
     </Routes>
   );
 };

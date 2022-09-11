@@ -32,7 +32,7 @@ export const SignInForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user.email;
-        navigate(`/${ROUTES.USER_INFO}`);
+        navigate(`/${ROUTES.SETTINGS}`);
       })
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));

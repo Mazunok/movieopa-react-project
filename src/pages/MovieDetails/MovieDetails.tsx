@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IDetailsMovie } from "../../types/index";
-import { movieAPI } from "../../services/index";
 import {
   Descriprion,
   InfoContainer,
@@ -13,45 +11,49 @@ import {
   Title,
   StyledText,
 } from "./styles";
-import { useDispatch } from "react-redux";
 import {
   addFavorite,
   removeFavorite,
 } from "../../store/features/favoritesSlice/favoritesSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { fetchDetails } from "../../store/features/movieDetailsSlice/movieDetailsSlice";
 
 export const MovieDetails = () => {
   const { id } = useParams();
-  const [movie, setMovie] = useState<IDetailsMovie>();
+  const dispatch = useAppDispatch();
+  const { results } = useAppSelector(
+    (state) => state.persistedReducer.detailsMovies
+  );
 
   useEffect(() => {
-    movieAPI.getDetails(id as string).then((movie) => {
-      setMovie(movie);
-    });
-  }, [id]);
-
-  const dispatch = useDispatch();
+    if (id) {
+      dispatch(fetchDetails(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <StyledWrapper>
       <PosterContainer>
-        <Poster src={movie && movie.Poster}></Poster>
-        <LikeButton onClick={() => dispatch(addFavorite(movie))}>❤️</LikeButton>
-        <LikeButton onClick={() => dispatch(removeFavorite(movie))}>
+        <Poster src={results.Poster}></Poster>
+        <LikeButton onClick={() => dispatch(addFavorite(results))}>
+          ❤️
+        </LikeButton>
+        <LikeButton onClick={() => dispatch(removeFavorite(results))}>
           💔
         </LikeButton>
       </PosterContainer>
       <InfoContainer>
-        <Subtitle>{movie && movie.Genre}</Subtitle>
-        <Title>{movie && movie.Title}</Title>
-        <Descriprion>{movie && movie.Plot}</Descriprion>
-        <StyledText>Year: {movie && movie.Year}</StyledText>
-        <StyledText>Released:{movie && movie.Released}</StyledText>
-        <StyledText>BoxOffice:{movie && movie.BoxOffice}</StyledText>
-        <StyledText>Country:{movie && movie.Country}</StyledText>
-        <StyledText>Production:{movie && movie.Production}</StyledText>
-        <StyledText>Actors:{movie && movie.Actors}</StyledText>
-        <StyledText>Director:{movie && movie.Director}</StyledText>
-        <StyledText>Writers:{movie && movie.Writer}</StyledText>
+        <Subtitle>{results.Genre}</Subtitle>
+        <Title>{results.Title}</Title>
+        <Descriprion>{results.Plot}</Descriprion>
+        <StyledText>Year: {results.Year}</StyledText>
+        <StyledText>Released:{results.Released}</StyledText>
+        <StyledText>BoxOffice:{results.BoxOffice}</StyledText>
+        <StyledText>Country:{results.Country}</StyledText>
+        <StyledText>Production:{results.Production}</StyledText>
+        <StyledText>Actors:{results.Actors}</StyledText>
+        <StyledText>Director:{results.Director}</StyledText>
+        <StyledText>Writers:{results.Writer}</StyledText>
       </InfoContainer>
     </StyledWrapper>
   );

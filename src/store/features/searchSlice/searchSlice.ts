@@ -1,47 +1,47 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { movieAPI } from "../../../services/index";
+import { movieAPI, transformMovieData } from "../../../services/index";
 import { IMovieSearch, MovieRequestParams } from "../../../types";
 
-interface MoviesState {
+interface SearchState {
   isLoading: boolean;
   error: string | null;
   results: IMovieSearch;
 }
 
-export const fetchMovies = createAsyncThunk<
+export const fetchSearch = createAsyncThunk<
   IMovieSearch,
   MovieRequestParams,
   { rejectValue: string }
->("movies/fetchMovies", async ({page}, { rejectWithValue }) => {
+>("search/fetchSearch", async ({ s, page }, { rejectWithValue }) => {
   try {
-    return await movieAPI.getAll({page} );
+    return await movieAPI.getSearch(s, { page });
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);
   }
 });
 
-const initialState: MoviesState = {
+const initialState: SearchState = {
   isLoading: false,
   error: null,
   results: { Response: "False", TotalResults: "0", Search: [] },
 };
 
-const moviesSlice = createSlice({
+const searchSlice = createSlice({
   name: "movies",
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchMovies.pending, (state) => {
+    builder.addCase(fetchSearch.pending, (state) => {
       state.isLoading = true;
       state.error = null;
     });
-    builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchSearch.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.results = payload;
     });
-    builder.addCase(fetchMovies.rejected, (state, { payload }) => {
+    builder.addCase(fetchSearch.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = false;
         state.error = payload;
@@ -50,4 +50,4 @@ const moviesSlice = createSlice({
   },
 });
 
-export default moviesSlice.reducer;
+export default searchSlice.reducer;
