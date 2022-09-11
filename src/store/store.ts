@@ -13,6 +13,7 @@ import moviesReducer from "./features/moviesSlice/moviesSlice";
 import storage from "redux-persist/lib/storage";
 import trandsReduser from "./features/trandsSlice/trandsSlice";
 import favoritesReduser from "./features/favoritesSlice/favoritesSlice";
+import movieDetailsReducer from "./features/movieDetailsSlice/movieDetailsSlice";
 
 const persistConfig = {
   key: "root",
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   movies: moviesReducer,
   favorites: favoritesReduser,
   trands: trandsReduser,
+  detailsMovies: movieDetailsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
