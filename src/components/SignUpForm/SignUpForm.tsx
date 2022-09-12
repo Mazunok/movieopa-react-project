@@ -14,6 +14,7 @@ import {
   Span,
 } from "../SignInForm/styles";
 
+
 type SignUpFormValues = {
   name: string;
   email: string;
@@ -21,7 +22,11 @@ type SignUpFormValues = {
   confirmPassword: string;
 };
 
-export const SignUpForm = () => {
+interface SignUpProps {
+  handleModal: () => void;
+}
+
+export const SignUpForm = ({ handleModal }: SignUpProps) => {
   const {
     register,
     handleSubmit,
@@ -48,6 +53,7 @@ export const SignUpForm = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        handleModal();
       })
       .catch((error) => {
         setErrorMessage(getFirebaseeMessageError(error.code));

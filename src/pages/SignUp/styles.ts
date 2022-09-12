@@ -2,6 +2,7 @@ import styled from "styled-components";
 import signupbackground from "../../assets/signupbackground.png";
 
 const StyledSignUp = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   margin: 0;

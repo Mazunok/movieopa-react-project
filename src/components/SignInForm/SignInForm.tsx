@@ -74,6 +74,7 @@ export const SignInForm = () => {
       <Text>
         Don't have an account <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
       </Text>
+      
     </StyledForm>
   );
 };
