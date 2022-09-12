@@ -22,7 +22,7 @@ export interface IMovie {
 
 export type MovieRequestParams = {
   apikey?: string;
-  s?: string;
+  s: string;
   i?: string;
   title?: string;
   type?: string;
