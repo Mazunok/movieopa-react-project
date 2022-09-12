@@ -1,10 +1,14 @@
 import { useEffect } from "react";
-import { MovieList } from "../../components/index";
+import { MovieList, SearchInput } from "../../components/index";
 import { fetchMovies } from "../../store/features/moviesSlice/moviesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { transformMovieData } from "../../services/index";
 import { HomeContainer } from "./styles";
 import { ShowMoreButton } from "../../components/ShowMoreButton/ShowMoreButton";
+import { useInput } from "../../hooks";
+import searchSlice, {
+  fetchSearch,
+} from "../../store/features/searchSlice/searchSlice";
 
 export const Home = () => {
   const dispatch = useAppDispatch();

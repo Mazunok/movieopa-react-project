@@ -50,6 +50,7 @@ class MovieAPI {
   private readonly DEFALUT_REQUEST_PARAMS: MovieRequestParams = {
     apikey: "2a1e8083",
     i: "string",
+    s: "string",
   };
 
   public async getAll(newParams: MovieRequestParams) {
@@ -95,9 +96,11 @@ class MovieAPI {
     return data;
   }
 
-  public async getSearch(s: string) {
+  public async getSearch(s: string | undefined, newParams: MovieRequestParams) {
     const params = {
-      s: "value",
+      ...this.DEFALUT_REQUEST_PARAMS,
+      ...newParams,
+      s: s,
     };
 
     const { data } = await this.API.get<IMovieSearch>("", {

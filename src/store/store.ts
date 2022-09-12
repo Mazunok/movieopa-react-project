@@ -19,7 +19,7 @@ import searchReduser from "./features/searchSlice/searchSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["users", "favorites"],
+  whitelist: ["favorites"],
 };
 
 const rootReducer = combineReducers({
