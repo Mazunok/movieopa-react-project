@@ -58,3 +58,8 @@ export interface IDetailsMovie {
   Website: string;
   Response: string;
 }
+
+export interface IUser {
+  displayName: string | null;
+  email: string | null;
+}
