@@ -4,9 +4,11 @@ import { Color } from "../../ui/colors";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content:space-around ;
   width: 100%;
   height: 100%;
   background-color: ${Color.Black};
+  overflow-x: hidden;
 `;
 
 const Container = styled.div`

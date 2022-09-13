@@ -8,11 +8,10 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 230px;
-  height: 300px;
-  padding: 20px;
+  height: 400px;
+  padding: 10px;
   ${MEDIA.MD} {
-    width: 200px;
-    height: 280px;
+    width: 250px;
   }
 `;
 

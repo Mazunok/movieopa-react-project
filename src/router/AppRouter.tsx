@@ -7,7 +7,6 @@ import {
   Trands,
   Favorites,
   Settings,
-  Search,
   MovieDetails,
 } from "../pages/index";
 import { ROUTES } from "./routes";
@@ -21,10 +20,9 @@ export const AppRouter = () => {
         <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
         <Route path={ROUTES.TRANDS} element={<Trands />} />
         <Route element={<RequareAuth />}>
-          <Route path={ROUTES.FAVORITES} element={<Favorites />} />
+          <Route path={ROUTES.FAVORITES} element={<Favorites />} />{" "}
+          <Route path={ROUTES.SETTINGS} element={<Settings />} />
         </Route>
-        <Route path={ROUTES.SETTINGS} element={<Settings />} />
-        <Route path={ROUTES.SEARCH} element={<Search />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Route>
       <Route path={ROUTES.SIGN_IN} element={<SignIn />} />

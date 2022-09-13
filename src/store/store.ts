@@ -15,11 +15,12 @@ import trandsReduser from "./features/trandsSlice/trandsSlice";
 import favoritesReduser from "./features/favoritesSlice/favoritesSlice";
 import movieDetailsReducer from "./features/movieDetailsSlice/movieDetailsSlice";
 import searchReduser from "./features/searchSlice/searchSlice";
+import userReduser from "./features/userSlice/userSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites"],
+  whitelist: ["favorites", "user"],
 };
 
 const rootReducer = combineReducers({
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   trands: trandsReduser,
   detailsMovies: movieDetailsReducer,
   search: searchReduser,
+  user: userReduser,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
