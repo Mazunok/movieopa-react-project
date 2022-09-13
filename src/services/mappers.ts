@@ -1,4 +1,5 @@
-import { IMovie, IMovieApI } from "../types";
+import { UserCredential } from "firebase/auth";
+import { IMovie, IMovieApI, IUser } from "../types";
 
 export const transformMovieData = (movies: IMovieApI[]): IMovie[] => {
   return movies.map((movie: any) => {
@@ -10,4 +11,13 @@ export const transformMovieData = (movies: IMovieApI[]): IMovie[] => {
       poster: movie.Poster,
     };
   });
+};
+
+export const transformUserCredential = (
+  userCredential: UserCredential
+): IUser => {
+  return {
+    displayName: userCredential.user.displayName,
+    email: userCredential.user.email,
+  };
 };

@@ -1,19 +1,12 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
-import { getFirebaseeMessageError } from "../../utils/firebase-errors";
 import { Spinner } from "../Spinner/Spinner";
-import {
-  Text,
-  Input,
-  Title,
-  Button,
-  StyledForm,
-  Span,
-} from "../SignInForm/styles";
-
+import { Text, Input, Title, Button, StyledForm, Span } from "../SignInForm/styles";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { registerUser } from "../../store/features/userSlice/userSlice";
+import { useState } from "react";
+import { Modal } from "../Modal/Modal";
 
 type SignUpFormValues = {
   name: string;
@@ -22,11 +15,7 @@ type SignUpFormValues = {
   confirmPassword: string;
 };
 
-interface SignUpProps {
-  handleModal: () => void;
-}
-
-export const SignUpForm = ({ handleModal }: SignUpProps) => {
+export const SignUpForm = () => {
   const {
     register,
     handleSubmit,
@@ -36,33 +25,26 @@ export const SignUpForm = ({ handleModal }: SignUpProps) => {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const dispatch = useAppDispatch();
+  const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
+  const [isOpen, toggleModal] = useState<boolean>(false);
+
+  const handleModal = () => {
+    toggleModal((isOpen) => !isOpen);
+  };
+
   const onSubmit: SubmitHandler<SignUpFormValues> = ({
     name,
     email,
     password,
     confirmPassword,
   }) => {
-    setIsLoading(true);
-    if (password !== confirmPassword) {
-      setErrorMessage("Password is not the same");
-      return;
-    }
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        handleModal();
-      })
-      .catch((error) => {
-        setErrorMessage(getFirebaseeMessageError(error.code));
-      })
-      .finally(() => {
-        setIsLoading(false);
-        reset();
-      });
+    dispatch(registerUser({ email, password, name, handleModal }));
+
+    reset();
   };
+
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Title>Sign Up</Title>
@@ -111,10 +93,11 @@ export const SignUpForm = ({ handleModal }: SignUpProps) => {
       </label>
       {errors.confirmPassword && <Span>{errors.confirmPassword.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign Up"}</Button>
-      {errorMessage && <Span>{errorMessage}</Span>}
+      {error && <Span>{error}</Span>}
       <Text>
         Already have an acount <Link to={`/${ROUTES.SIGN_IN}`}>Sign In</Link>
       </Text>
+      <Modal isOpen={isOpen} handleModal={handleModal} />
     </StyledForm>
   );
 };

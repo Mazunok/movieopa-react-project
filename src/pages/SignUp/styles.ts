@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import signupbackground from "../../assets/signupbackground.png";
+import {Poster} from "../../assets";
 
 const StyledSignUp = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ const StyledSignUp = styled.div`
     rgba(0, 0, 0, 0.6) 0%,
     rgba(0, 0, 0, 0) 45.65%
   );
-  background: #000000 url(${signupbackground}) no-repeat center center;
+  background: #000000 url(${Poster}) no-repeat center center;
   background-size: cover;
 `;
 

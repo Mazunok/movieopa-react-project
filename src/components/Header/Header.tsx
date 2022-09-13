@@ -1,14 +1,16 @@
 import { ProfileForm } from "../ProfileForm/ProfileForm";
 import { SearchInput } from "../SearchInput/SearchInput";
-import { Logo, StyledHeader } from "./styles";
-import movieopa from "../../assets/movieOpa.svg";
+import { StyledHeader } from "./styles";
+import { MovieopaIcon } from "../../assets";
+import { useAppSelector } from "../../store/hooks";
 
 export const Header = () => {
+  const user = useAppSelector((state) => state.persistedReducer.user.result);
   return (
     <StyledHeader>
-      <Logo src={movieopa} alt="logo" />
-      <SearchInput placeholder={"Search"} type="text" />
-      <ProfileForm />
+      <MovieopaIcon />
+      <SearchInput />
+      <ProfileForm name={user && user.displayName} />
     </StyledHeader>
   );
 };

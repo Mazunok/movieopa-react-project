@@ -13,9 +13,9 @@ export const fetchMovies = createAsyncThunk<
   IMovieSearch,
   MovieRequestParams,
   { rejectValue: string }
->("movies/fetchMovies", async ({s}, { rejectWithValue }) => {
+>("movies/fetchMovies", async ({ s }, { rejectWithValue }) => {
   try {
-    return await movieAPI.getAll({s});
+    return await movieAPI.getAll({ s });
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);
@@ -31,7 +31,11 @@ const initialState: MoviesState = {
 const moviesSlice = createSlice({
   name: "movies",
   initialState,
-  reducers: {},
+  reducers: {
+    cleanStore: (state) => {
+      state.results = { Response: "False", TotalResults: "0", Search: [] };
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchMovies.pending, (state) => {
       state.isLoading = true;

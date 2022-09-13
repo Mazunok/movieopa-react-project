@@ -85,7 +85,7 @@ class MovieAPI {
   public async getDetails(id: string) {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
-      s:'',
+      s: "",
       i: id,
       plot: "full",
     };
@@ -94,7 +94,7 @@ class MovieAPI {
       params,
     });
 
-    return data ;
+    return data;
   }
 
   public async getSearch(s: string | undefined, newParams: MovieRequestParams) {

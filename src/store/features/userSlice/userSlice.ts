@@ -9,6 +9,7 @@ import {
   updateProfile,
   UserCredential,
 } from "firebase/auth";
+import { transformUserCredential } from "../../../services/mappers";
 import { IUser } from "../../../types";
 
 interface UserState {
@@ -27,19 +28,15 @@ type FormValues = {
   name?: string;
   email: string;
   password: string;
+  confirmPassword?: string;
   handleModal?: () => void;
-  // confirmPassword?: string;
 };
 
-export const registerUser = createAsyncThunk<
-  UserCredential,
-  FormValues,
-  { rejectValue: string }
->(
+export const registerUser = createAsyncThunk<UserCredential, FormValues, { rejectValue: string }>(
   "user/registerUser",
   async (
     { email, password, name, handleModal }: FormValues,
-    { rejectWithValue }
+    { rejectWithValue },
   ) => {
     const auth = getAuth();
     try {
@@ -53,59 +50,51 @@ export const registerUser = createAsyncThunk<
       return res;
     } catch (error) {
       const firebaseError = error as FirebaseError;
-      // if (password !== confirmPassword) {
-      //   return firebaseError.message;
-      // }
       return rejectWithValue(firebaseError.code);
     }
-  }
+  },
 );
 
 export const signInUser = createAsyncThunk<
   UserCredential | null,
   FormValues,
   { rejectValue: string }
->(
-  "user/signInUser",
-  async ({ email, password }: FormValues, { rejectWithValue }) => {
+>("user/signInUser", async ({ email, password }: FormValues, { rejectWithValue }) => {
+  const auth = getAuth();
+  try {
+    const res = await signInWithEmailAndPassword(auth, email, password);
+    return res.user ? res : null;
+  } catch (error) {
+    const firebaseError = error as FirebaseError;
+    return rejectWithValue(firebaseError.code);
+  }
+});
+
+export const logoutUser = createAsyncThunk<void, undefined, { rejectValue: string }>(
+  "user/logoutUser",
+  async (_, { rejectWithValue }) => {
     const auth = getAuth();
     try {
-      const res = await signInWithEmailAndPassword(auth, email, password);
-      return res.user ? res : null;
+      await signOut(auth);
     } catch (error) {
       const firebaseError = error as FirebaseError;
       return rejectWithValue(firebaseError.code);
     }
-  }
+  },
 );
 
-export const logoutUser = createAsyncThunk<
-  void,
-  undefined,
-  { rejectValue: string }
->("user/logoutUser", async (_, { rejectWithValue }) => {
-  const auth = getAuth();
-  try {
-    await signOut(auth);
-  } catch (error) {
-    const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
-  }
-});
-
-export const forgotPassword = createAsyncThunk<
-  void,
-  FormValues,
-  { rejectValue: string }
->("user/forgotPassword", async ({ email }, { rejectWithValue }) => {
-  const auth = getAuth();
-  try {
-    return await sendPasswordResetEmail(auth, email);
-  } catch (error) {
-    const firebaseError = error as FirebaseError;
-    return rejectWithValue(firebaseError.code);
-  }
-});
+export const forgotPassword = createAsyncThunk<void, FormValues, { rejectValue: string }>(
+  "user/forgotPassword",
+  async ({ email }, { rejectWithValue }) => {
+    const auth = getAuth();
+    try {
+      return await sendPasswordResetEmail(auth, email);
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      return rejectWithValue(firebaseError.code);
+    }
+  },
+);
 
 const userSlice = createSlice({
   name: "user",
@@ -118,7 +107,7 @@ const userSlice = createSlice({
     });
     builder.addCase(registerUser.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result = payload;
+      state.result = transformUserCredential(payload);
     });
     builder.addCase(registerUser.rejected, (state, { payload }) => {
       if (payload) {
@@ -132,7 +121,11 @@ const userSlice = createSlice({
     });
     builder.addCase(signInUser.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result = payload;
+      if (payload) {
+        state.result = transformUserCredential(payload);
+      } else {
+        state.result = null;
+      }
     });
     builder.addCase(signInUser.rejected, (state, { payload }) => {
       if (payload) {
@@ -146,7 +139,6 @@ const userSlice = createSlice({
     });
     builder.addCase(logoutUser.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result = payload;
     });
     builder.addCase(logoutUser.rejected, (state, { payload }) => {
       if (payload) {
@@ -160,7 +152,6 @@ const userSlice = createSlice({
     });
     builder.addCase(forgotPassword.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result = payload;
     });
     builder.addCase(forgotPassword.rejected, (state, { payload }) => {
       if (payload) {

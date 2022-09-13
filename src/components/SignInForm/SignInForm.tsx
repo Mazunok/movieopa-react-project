@@ -1,9 +1,8 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
-import { getFirebaseeMessageError } from "../../utils/firebase-errors";
+import { signInUser } from "../../store/features/userSlice/userSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
 
@@ -23,25 +22,15 @@ export const SignInForm = () => {
     reValidateMode: "onSubmit",
   });
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
-    setIsLoading(true);
-    const auth = getAuth();
+  const dispatch = useAppDispatch();
+  const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user.email;
-        navigate(`/${ROUTES.SETTINGS}`);
-      })
-      .catch((error) => {
-        setErrorMessage(getFirebaseeMessageError(error.code));
-      })
-      .finally(() => {
-        setIsLoading(false);
-        reset();
-      });
+  const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
+    dispatch(signInUser({ email, password }));
+    reset();
+    navigate(`/${ROUTES.SETTINGS}`);
   };
+
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Title>Sign In</Title>
@@ -70,11 +59,10 @@ export const SignInForm = () => {
       </label>
       {errors.password && <Span>{errors.password.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
-      {errorMessage && <Span>{errorMessage}</Span>}
+      {error && <Span>{error}</Span>}
       <Text>
         Don't have an account <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
       </Text>
-      
     </StyledForm>
   );
 };

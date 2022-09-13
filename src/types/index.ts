@@ -27,7 +27,7 @@ export type MovieRequestParams = {
   title?: string;
   type?: string;
   year?: number;
-  page?: number;
+  page?: string;
   poster?: string;
   plot?: string;
 };

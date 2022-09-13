@@ -9,12 +9,16 @@ import {
   LinkContainer,
   ProfileContainer,
 } from "./styles";
-import arrow from "../../assets/arrow.svg";
+import { ArrowIcon } from "../../assets";
 import { ROUTES } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
 
-export const ProfileForm = () => {
+interface IProps {
+  name: string|null;
+}
+
+export const ProfileForm = ({ name }: IProps) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
 
   return (
@@ -23,9 +27,9 @@ export const ProfileForm = () => {
         <Avatar>
           <AvatarName>N M</AvatarName>
         </Avatar>
-        <ProfileName>Nastya Mazun</ProfileName>
+        <ProfileName>{name ? name : "Sign in"}</ProfileName>
         <ArrowBtn onClick={toggleIsOpen} isOpen={isOpen}>
-          <img src={arrow} alt="arrow"></img>
+          <ArrowIcon />
         </ArrowBtn>
         <BurgerContainer>
           <BurgerButton onClick={toggleIsOpen} isOpen={isOpen} />

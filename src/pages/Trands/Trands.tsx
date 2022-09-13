@@ -10,7 +10,7 @@ export const Trands = () => {
   const { results } = useAppSelector((state) => state.persistedReducer.trands);
 
   useEffect(() => {
-    dispatch(fetchTrands({}));
+    dispatch(fetchTrands({s}));
   }, [dispatch]);
 
   return (
