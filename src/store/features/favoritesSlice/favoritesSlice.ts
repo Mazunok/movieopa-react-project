@@ -14,7 +14,10 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite(state, { payload }) {
-      state.favorites.push(payload);
+      const findItem = state.favorites.find((movie) => movie.imdbID === payload.imdbID);
+      if (!findItem) {
+        state.favorites.push(payload);
+      }
     },
     removeFavorite(state, { payload }) {
       state.favorites = state.favorites.filter((f) => f.imdbID !== payload.imdbID);
