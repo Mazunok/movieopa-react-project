@@ -44,7 +44,7 @@ const Avatar = styled.div`
 const AvatarName = styled.p`
   position: absolute;
   top: 16px;
-  left: 13px;
+  left: 15px;
   display: block;
   ${S2}
   font-size: 20;
