@@ -63,7 +63,7 @@ export const SignInForm = () => {
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
       {error && <Span>{error}</Span>}
       <Text>
-        Don't have an account <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
+        Don't have an account <Link to={`${ROUTES.SIGN_UP}`}>Sign Up</Link>
       </Text>
     </StyledForm>
   );

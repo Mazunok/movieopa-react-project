@@ -7,9 +7,9 @@ import { Container, Wrapper } from "./styles";
 export const MainTemplate = () => {
   return (
     <Wrapper>
-      <Nav />
-      <Container>
-        <Header />
+      <Header />
+          <Container>
+         <Nav />
         <Outlet />
       </Container>
     </Wrapper>

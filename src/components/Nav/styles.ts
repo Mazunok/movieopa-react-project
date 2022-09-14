@@ -22,9 +22,9 @@ const StyledNav = styled.nav`
   }
 `;
 
-const Img = styled.img`
-  padding-right: 20px;
-  margin: 0;
+const StyledText = styled.p`
+  padding-left: 20px;
+  font-family: "Exo 2";
 `;
 
-export { StyledNav, Img };
+export { StyledNav, StyledText };

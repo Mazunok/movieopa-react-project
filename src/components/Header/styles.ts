@@ -8,7 +8,7 @@ const StyledHeader = styled.div`
   flex-direction: row;
   gap: 20px;
   width: 100%;
-  padding: 40px 20px 0 100px;
+  padding: 40px 40px 0 40px;
   ${MEDIA.MD} {
     justify-content: space-around;
     align-items: center;
@@ -26,14 +26,7 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Logo = styled.img`
-  display: none;
-  width: 156px;
-  ${MEDIA.MD} {
-    display: block;
-  }
-  ${MEDIA.SM} {
-    padding-left: 30px;
-  }
+const LogoWrapper = styled.div`
+
 `;
-export { StyledHeader, Logo };
+export { StyledHeader, LogoWrapper };

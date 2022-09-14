@@ -96,7 +96,7 @@ export const SignUpForm = () => {
       <Button type="submit">{isLoading ? <Spinner /> : "Sign Up"}</Button>
       {error && <Span>{error}</Span>}
       <Text>
-        Already have an acount <Link to={`/${ROUTES.SIGN_IN}`}>Sign In</Link>
+        Already have an acount <Link to={`${ROUTES.SIGN_IN}`}>Sign In</Link>
       </Text>
       <Modal isOpen={isOpen} handleModal={handleModal} />
     </StyledForm>

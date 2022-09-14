@@ -3,8 +3,7 @@ import { Color } from "../../ui/colors";
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content:space-around ;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background-color: ${Color.Black};
@@ -13,8 +12,10 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
 `;
 
 export { Wrapper, Container };
