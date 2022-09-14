@@ -13,9 +13,7 @@ export const transformMovieData = (movies: IMovieApI[]): IMovie[] => {
   });
 };
 
-export const transformUserCredential = (
-  userCredential: UserCredential
-): IUser => {
+export const transformUserCredential = (userCredential: UserCredential): IUser => {
   return {
     displayName: userCredential.user.displayName,
     email: userCredential.user.email,

@@ -16,7 +16,7 @@ export const Modal = ({ isOpen, handleModal }: IProps) => {
         <ModalContainer>
           <ModalTitle>🎊 CONGRATULATION 🎊</ModalTitle>
           <ModalText>You successfully sign up</ModalText>
-          <CustomLink to={`/${ROUTES.SIGN_IN}`}>Sign In</CustomLink>
+          <CustomLink to={ROUTES.SIGN_IN}>Sign In</CustomLink>
         </ModalContainer>
       </ModalWrapper>
     </Portal>

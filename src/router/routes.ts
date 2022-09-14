@@ -8,4 +8,5 @@ export enum ROUTES {
   SIGN_UP = "sign-up",
   NOT_FOUND = "*",
   MOVIE_DETAILS = "movie/:id",
+  CHANGE_PASSWORD = "/change-password",
 }

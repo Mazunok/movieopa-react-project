@@ -13,9 +13,9 @@ export const fetchTrands = createAsyncThunk<
   IMovieSearch,
   MovieRequestParams,
   { rejectValue: string }
->("trands/fetchTrands", async ({page}, { rejectWithValue }) => {
+>("trands/fetchTrands", async ({ s }, { rejectWithValue }) => {
   try {
-    return await movieAPI.getTrands({page});
+    return await movieAPI.getTrands({ s });
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);

@@ -1,11 +1,11 @@
-import { Favorites } from "./Favorites/index";
-import { Home } from "./Home/index";
-import { MovieDetails } from "./MovieDetails/index";
-import { NotFound } from "./NotFound/index";
-import { Settings } from "./Settings/index";
-import { SignIn } from "./SignIn/index";
-import { SignUp } from "./SignUp/index";
-import { Trands } from "./Trands/index";
+import { Favorites } from "./FavoritesPage/index";
+import { Home } from "./HomePage/index";
+import { MovieDetails } from "./MovieDetailsPage/index";
+import { NotFound } from "./NotFoundPage/index";
+import { Settings } from "./SettingsPage/index";
+import { SignIn } from "./SignInPage/index";
+import { SignUp } from "./SignUpPage/index";
+import { Trands } from "./TrandsPage/index";
 
 export {
   Favorites,

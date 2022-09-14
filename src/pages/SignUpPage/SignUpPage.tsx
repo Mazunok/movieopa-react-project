@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SignUpForm } from "../../components/index";
 import { Modal } from "../../components/Modal/Modal";
 import { StyledSignUp } from "./styles";
@@ -12,7 +12,7 @@ export const SignUp = () => {
 
   return (
     <StyledSignUp>
-      <SignUpForm handleModal={handleModal} />
+      <SignUpForm />
       <Modal isOpen={isOpen} handleModal={handleModal} />
     </StyledSignUp>
   );

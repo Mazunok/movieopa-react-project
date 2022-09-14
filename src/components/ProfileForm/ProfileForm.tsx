@@ -37,8 +37,8 @@ export const ProfileForm = ({ name }: IProps) => {
       </ProfileContainer>
       {isOpen && (
         <LinkContainer>
-          <CustomLink to={`/${ROUTES.SIGN_UP}`}>Sign Up</CustomLink>
-          <CustomLink to={`/${ROUTES.SIGN_IN}`}>Sign In</CustomLink>
+          <CustomLink to={ROUTES.SIGN_UP}>Sign Up</CustomLink>
+          <CustomLink to={ROUTES.SIGN_IN}>Sign In</CustomLink>
         </LinkContainer>
       )}
     </StyledContainer>

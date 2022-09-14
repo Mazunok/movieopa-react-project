@@ -1,24 +1,22 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/routes";
-import { signInUser } from "../../store/features/userSlice/userSlice";
+import { forgotPassword, signInUser } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { CustomLink } from "../CustomLink";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
 
-type SignInFormValues = {
+type ChangePasswordValues = {
   email: string;
-  password: string;
 };
 
-export const SignInForm = () => {
+export const ChangePasswordForm = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<SignInFormValues>({
+  } = useForm<ChangePasswordValues>({
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
@@ -26,16 +24,18 @@ export const SignInForm = () => {
   const dispatch = useAppDispatch();
   const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
 
-  const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
-    dispatch(signInUser({ email, password }));
+  const onSubmit: SubmitHandler<ChangePasswordValues> = ({ email }) => {
+    dispatch(forgotPassword({
+      email,
+      password: ""
+    }));
     reset();
     navigate(`/${ROUTES.SETTINGS}`);
   };
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <Title>Sign In</Title>
-      <CustomLink to={ROUTES.CHANGE_PASSWORD}>Forgot Password</CustomLink>
+      <Title>Change Password</Title>
       <label>
         <Text>Email:</Text>
         <Input
@@ -45,26 +45,9 @@ export const SignInForm = () => {
         />
       </label>
       {errors.email && <Span>{errors.email.message}</Span>}
-      <label>
-        <Text>Password:</Text>
-        <Input
-          type="password"
-          placeholder="Your password"
-          {...register("password", {
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "password must be at least 6 characters",
-            },
-          })}
-        />
-      </label>
-      {errors.password && <Span>{errors.password.message}</Span>}
-      <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
+      
+      <Button type="submit">{isLoading ? <Spinner /> : "Change Password"}</Button>
       {error && <Span>{error}</Span>}
-      <Text>
-        Don't have an account <Link to={`/${ROUTES.SIGN_UP}`}>Sign Up</Link>
-      </Text>
     </StyledForm>
   );
 };
