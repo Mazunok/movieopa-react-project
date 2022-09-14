@@ -22,14 +22,14 @@ export const AppRouter = () => {
         <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
         <Route path={ROUTES.TRANDS} element={<Trands />} />
         <Route element={<RequareAuth />}>
-          <Route path={ROUTES.FAVORITES} element={<Favorites />} />
+          <Route path={ROUTES.FAVORITES} element={<Favorites />} />{" "}
           <Route path={ROUTES.SETTINGS} element={<Settings />} />
         </Route>
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Route>
       <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
       <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
-      <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePasswordPage/>}/>
+      <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePasswordPage />} />
     </Routes>
   );
 };

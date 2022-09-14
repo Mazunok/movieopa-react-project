@@ -13,9 +13,7 @@ import { ArrowIcon } from "../../assets";
 import { ROUTES } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
-import { useAuth } from "hooks";
-import { useWindowSize } from "react-use";
-import { MEDIA } from "ui";
+
 
 interface IProps {
   name: string | null;
@@ -23,9 +21,7 @@ interface IProps {
 
 export const ProfileForm = ({ name }: IProps) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
-  const isAuth = useAuth();
-  const size = useWindowSize();
-
+  
   return (
     <StyledContainer>
       <ProfileContainer>

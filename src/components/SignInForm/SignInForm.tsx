@@ -29,7 +29,7 @@ export const SignInForm = () => {
   const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
     dispatch(signInUser({ email, password }));
     reset();
-    navigate(`/${ROUTES.SETTINGS}`);
+    navigate(`${ROUTES.SETTINGS}`);
   };
 
   return (

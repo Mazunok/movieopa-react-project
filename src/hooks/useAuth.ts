@@ -2,15 +2,15 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 export const useAuth = () => {
-  const [currentUser, setCurrentUser] = useState<{} | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [isAuth, setIsAuth] = useState<boolean>(false);
   const auth = getAuth();
-
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (user) => {
-      user ? setCurrentUser(user) : setCurrentUser(null);
+    onAuthStateChanged(auth, (user) => {
+      user ? setIsAuth(true) : setIsAuth(false);
     });
-    return unsub;
+    setLoading(false);
   }, [auth]);
 
-  return currentUser;
+  return [loading, isAuth];
 };
