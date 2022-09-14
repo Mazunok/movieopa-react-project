@@ -34,10 +34,7 @@ type FormValues = {
 
 export const registerUser = createAsyncThunk<UserCredential, FormValues, { rejectValue: string }>(
   "user/registerUser",
-  async (
-    { email, password, name, handleModal }: FormValues,
-    { rejectWithValue },
-  ) => {
+  async ({ email, password, name, handleModal }: FormValues, { rejectWithValue }) => {
     const auth = getAuth();
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);

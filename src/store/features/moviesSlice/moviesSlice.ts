@@ -13,7 +13,7 @@ export const fetchMovies = createAsyncThunk<
   IMovieSearch,
   MovieRequestParams,
   { rejectValue: string }
->("movies/fetchMovies", async ({}, { rejectWithValue }) => {
+>("movies/fetchMovies", async (_, { rejectWithValue }) => {
   try {
     return await movieAPI.getAll();
   } catch (error) {

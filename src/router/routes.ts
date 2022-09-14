@@ -9,4 +9,5 @@ export enum ROUTE {
   NOT_FOUND = "*",
   MOVIE_DETAILS = "/movie/:id",
   CHANGE_PASSWORD = "/change-password",
+  LOG_OUT = "log-out",
 }

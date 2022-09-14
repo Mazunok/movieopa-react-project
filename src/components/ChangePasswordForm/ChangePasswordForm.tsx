@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "../../router/routes";
-import { forgotPassword, signInUser } from "../../store/features/userSlice/userSlice";
+import { forgotPassword } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
@@ -25,12 +25,14 @@ export const ChangePasswordForm = () => {
   const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
 
   const onSubmit: SubmitHandler<ChangePasswordValues> = ({ email }) => {
-    dispatch(forgotPassword({
-      email,
-      password: ""
-    }));
+    dispatch(
+      forgotPassword({
+        email,
+        password: "",
+      }),
+    );
     reset();
-    navigate(`/${ROUTE.SETTINGS}`);
+    navigate(`${ROUTE.SETTINGS}`);
   };
 
   return (
@@ -45,7 +47,7 @@ export const ChangePasswordForm = () => {
         />
       </label>
       {errors.email && <Span>{errors.email.message}</Span>}
-      
+
       <Button type="submit">{isLoading ? <Spinner /> : "Change Password"}</Button>
       {error && <Span>{error}</Span>}
     </StyledForm>

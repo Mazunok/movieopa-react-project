@@ -7,7 +7,7 @@ import { CustomLink } from "../CustomLink";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledForm, Text, Input, Title, Button, Span } from "./styles";
 
-type SignInFormValues = {
+export type SignInFormValues = {
   email: string;
   password: string;
 };
@@ -45,20 +45,18 @@ export const SignInForm = () => {
         />
       </label>
       {errors.email && <Span>{errors.email.message}</Span>}
-      <label>
-        <Text>Password:</Text>
-        <Input
-          type="password"
-          placeholder="Your password"
-          {...register("password", {
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "password must be at least 6 characters",
-            },
-          })}
-        />
-      </label>
+      <Text>Password:</Text>
+      <Input
+        type="password"
+        placeholder="Your password"
+        {...register("password", {
+          required: "Password is required",
+          minLength: {
+            value: 6,
+            message: "password must be at least 6 characters",
+          },
+        })}
+      />
       {errors.password && <Span>{errors.password.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
       {error && <Span>{error}</Span>}

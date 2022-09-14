@@ -1,4 +1,5 @@
 import { ChangePasswordPage } from "pages/ChangePasswordPage/ChangePasswordPage";
+import { LogOutPage } from "pages/LogOutPage/LogOutPage";
 import { MovieDetailsPage } from "pages/MovieDetailsPage/MovieDetailsPage";
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequareAuth } from "../components";
@@ -28,6 +29,7 @@ export const AppRouter = () => {
       </Route>
       <Route path={ROUTE.SIGN_IN} element={<SignIn />} />
       <Route path={ROUTE.SIGN_UP} element={<SignUp />} />
+      <Route path={ROUTE.LOG_OUT} element={<LogOutPage />} />
       <Route path={ROUTE.CHANGE_PASSWORD} element={<ChangePasswordPage />} />
     </Routes>
   );

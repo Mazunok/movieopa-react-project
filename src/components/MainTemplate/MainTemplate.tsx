@@ -8,8 +8,8 @@ export const MainTemplate = () => {
   return (
     <Wrapper>
       <Header />
-          <Container>
-         <Nav />
+      <Container>
+        <Nav />
         <Outlet />
       </Container>
     </Wrapper>

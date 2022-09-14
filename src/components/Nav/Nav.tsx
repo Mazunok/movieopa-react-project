@@ -5,7 +5,6 @@ import {
   HomeIcon,
   SettingsIcon,
   TrendsIcon,
-  MovieopaIcon,
 } from "../../assets";
 import { CustomLink } from "../CustomLink/CustomLink";
 

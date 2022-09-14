@@ -7,9 +7,8 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { registerUser } from "../../store/features/userSlice/userSlice";
 import { useState } from "react";
 import { Modal } from "../Modal/Modal";
-import { CustomLink } from "../CustomLink";
 
-type SignUpFormValues = {
+export type SignUpFormValues = {
   name: string;
   email: string;
   password: string;

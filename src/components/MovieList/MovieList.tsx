@@ -1,7 +1,5 @@
-import React from "react";
 import { IMovie } from "../../types";
 import { MovieItem } from "../MovieItem/MovieItem";
-import { Spinner } from "../Spinner/Spinner";
 import { Container } from "../MovieList/styles";
 
 interface IProps {
@@ -10,10 +8,7 @@ interface IProps {
   errorMessage?: string | null;
 }
 
-export const MovieList = ({ movies, isLoading, errorMessage }: IProps) => {
-  if (isLoading) {
-    return <Spinner />;
-  }
+export const MovieList = ({ movies, errorMessage }: IProps) => {
   if (errorMessage) {
     return <h1>Error</h1>;
   }

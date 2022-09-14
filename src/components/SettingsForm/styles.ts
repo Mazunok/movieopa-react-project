@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
-import { H2, S3 } from "../../ui/typography";
+import { H2 } from "../../ui/typography";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -60,15 +60,4 @@ const StyledTitle = styled.h2`
   }
 `;
 
-const StyledLabel = styled.label`
-  ${S3}
-  color: ${Color.White};
-`;
-
-export {
-  StyledWrapper,
-  StyledContainer,
-  StyledTitle,
-  InfoContainer,
-  StyledLabel,
-};
+export { StyledWrapper, StyledContainer, StyledTitle, InfoContainer };

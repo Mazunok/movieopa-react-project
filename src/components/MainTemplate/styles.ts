@@ -15,7 +15,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-
+  height: 100%;
 `;
 
 export { Wrapper, Container };
