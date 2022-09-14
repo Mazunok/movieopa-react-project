@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../router/routes";
+import { useNavigate } from "react-router-dom";
+import { ROUTE } from "../../router/routes";
 import { forgotPassword, signInUser } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Spinner } from "../Spinner/Spinner";
@@ -30,7 +30,7 @@ export const ChangePasswordForm = () => {
       password: ""
     }));
     reset();
-    navigate(`/${ROUTES.SETTINGS}`);
+    navigate(`/${ROUTE.SETTINGS}`);
   };
 
   return (

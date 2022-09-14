@@ -1,7 +1,7 @@
 import { ChangePasswordPage } from "pages/ChangePasswordPage/ChangePasswordPage";
+import { MovieDetailsPage } from "pages/MovieDetailsPage/MovieDetailsPage";
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequareAuth } from "../components";
-import { ChangePasswordForm } from "../components/ChangePasswordForm/ChangePasswordForm";
 import {
   Home,
   SignIn,
@@ -10,26 +10,25 @@ import {
   Trands,
   Favorites,
   Settings,
-  MovieDetails,
 } from "../pages/index";
-import { ROUTES } from "./routes";
+import { ROUTE } from "./routes";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path={ROUTES.HOME} element={<MainTemplate />}>
+      <Route path={ROUTE.HOME} element={<MainTemplate />}>
         <Route index element={<Home />} />
-        <Route path={ROUTES.MOVIE_DETAILS} element={<MovieDetails />} />
-        <Route path={ROUTES.TRANDS} element={<Trands />} />
+        <Route path={ROUTE.MOVIE_DETAILS} element={<MovieDetailsPage />} />
+        <Route path={ROUTE.TRANDS} element={<Trands />} />
         <Route element={<RequareAuth />}>
-          <Route path={ROUTES.FAVORITES} element={<Favorites />} />{" "}
-          <Route path={ROUTES.SETTINGS} element={<Settings />} />
+          <Route path={ROUTE.FAVORITES} element={<Favorites />} />{" "}
+          <Route path={ROUTE.SETTINGS} element={<Settings />} />
         </Route>
-        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+        <Route path={ROUTE.NOT_FOUND} element={<NotFound />} />
       </Route>
-      <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
-      <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
-      <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePasswordPage />} />
+      <Route path={ROUTE.SIGN_IN} element={<SignIn />} />
+      <Route path={ROUTE.SIGN_UP} element={<SignUp />} />
+      <Route path={ROUTE.CHANGE_PASSWORD} element={<ChangePasswordPage />} />
     </Routes>
   );
 };

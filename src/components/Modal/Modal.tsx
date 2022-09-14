@@ -1,5 +1,5 @@
 import React from "react";
-import { ROUTES } from "../../router/routes";
+import { ROUTE } from "../../router/routes";
 import { CustomLink } from "../CustomLink";
 import { Portal, PortalTarget } from "../Portal/Portal";
 import { ModalContainer, ModalText, ModalTitle, ModalWrapper } from "./styles";
@@ -16,7 +16,7 @@ export const Modal = ({ isOpen, handleModal }: IProps) => {
         <ModalContainer>
           <ModalTitle>🎊 CONGRATULATION 🎊</ModalTitle>
           <ModalText>You successfully sign up</ModalText>
-          <CustomLink to={ROUTES.SIGN_IN}>Sign In</CustomLink>
+          <CustomLink to={ROUTE.SIGN_IN}>Sign In</CustomLink>
         </ModalContainer>
       </ModalWrapper>
     </Portal>

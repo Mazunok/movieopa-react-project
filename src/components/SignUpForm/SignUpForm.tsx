@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../router/routes";
+import { ROUTE } from "../../router/routes";
 import { Spinner } from "../Spinner/Spinner";
 import { Text, Input, Title, Button, StyledForm, Span } from "../SignInForm/styles";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -96,7 +96,7 @@ export const SignUpForm = () => {
       <Button type="submit">{isLoading ? <Spinner /> : "Sign Up"}</Button>
       {error && <Span>{error}</Span>}
       <Text>
-        Already have an acount <Link to={`${ROUTES.SIGN_IN}`}>Sign In</Link>
+        Already have an acount <Link to={`${ROUTE.SIGN_IN}`}>Sign In</Link>
       </Text>
       <Modal isOpen={isOpen} handleModal={handleModal} />
     </StyledForm>

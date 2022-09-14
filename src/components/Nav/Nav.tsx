@@ -1,4 +1,4 @@
-import { ROUTES } from "../../router/routes";
+import { ROUTE } from "../../router/routes";
 import { StyledNav, StyledText } from "./styles";
 import {
   FavoritesIcon,
@@ -12,19 +12,19 @@ import { CustomLink } from "../CustomLink/CustomLink";
 export const Nav = () => {
   return (
     <StyledNav>
-      <CustomLink to={ROUTES.HOME}>
+      <CustomLink to={ROUTE.HOME}>
         <HomeIcon />
         <StyledText>Home</StyledText>
       </CustomLink>
-      <CustomLink to={ROUTES.TRANDS}>
+      <CustomLink to={ROUTE.TRANDS}>
         <TrendsIcon />
         <StyledText>Trands</StyledText>
       </CustomLink>
-      <CustomLink to={ROUTES.FAVORITES}>
+      <CustomLink to={ROUTE.FAVORITES}>
         <FavoritesIcon />
         <StyledText>Favorites</StyledText>
       </CustomLink>
-      <CustomLink to={ROUTES.SETTINGS}>
+      <CustomLink to={ROUTE.SETTINGS}>
         <SettingsIcon />
         <StyledText>Settings</StyledText>
       </CustomLink>

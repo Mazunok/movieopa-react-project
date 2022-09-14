@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../router/routes";
+import { ROUTE } from "../../router/routes";
 import { signInUser } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { CustomLink } from "../CustomLink";
@@ -29,13 +29,13 @@ export const SignInForm = () => {
   const onSubmit: SubmitHandler<SignInFormValues> = ({ email, password }) => {
     dispatch(signInUser({ email, password }));
     reset();
-    navigate(`${ROUTES.SETTINGS}`);
+    navigate(`${ROUTE.SETTINGS}`);
   };
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Title>Sign In</Title>
-      <CustomLink to={ROUTES.CHANGE_PASSWORD}>Forgot Password</CustomLink>
+      <CustomLink to={ROUTE.CHANGE_PASSWORD}>Forgot Password</CustomLink>
       <label>
         <Text>Email:</Text>
         <Input
@@ -63,7 +63,7 @@ export const SignInForm = () => {
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
       {error && <Span>{error}</Span>}
       <Text>
-        Don't have an account <Link to={`${ROUTES.SIGN_UP}`}>Sign Up</Link>
+        Don't have an account <Link to={`${ROUTE.SIGN_UP}`}>Sign Up</Link>
       </Text>
     </StyledForm>
   );

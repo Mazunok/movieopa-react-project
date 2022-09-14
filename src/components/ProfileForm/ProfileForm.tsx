@@ -10,10 +10,9 @@ import {
   ProfileContainer,
 } from "./styles";
 import { ArrowIcon } from "../../assets";
-import { ROUTES } from "../../router/routes";
+import { ROUTE } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
-
 
 interface IProps {
   name: string | null;
@@ -21,7 +20,7 @@ interface IProps {
 
 export const ProfileForm = ({ name }: IProps) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
-  
+
   return (
     <StyledContainer>
       <ProfileContainer>
@@ -38,8 +37,8 @@ export const ProfileForm = ({ name }: IProps) => {
       </ProfileContainer>
       {isOpen && (
         <LinkContainer>
-          <CustomLink to={ROUTES.SIGN_UP}>Sign Up</CustomLink>
-          <CustomLink to={ROUTES.SIGN_IN}>Sign In</CustomLink>
+          <CustomLink to={ROUTE.SIGN_UP}>Sign Up</CustomLink>
+          <CustomLink to={ROUTE.SIGN_IN}>Sign In</CustomLink>
         </LinkContainer>
       )}
     </StyledContainer>
