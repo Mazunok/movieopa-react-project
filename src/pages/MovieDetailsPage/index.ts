@@ -1,3 +1,3 @@
-import { MovieDetails } from "./MovieDetailsPage";
+import { MovieDetailsPage } from "./MovieDetailsPage";
 
-export { MovieDetails };
+export { MovieDetailsPage };

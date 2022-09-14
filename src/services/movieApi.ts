@@ -1,13 +1,8 @@
 import axios from "axios";
-import {
-  IMovieSearch,
-  IDetailsMovie,
-  MovieRequestParams,
-} from "../types/index";
+import { IMovieSearch, IDetailsMovie, MovieRequestParams } from "../types/index";
 
 class MovieAPI {
-  private readonly BASE_URL = process.env
-    .REACT_APP_BASE_URL_MOVIES_API as string;
+  private readonly BASE_URL = process.env.REACT_APP_BASE_URL_MOVIES_API as string;
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });
@@ -53,10 +48,9 @@ class MovieAPI {
     s: "string",
   };
 
-  public async getAll(newParams: MovieRequestParams) {
+  public async getAll() {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
-      ...newParams,
       s: this.getRandomWord(),
     };
 

@@ -13,6 +13,7 @@ import { ArrowIcon } from "../../assets";
 import { ROUTE } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
+import { useAuth } from "hooks";
 
 interface IProps {
   name: string | null;
@@ -20,6 +21,7 @@ interface IProps {
 
 export const ProfileForm = ({ name }: IProps) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
+  const isAuth = useAuth();
 
   return (
     <StyledContainer>
@@ -28,17 +30,22 @@ export const ProfileForm = ({ name }: IProps) => {
           <AvatarName>N S</AvatarName>
         </Avatar>
         <ProfileName>{name ? name : "Sign in"}</ProfileName>
-        <ArrowBtn onClick={toggleIsOpen} isOpen={isOpen}>
+        <ArrowBtn onClick={toggleIsOpen as () => void}>
           <ArrowIcon />
         </ArrowBtn>
         <BurgerContainer>
-          <BurgerButton onClick={toggleIsOpen} isOpen={isOpen} />
+          <BurgerButton onClick={toggleIsOpen as () => void} />
         </BurgerContainer>
       </ProfileContainer>
       {isOpen && (
         <LinkContainer>
-          <CustomLink to={ROUTE.SIGN_UP}>Sign Up</CustomLink>
-          <CustomLink to={ROUTE.SIGN_IN}>Sign In</CustomLink>
+          {!isAuth && (
+            <div>
+              <CustomLink to={ROUTE.SIGN_UP}>Sign Up</CustomLink>
+              <CustomLink to={ROUTE.SIGN_IN}>Sign In</CustomLink>
+            </div>
+          )}
+          {isAuth && <CustomLink to={ROUTE.SIGN_IN}>LogOut</CustomLink>}
         </LinkContainer>
       )}
     </StyledContainer>

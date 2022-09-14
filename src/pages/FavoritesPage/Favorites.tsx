@@ -4,9 +4,7 @@ import { transformMovieData } from "../../services/index";
 import { FavoritesContainer } from "./styles";
 
 export const Favorites = () => {
-  const { favorites } = useAppSelector(
-    (state) => state.persistedReducer.favorites
-  );
+  const { favorites } = useAppSelector((state) => state.persistedReducer.favorites);
 
   return (
     <FavoritesContainer>
