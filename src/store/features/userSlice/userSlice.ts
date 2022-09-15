@@ -134,8 +134,9 @@ const userSlice = createSlice({
       state.isLoading = true;
       state.error = null;
     });
-    builder.addCase(logoutUser.fulfilled, (state, { payload }) => {
+    builder.addCase(logoutUser.fulfilled, (state) => {
       state.isLoading = false;
+      state.result = null;
     });
     builder.addCase(logoutUser.rejected, (state, { payload }) => {
       if (payload) {
@@ -145,7 +146,7 @@ const userSlice = createSlice({
     });
     builder.addCase(forgotPassword.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
+      state.result = null;
     });
     builder.addCase(forgotPassword.fulfilled, (state, { payload }) => {
       state.isLoading = false;
