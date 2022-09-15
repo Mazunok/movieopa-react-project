@@ -63,3 +63,8 @@ export interface IUser {
   displayName: string | null;
   email: string | null;
 }
+
+export type ITheme = {
+  readonly value: string;
+  readonly label: string;
+};

@@ -23,7 +23,7 @@ export const AppRouter = () => {
         <Route path={ROUTE.TRANDS} element={<Trands />} />
         <Route element={<RequareAuth />}>
           <Route path={ROUTE.FAVORITES} element={<Favorites />} />{" "}
-          <Route path={ROUTE.SETTINGS} element={<Settings />} />
+          <Route path={ROUTE.SETTINGS} element={<Settings/>} />
         </Route>
         <Route path={ROUTE.NOT_FOUND} element={<NotFound />} />
       </Route>

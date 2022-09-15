@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
-import { H2 } from "../../ui/typography";
+import { H2, S3 } from "../../ui/typography";
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%;
   height: 100%;
   ${MEDIA.MD} {
     width: 688px;
@@ -16,12 +17,13 @@ const StyledWrapper = styled.div`
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
   gap: 30px;
   width: 100%;
   height: 168px;
+  padding-left: 40px;
   background-color: ${Color.Dark};
   border-radius: 10px;
   ${MEDIA.SM} {
@@ -60,4 +62,9 @@ const StyledTitle = styled.h2`
   }
 `;
 
-export { StyledWrapper, StyledContainer, StyledTitle, InfoContainer };
+const StyledText = styled.p`
+  ${S3}
+  color: ${Color.White};
+`;
+
+export { StyledWrapper, StyledContainer, StyledTitle, InfoContainer, StyledText };
