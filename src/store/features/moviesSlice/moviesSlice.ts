@@ -28,7 +28,7 @@ const initialState: MoviesState = {
   results: { Response: "False", TotalResults: "0", Search: [] },
 };
 
-const moviesSlice = createSlice({
+export const moviesSlice = createSlice({
   name: "movies",
   initialState,
   reducers: {

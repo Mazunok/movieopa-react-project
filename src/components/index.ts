@@ -10,8 +10,22 @@ import { SearchInput } from "./SearchInput/index";
 import { SignInForm } from "./SignInForm/index";
 import { SignUpForm } from "./SignUpForm/index";
 import { Spinner } from "./Spinner/index";
+import { ChangePasswordForm } from "./ChangePasswordForm";
+import { Modal } from "./Modal";
+import { MovieDetails } from "./MovieDetails";
+import { Portal } from "./Portal";
+import { CustomSelect } from "./Select";
+import { SettingsForm } from "./SettingsForm";
+import { ShowMoreButton } from "./ShowMoreButton";
 
 export {
+  ShowMoreButton,
+  SettingsForm,
+  CustomSelect,
+  Portal,
+  MovieDetails,
+  Modal,
+  ChangePasswordForm,
   CustomLink,
   Header,
   MainTemplate,

@@ -28,7 +28,7 @@ const initialState: TrandsState = {
   results: { Response: "False", TotalResults: "0", Search: [] },
 };
 
-const trandsSlice = createSlice({
+export const trandsSlice = createSlice({
   name: "trands",
   initialState,
   reducers: {},

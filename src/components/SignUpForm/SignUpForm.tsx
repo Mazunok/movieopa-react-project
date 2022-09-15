@@ -97,6 +97,9 @@ export const SignUpForm = () => {
       <Text>
         Already have an acount <Link to={`${ROUTE.SIGN_IN}`}>Sign In</Link>
       </Text>
+      <Text>
+        Don't want to register? <Link to={`${ROUTE.HOME}`}>Go Home Page</Link>
+      </Text>
       <Modal isOpen={isOpen} handleModal={handleModal} />
     </StyledForm>
   );

@@ -93,7 +93,7 @@ export const forgotPassword = createAsyncThunk<void, FormValues, { rejectValue: 
   },
 );
 
-const userSlice = createSlice({
+export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {},

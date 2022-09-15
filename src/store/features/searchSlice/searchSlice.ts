@@ -31,7 +31,7 @@ const initialState: SearchState = {
   results: { Response: "False", TotalResults: "0", Search: [] },
 };
 
-const searchSlice = createSlice({
+export const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {},

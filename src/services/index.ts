@@ -1,4 +1,4 @@
-import { transformMovieData } from "./mappers";
+import { transformMovieData, transformUserCredential } from "./mappers";
 import { movieAPI } from "./movieApi";
 
-export { transformMovieData, movieAPI };
+export { transformUserCredential, transformMovieData, movieAPI };

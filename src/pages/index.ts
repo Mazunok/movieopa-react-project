@@ -6,8 +6,12 @@ import { Settings } from "./SettingsPage/index";
 import { SignIn } from "./SignInPage/index";
 import { SignUp } from "./SignUpPage/index";
 import { Trands } from "./TrandsPage/index";
+import { ChangePasswordPage } from "./ChangePasswordPage";
+import { LogOutPage } from "./LogOutPage";
 
 export {
+  LogOutPage,
+  ChangePasswordPage,
   Favorites,
   Home,
   MovieDetailsPage,
