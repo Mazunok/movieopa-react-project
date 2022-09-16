@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "store";
 import { ROUTE } from "../../router/routes";
 import { forgotPassword } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -22,7 +23,7 @@ export const ChangePasswordForm = () => {
   });
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
+  const { isLoading, error } = useAppSelector(getUser);
 
   const onSubmit: SubmitHandler<ChangePasswordValues> = ({ email }) => {
     dispatch(

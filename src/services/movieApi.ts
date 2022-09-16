@@ -91,7 +91,7 @@ class MovieAPI {
     return data;
   }
 
-  public async getSearch(s: string | undefined, newParams: MovieRequestParams) {
+  public async getSearch(s: string | null, newParams: MovieRequestParams) {
     const params = {
       ...this.DEFALUT_REQUEST_PARAMS,
       ...newParams,

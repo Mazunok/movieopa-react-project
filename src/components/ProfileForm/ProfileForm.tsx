@@ -13,13 +13,15 @@ import { ArrowIcon } from "../../assets";
 import { ROUTE } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
+import { useState } from "react";
+import { Nav } from "components/Nav";
 
 interface IProps {
   name?: string | null;
 }
 
 export const ProfileForm = ({ name }: IProps) => {
-  const [isOpen, toggleIsOpen] = useToggle(false);
+  const [isToggle, toggleIsOpen] = useToggle(false);
 
   return (
     <StyledContainer>
@@ -31,11 +33,8 @@ export const ProfileForm = ({ name }: IProps) => {
         <ArrowBtn onClick={toggleIsOpen as () => void}>
           <ArrowIcon />
         </ArrowBtn>
-        <BurgerContainer>
-          <BurgerButton onClick={toggleIsOpen as () => void} />
-        </BurgerContainer>
       </ProfileContainer>
-      {isOpen && (
+      {isToggle && (
         <LinkContainer>
           <CustomLink to={name ? ROUTE.SETTINGS : ROUTE.SIGN_IN}>
             {name ? "Edit profile" : "Sign In"}

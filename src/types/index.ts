@@ -8,7 +8,7 @@ export interface IMovieApI {
 
 export interface IMovieSearch {
   Response: "True" | "False";
-  TotalResults: string;
+  TotalResults: string|null;
   Search: IMovieApI[];
 }
 
@@ -68,3 +68,7 @@ export type ITheme = {
   readonly value: string;
   readonly label: string;
 };
+
+export interface ISearchedMoviesResponse extends IMovieSearch {
+  page: string | null
+}

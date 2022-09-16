@@ -12,7 +12,8 @@ export interface DetailsState {
 const initialState: DetailsState = {
   isLoading: false,
   error: null,
-  results: { Title: "",
+  results: {
+    Title: "",
     Year: 0,
     Rated: "",
     Released: "",
@@ -35,21 +36,21 @@ const initialState: DetailsState = {
     BoxOffice: "",
     Production: "",
     Website: "",
-    Response: "", },
+    Response: "",
+  },
 };
 
-export const fetchDetails = createAsyncThunk<
-  IDetailsMovie,
-  string,
-  { rejectValue: string }
->("detailsMovies/fetchDetails", async (id, { rejectWithValue }) => {
-  try {
-    return await movieAPI.getDetails(id);
-  } catch (error) {
-    const axiosError = error as AxiosError;
-    return rejectWithValue(axiosError.message);
-  }
-});
+export const fetchDetails = createAsyncThunk<IDetailsMovie, string, { rejectValue: string }>(
+  "detailsMovies/fetchDetails",
+  async (id, { rejectWithValue }) => {
+    try {
+      return await movieAPI.getDetails(id);
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return rejectWithValue(axiosError.message);
+    }
+  },
+);
 
 export const movieDetailsSlice = createSlice({
   name: "detailsMovies",

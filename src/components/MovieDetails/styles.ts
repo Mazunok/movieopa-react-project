@@ -33,6 +33,15 @@ const Poster = styled.img`
   border-radius: 20px;
 `;
 
+const SpinnerContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+`;
+
 const LikeButton = styled.button`
   width: 250px;
   height: 56px;
@@ -83,4 +92,5 @@ export {
   InfoContainer,
   Subtitle,
   Title,
+  SpinnerContainer,
 };

@@ -10,21 +10,32 @@ import {
   Subtitle,
   Title,
   StyledText,
+  SpinnerContainer,
 } from "./styles";
 import { addFavorite, removeFavorite } from "../../store/features/favoritesSlice/favoritesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchDetails } from "../../store/features/movieDetailsSlice/movieDetailsSlice";
+import { getmovieDetails } from "store";
+import { Spinner } from "components/Spinner";
 
 export const MovieDetails = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const { results } = useAppSelector((state) => state.persistedReducer.detailsMovies);
+  const { results, isLoading, error } = useAppSelector(getmovieDetails);
 
   useEffect(() => {
     if (id) {
       dispatch(fetchDetails(id));
     }
   }, [dispatch, id]);
+
+  if (isLoading) {
+    return (
+      <SpinnerContainer>
+        <Spinner />
+      </SpinnerContainer>
+    );
+  }
 
   return (
     <StyledWrapper>

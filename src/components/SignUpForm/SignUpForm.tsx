@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { registerUser } from "../../store/features/userSlice/userSlice";
 import { useState } from "react";
 import { Modal } from "../Modal/Modal";
+import { getUser } from "../../store/index";
 
 export type SignUpFormValues = {
   name: string;
@@ -27,7 +28,7 @@ export const SignUpForm = () => {
   });
 
   const dispatch = useAppDispatch();
-  const { isLoading, error } = useAppSelector((state) => state.persistedReducer.user);
+  const { isLoading, error } = useAppSelector(getUser);
   const [isOpen, toggleModal] = useState<boolean>(false);
 
   const handleModal = () => {

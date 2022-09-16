@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Color } from "ui";
 import { MEDIA } from "../../ui/media";
 
 const StyledHeader = styled.div`
@@ -26,7 +27,29 @@ const StyledHeader = styled.div`
   }
 `;
 
+const BurgerButton = styled.div`
+  position: relative;
+  left: 15px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-color: ${Color.Primary};
+  border-top: 2px solid ${Color.White};
+  border-bottom: 2px solid ${Color.White};
+  ::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    width: 100%;
+    border-top: 2px solid ${Color.White};
+  }
+  ${MEDIA.MD} {
+    display: block;
+  }
+`;
+
 const LogoWrapper = styled.div`
 
 `;
-export { StyledHeader, LogoWrapper };
+export { StyledHeader, LogoWrapper, BurgerButton };

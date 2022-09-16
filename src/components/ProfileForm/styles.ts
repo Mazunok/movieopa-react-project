@@ -36,7 +36,7 @@ const Avatar = styled.div`
   height: 56px;
   background: ${Color.Primary};
   border-radius: 10px;
-   ${MEDIA.MD} {
+  ${MEDIA.MD} {
     display: none;
   }
 `;
@@ -135,9 +135,9 @@ export {
   AvatarName,
   ProfileName,
   ArrowBtn,
-  BurgerButton,
   BurgerContainer,
   LinkContainer,
   ProfileContainer,
   StyledLink,
+  BurgerButton,
 };

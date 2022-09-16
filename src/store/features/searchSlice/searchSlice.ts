@@ -1,40 +1,63 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { movieAPI } from "../../../services/index";
-import { IMovieSearch, MovieRequestParams } from "../../../types";
+import { IMovieSearch, ISearchedMoviesResponse } from "../../../types";
 
 interface SearchState {
   isLoading: boolean;
   error: string | null;
   results: IMovieSearch;
+  searchValue: string | null;
+  searchResponse: ISearchedMoviesResponse;
 }
 
-export const fetchSearch = createAsyncThunk<
-  IMovieSearch,
-  MovieRequestParams,
-  { rejectValue: string }
->("search/fetchSearch", async ({ s, page }, { rejectWithValue }) => {
-  try {
-    return await movieAPI.getSearch(s, {
-      page,
-      s: "",
-    });
-  } catch (error) {
-    const axiosError = error as AxiosError;
-    return rejectWithValue(axiosError.message);
-  }
-});
+type SearchParams = {
+  searchValue: string | null;
+  page: string;
+};
 
-const initialState: SearchState = {
+export const fetchSearch = createAsyncThunk<IMovieSearch, SearchParams, { rejectValue: string }>(
+  "search/fetchSearch",
+  async ({ searchValue, page }, { rejectWithValue }) => {
+    try {
+      return await movieAPI.getSearch(searchValue, {
+        page,
+      });
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return rejectWithValue(axiosError.message);
+    }
+  },
+);
+
+export const initialState: SearchState = {
   isLoading: false,
   error: null,
   results: { Response: "False", TotalResults: "0", Search: [] },
+  searchValue: null,
+  searchResponse: {
+    Response: "True",
+    TotalResults: null,
+    Search: [],
+    page: null,
+  },
 };
 
 export const searchSlice = createSlice({
   name: "search",
   initialState,
-  reducers: {},
+  reducers: {
+    addSearchValue(state, { payload }) {
+      state.searchValue = payload;
+    },
+    removeState: (state) => {
+      state.searchValue = null;
+      state.isLoading = false;
+      state.error = null;
+      state.searchResponse.Search = [];
+      state.searchResponse.TotalResults = null;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchSearch.pending, (state) => {
       state.isLoading = true;
@@ -42,7 +65,9 @@ export const searchSlice = createSlice({
     });
     builder.addCase(fetchSearch.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.results = payload;
+      state.error = null;
+      state.searchResponse.Search = payload.Search;
+      state.searchResponse.TotalResults = payload.TotalResults;
     });
     builder.addCase(fetchSearch.rejected, (state, { payload }) => {
       if (payload) {
@@ -52,5 +77,7 @@ export const searchSlice = createSlice({
     });
   },
 });
+
+export const { addSearchValue } = searchSlice.actions;
 
 export default searchSlice.reducer;
