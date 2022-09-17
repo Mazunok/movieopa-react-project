@@ -1,8 +1,8 @@
 import { ROUTE } from "../../router/routes";
 import { BurgerButton, BurgerContainer, ImgWrapper, StyledNav, StyledText } from "./styles";
-import { FavoritesIcon, HomeIcon, TrendsIcon, SettingsIcon } from "../../assets";
 import { CustomLink } from "../CustomLink/CustomLink";
 import { useState } from "react";
+import { RiHomeHeartFill, RiSettings4Line, RiHeartLine, RiMedalLine } from "react-icons/ri";
 import { useWindowSize } from "hooks";
 
 export const Nav = () => {
@@ -19,25 +19,25 @@ export const Nav = () => {
       <StyledNav initial="closed" animate={isOpen ? "open" : "closed"} variants={menuVariants}>
         <CustomLink to={ROUTE.HOME}>
           <ImgWrapper>
-            <HomeIcon />
+            <RiHomeHeartFill />
           </ImgWrapper>
           <StyledText>Home</StyledText>
         </CustomLink>
         <CustomLink to={ROUTE.TRANDS}>
           <ImgWrapper>
-            <TrendsIcon />
+            <RiMedalLine />
           </ImgWrapper>
           <StyledText>Trands</StyledText>
         </CustomLink>
         <CustomLink to={ROUTE.FAVORITES}>
           <ImgWrapper>
-            <FavoritesIcon />
+            <RiHeartLine />
           </ImgWrapper>
           <StyledText>Favorites</StyledText>
         </CustomLink>
         <CustomLink to={ROUTE.SETTINGS}>
           <ImgWrapper>
-            <SettingsIcon />
+            <RiSettings4Line />
           </ImgWrapper>
           <StyledText>Settings</StyledText>
         </CustomLink>

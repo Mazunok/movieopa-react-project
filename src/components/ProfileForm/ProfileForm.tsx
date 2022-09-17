@@ -2,10 +2,8 @@ import {
   ArrowBtn,
   Avatar,
   AvatarName,
-  BurgerButton,
   ProfileName,
   StyledContainer,
-  BurgerContainer,
   LinkContainer,
   ProfileContainer,
 } from "./styles";
@@ -13,8 +11,6 @@ import { ArrowIcon } from "../../assets";
 import { ROUTE } from "../../router/routes";
 import { useToggle } from "../../hooks/useToggle";
 import { CustomLink } from "../CustomLink/CustomLink";
-import { useState } from "react";
-import { Nav } from "components/Nav";
 
 interface IProps {
   name?: string | null;

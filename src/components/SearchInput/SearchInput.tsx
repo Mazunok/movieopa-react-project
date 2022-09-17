@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { StyledInput } from "./styled";
+import { StyledButton, StyledInput } from "./styled";
 import { useInput } from "../../hooks/useInput";
 import { useAppDispatch } from "../../store/hooks";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useNavigate } from "react-router-dom";
 import { addSearchValue } from "../../store/features/searchSlice/searchSlice";
+import { RiSearchLine } from "react-icons/ri";
 
 export const SearchInput = () => {
   const search = useInput("");
@@ -23,11 +24,9 @@ export const SearchInput = () => {
   return (
     <>
       <StyledInput type="text" placeholder="Search" {...search} />
-      <button
-        type="button"
-        onClick={handleSearch}
-        style={{ width: "20px", height: "20px", background: "white" }}
-      />
+      <StyledButton type="button" onClick={handleSearch}>
+        <RiSearchLine />
+      </StyledButton>
       ;
     </>
   );

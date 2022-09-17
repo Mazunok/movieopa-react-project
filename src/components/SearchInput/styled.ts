@@ -18,4 +18,11 @@ const StyledInput = styled.input`
   }
 `;
 
-export { StyledInput };
+const StyledButton = styled.button`
+  width: 56px;
+  height: 56px;
+  background-color: ${Color.Primary};
+  border-radius: 10px ;
+`;
+
+export { StyledInput, StyledButton };

@@ -7,13 +7,12 @@ const StyledNav = styled(motion.nav)`
   position: sticky;
   top: 0;
   left: 0;
-
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: start;
-  gap: 50px;
+  gap: 40px;
   width: 160px;
   height: 100%;
   padding: 50px 30px 0px 30px;
@@ -43,6 +42,9 @@ const StyledText = styled.p`
 const ImgWrapper = styled.div`
   width: 18px;
   height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const BurgerButton = styled.div`
