@@ -25,7 +25,7 @@ export const fetchTrands = createAsyncThunk<
 const initialState: TrandsState = {
   isLoading: false,
   error: null,
-  results: { Response: "False", totalResults: "0", Search: [] },
+  results: { Response: "False", totalResults: "0", Search: [], Error: "" },
 };
 
 export const trandsSlice = createSlice({

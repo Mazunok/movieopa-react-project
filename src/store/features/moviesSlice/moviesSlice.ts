@@ -25,7 +25,7 @@ export const fetchMovies = createAsyncThunk<
 const initialState: MoviesState = {
   isLoading: false,
   error: null,
-  results: { Response: "False", totalResults: "0", Search: [] },
+  results: { Response: "False", totalResults: "0", Search: [], Error: "" },
 };
 
 export const moviesSlice = createSlice({
@@ -33,7 +33,7 @@ export const moviesSlice = createSlice({
   initialState,
   reducers: {
     cleanStore: (state) => {
-      state.results = { Response: "False", totalResults: "0", Search: [] };
+      state.results = { Response: "False", totalResults: "0", Search: [], Error: "" };
     },
   },
   extraReducers(builder) {

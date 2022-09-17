@@ -20,9 +20,10 @@ export const fetchSearch = createAsyncThunk<IMovieSearch, SearchParams, { reject
   "search/fetchSearch",
   async ({ searchValue, page }, { rejectWithValue }) => {
     try {
-      return await movieAPI.getSearch(searchValue, {
+      const result = await movieAPI.getSearch(searchValue, {
         page,
       });
+      return result.Search ? result : rejectWithValue(result.Error);
     } catch (error) {
       const axiosError = error as AxiosError;
       return rejectWithValue(axiosError.message);
@@ -33,13 +34,14 @@ export const fetchSearch = createAsyncThunk<IMovieSearch, SearchParams, { reject
 export const initialState: SearchState = {
   isLoading: false,
   error: null,
-  results: { Response: "False", totalResults: "10", Search: [] },
+  results: { Response: "False", totalResults: "10", Search: [], Error: "" },
   searchValue: null,
   searchResponse: {
     Response: "True",
     totalResults: null,
     Search: [],
     page: null,
+    Error: "",
   },
 };
 
