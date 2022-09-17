@@ -28,11 +28,6 @@ export const Home = () => {
           isLoading={isLoading}
           errorMessage={error}
         />
-        <ShowMoreButton
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
       </HomeContainer>
     </>
   );

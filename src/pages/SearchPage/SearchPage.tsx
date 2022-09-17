@@ -17,8 +17,8 @@ export const SearchPage = () => {
   const handleNext = () => {
     if (
       searchValue &&
-      !!searchResponse.TotalResults &&
-      countPages(searchResponse.TotalResults) > +page
+      !!searchResponse.totalResults &&
+      countPages(searchResponse.totalResults) > +page
     ) {
       navigate(`/search/${+page + 1}`);
     }

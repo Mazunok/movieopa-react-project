@@ -8,9 +8,10 @@ const Container = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   gap: 30px;
-  height: 100%;
+  min-height: 906px;
   margin: 30px 100px;
   ${MEDIA.SM} {
+    height: 100%;
     padding-top: 40px;
     margin: 0 auto;
   }

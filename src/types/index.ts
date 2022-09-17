@@ -8,7 +8,7 @@ export interface IMovieApI {
 
 export interface IMovieSearch {
   Response: "True" | "False";
-  TotalResults: string|null;
+  totalResults: string|null;
   Search: IMovieApI[];
 }
 

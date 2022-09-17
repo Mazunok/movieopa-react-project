@@ -33,11 +33,11 @@ export const fetchSearch = createAsyncThunk<IMovieSearch, SearchParams, { reject
 export const initialState: SearchState = {
   isLoading: false,
   error: null,
-  results: { Response: "False", TotalResults: "0", Search: [] },
+  results: { Response: "False", totalResults: "10", Search: [] },
   searchValue: null,
   searchResponse: {
     Response: "True",
-    TotalResults: null,
+    totalResults: null,
     Search: [],
     page: null,
   },
@@ -55,7 +55,7 @@ export const searchSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.searchResponse.Search = [];
-      state.searchResponse.TotalResults = null;
+      state.searchResponse.totalResults = null;
     },
   },
   extraReducers(builder) {
@@ -67,7 +67,7 @@ export const searchSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.searchResponse.Search = payload.Search;
-      state.searchResponse.TotalResults = payload.TotalResults;
+      state.searchResponse.totalResults = payload.totalResults;
     });
     builder.addCase(fetchSearch.rejected, (state, { payload }) => {
       if (payload) {
