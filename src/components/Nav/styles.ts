@@ -19,7 +19,7 @@ const StyledNav = styled(motion.nav)`
   background-color: ${Color.Black};
   ${MEDIA.MD} {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -29,7 +29,7 @@ const StyledNav = styled(motion.nav)`
     justify-content: center;
 
     width: 100vw;
-    height: calc(100vh-56px);
+    height: calc(100vh);
     background-color: ${Color.Light};
   }
 `;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { StyledButton, StyledInput } from "./styled";
+import { InputContainer, StyledButton, StyledInput } from "./styles";
 import { useInput } from "../../hooks/useInput";
 import { useAppDispatch } from "../../store/hooks";
 import { useDebounce } from "../../hooks/useDebounce";
@@ -22,12 +22,12 @@ export const SearchInput = () => {
   }, [debounceValue, dispatch]);
 
   return (
-    <>
+    <InputContainer>
       <StyledInput type="text" placeholder="Search" {...search} />
       <StyledButton type="button" onClick={handleSearch}>
         <RiSearchLine />
       </StyledButton>
       ;
-    </>
+    </InputContainer>
   );
 };

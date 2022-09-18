@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MEDIA } from "ui";
 import { Color } from "../../ui/colors";
 
 const Wrapper = styled.div`
@@ -16,6 +17,13 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
+  ${MEDIA.MD}{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    gap: 20px;
+  }
 `;
 
 export { Wrapper, Container };

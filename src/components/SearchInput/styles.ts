@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
-import { MEDIA } from "../../ui/media";
 
 const StyledInput = styled.input`
   flex-grow: 1;
@@ -9,20 +8,22 @@ const StyledInput = styled.input`
   background: ${Color.Graphite};
   border: none;
   border-radius: 10px;
-  ${MEDIA.SM} {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    width: 100%;
-  }
 `;
 
 const StyledButton = styled.button`
   width: 56px;
   height: 56px;
   background-color: ${Color.Primary};
-  border-radius: 10px ;
+  border-radius: 10px;
 `;
 
-export { StyledInput, StyledButton };
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-grow: 1;
+`;
+
+export { StyledInput, StyledButton, InputContainer };

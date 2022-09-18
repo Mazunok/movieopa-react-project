@@ -6,18 +6,19 @@ import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   width: 260px;
   background-color: ${Color.Graphite};
   border-radius: 10px;
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     width: 100px;
   }
   ${MEDIA.SM} {
     justify-content: flex-end;
-  }
+  } */
 `;
 
 const ProfileContainer = styled.div`
@@ -26,7 +27,7 @@ const ProfileContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-  width: 264px;
+  width: 100%;
 `;
 
 const Avatar = styled.div`
@@ -36,9 +37,9 @@ const Avatar = styled.div`
   height: 56px;
   background: ${Color.Primary};
   border-radius: 10px;
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     display: none;
-  }
+  } */
 `;
 
 const AvatarName = styled.p`
@@ -49,27 +50,27 @@ const AvatarName = styled.p`
   ${S2}
   font-size: 20;
   color: ${Color.White};
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     display: none;
-  }
+  } */
 `;
 
 const ProfileName = styled.p`
   display: block;
   ${S3};
   color: ${Color.White};
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     display: none;
-  }
+  } */
 `;
 
 const ArrowBtn = styled.button`
   display: block;
   width: 24px;
   height: 24px;
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     display: none;
-  }
+  } */
 `;
 
 const LinkContainer = styled.div`
@@ -84,17 +85,17 @@ const LinkContainer = styled.div`
   height: 200px;
   background-color: ${Color.Graphite};
   border-radius: 10px;
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     width: 100px;
-  }
+  } */
 `;
 
 const StyledLink = styled(Link)`
   ${H2}
   color: ${Color.Primary};
-  ${MEDIA.MD} {
+  /* ${MEDIA.MD} {
     ${H3}
-  }
+  } */
 `;
 
 export {
