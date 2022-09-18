@@ -1,4 +1,4 @@
-import { MovieList } from "components";
+import { MovieList, Spinner } from "components";
 import { PaginateButton } from "components/PaginateButton/PaginateButton";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,7 +6,7 @@ import { transformMovieData } from "services";
 import { getSearch, useAppDispatch, useAppSelector } from "store";
 import { fetchSearch } from "store/features/searchSlice/searchSlice";
 import { countPages } from "utils/countPages";
-import { SearchContainer } from "./styles";
+import { SearchContainer, SpinnerContainer } from "./styles";
 
 export const SearchPage = () => {
   const dispatch = useAppDispatch();
@@ -46,16 +46,23 @@ export const SearchPage = () => {
   }, [dispatch, searchValue, page]);
 
   return (
-    <SearchContainer>
-      <MovieList
-        movies={transformMovieData(searchResponse.Search)}
-        isLoading={isLoading}
-        errorMessage={error}
-      />
-      <div>
-        <PaginateButton onClick={handlePrevious} type="button" />
-        <PaginateButton onClick={handleNext} type="button" />
-      </div>
-    </SearchContainer>
+    <>
+      {isLoading && (
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
+      )}
+      <SearchContainer>
+        <MovieList
+          movies={transformMovieData(searchResponse.Search)}
+          isLoading={isLoading}
+          errorMessage={error}
+        />
+        <div>
+          <PaginateButton onClick={handlePrevious} type="button" />
+          <PaginateButton onClick={handleNext} type="button" />
+        </div>
+      </SearchContainer>
+    </>
   );
 };
