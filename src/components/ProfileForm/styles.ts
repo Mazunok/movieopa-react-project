@@ -72,38 +72,6 @@ const ArrowBtn = styled.button`
   }
 `;
 
-const BurgerContainer = styled.button`
-  display: none;
-  width: 56px;
-  height: 56px;
-  background: ${Color.Primary};
-  border-radius: 10px;
-  ${MEDIA.MD} {
-    display: block;
-  }
-`;
-
-const BurgerButton = styled.div`
-  position: relative;
-  left: 15px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  border-top: 2px solid ${Color.White};
-  border-bottom: 2px solid ${Color.White};
-  ::before {
-    content: "";
-    position: absolute;
-    top: 9px;
-    left: 0px;
-    width: 100%;
-    border-top: 2px solid ${Color.White};
-  }
-  ${MEDIA.MD} {
-    display: block;
-  }
-`;
-
 const LinkContainer = styled.div`
   position: absolute;
   top: 100px;
@@ -135,9 +103,7 @@ export {
   AvatarName,
   ProfileName,
   ArrowBtn,
-  BurgerContainer,
   LinkContainer,
   ProfileContainer,
   StyledLink,
-  BurgerButton,
 };
