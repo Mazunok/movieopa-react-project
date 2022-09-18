@@ -3,7 +3,7 @@ import { AxiosError } from "axios";
 import { movieAPI } from "../../../services/index";
 import { IMovieSearch, MovieRequestParams } from "../../../types";
 
-interface TrandsState {
+export interface TrandsState {
   isLoading: boolean;
   error: string | null;
   results: IMovieSearch;
@@ -15,7 +15,8 @@ export const fetchTrands = createAsyncThunk<
   { rejectValue: string }
 >("trands/fetchTrands", async ({ s }, { rejectWithValue }) => {
   try {
-    return await movieAPI.getTrands({ s });
+    const result = await movieAPI.getTrands({ s });
+    return result.Search ? result : rejectWithValue(result.Error);
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);
@@ -31,7 +32,11 @@ const initialState: TrandsState = {
 export const trandsSlice = createSlice({
   name: "trands",
   initialState,
-  reducers: {},
+  reducers: {
+    cleanStore: (state) => {
+      state.results = { Response: "False", totalResults: "0", Search: [], Error: "" };
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchTrands.pending, (state) => {
       state.isLoading = true;
@@ -49,5 +54,7 @@ export const trandsSlice = createSlice({
     });
   },
 });
+
+export const { cleanStore } = trandsSlice.actions;
 
 export default trandsSlice.reducer;

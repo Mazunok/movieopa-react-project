@@ -45,18 +45,20 @@ export const SignInForm = () => {
         />
       </label>
       {errors.email && <Span>{errors.email.message}</Span>}
-      <Text>Password:</Text>
-      <Input
-        type="password"
-        placeholder="Your password"
-        {...register("password", {
-          required: "Password is required",
-          minLength: {
-            value: 6,
-            message: "password must be at least 6 characters",
-          },
-        })}
-      />
+      <label>
+        <Text>Password:</Text>
+        <Input
+          type="password"
+          placeholder="Your password"
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "password must be at least 6 characters",
+            },
+          })}
+        />
+      </label>
       {errors.password && <Span>{errors.password.message}</Span>}
       <Button type="submit">{isLoading ? <Spinner /> : "Sign In"}</Button>
       {error && <Span>{error}</Span>}

@@ -54,4 +54,6 @@ export const moviesSlice = createSlice({
   },
 });
 
+export const { cleanStore } = moviesSlice.actions;
+
 export default moviesSlice.reducer;

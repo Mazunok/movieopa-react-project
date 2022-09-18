@@ -7,6 +7,7 @@ import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
 
 import Background from "./img/background.png";
 import Poster from "./img/sign-up-background.png";
+import NoImage from "./img/no-image-found.png";
 
 export {
   ArrowIcon,
@@ -17,4 +18,5 @@ export {
   TrendsIcon,
   Background,
   Poster,
+  NoImage,
 };

@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { MovieList, Spinner } from "../../components/index";
-import { fetchMovies } from "../../store/features/moviesSlice/moviesSlice";
+import { cleanStore, fetchMovies } from "../../store/features/moviesSlice/moviesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { transformMovieData } from "../../services/index";
 import { HomeContainer, SpinnerContainer } from "./styles";
-import { ShowMoreButton } from "../../components/ShowMoreButton/ShowMoreButton";
 import { getMovies } from "store";
 
 export const Home = () => {
@@ -13,6 +12,10 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(fetchMovies({}));
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(cleanStore());
   }, [dispatch]);
 
   return (

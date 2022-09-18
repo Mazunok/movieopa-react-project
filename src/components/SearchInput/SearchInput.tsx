@@ -27,7 +27,6 @@ export const SearchInput = () => {
       <StyledButton type="button" onClick={handleSearch}>
         <RiSearchLine />
       </StyledButton>
-      ;
     </InputContainer>
   );
 };

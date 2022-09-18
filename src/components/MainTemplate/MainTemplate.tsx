@@ -4,9 +4,10 @@ import { Nav } from "../Nav/Nav";
 import { Container, Wrapper } from "./styles";
 
 export const MainTemplate = () => {
+
   return (
     <Wrapper>
-      <Header />
+      <Header/>
       <Container>
         <Nav />
         <Outlet />
