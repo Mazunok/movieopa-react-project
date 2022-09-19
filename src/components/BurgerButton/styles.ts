@@ -7,8 +7,8 @@ interface IProps {
 
 const StyledButton = styled.div<IProps>`
   ${MEDIA.MD} {
-    position: fixed;
-    top: 130px;
+    position: absolute;
+    top: 30px;
     right: 50%;
     z-index: 99;
     display: flex;
@@ -20,7 +20,7 @@ const StyledButton = styled.div<IProps>`
     margin-left: 20px;
   }
   ${MEDIA.SM} {
-    top: 200px;
+    top: 30px;
   }
 
   div {

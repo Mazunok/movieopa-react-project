@@ -6,6 +6,7 @@ const TrandsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding-top: 30px;
 `;
 
 export { TrandsContainer };

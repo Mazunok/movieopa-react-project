@@ -8,9 +8,12 @@ interface IProps {
 }
 
 export const CustomSelect = ({ theme, handleSelect }: IProps) => {
+  const htmlTag = document.documentElement;
+  htmlTag.setAttribute("theme", "dark");
+
   const options: ITheme[] = [
-    { value: "Light", label: "light" },
-    { value: "Dark", label: "dark" },
+    { value: "light", label: "light" },
+    { value: "dark", label: "dark" },
   ];
 
   return (

@@ -7,9 +7,9 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 30px;
+  gap: 22px;
   min-height: 906px;
-  margin: 30px 100px;
+  margin: 30px 40px 20px 60px;
   ${MEDIA.SM} {
     height: 100%;
     padding-top: 40px;

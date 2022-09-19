@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const SearchContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,4 +19,8 @@ const SpinnerContainer = styled.div`
   margin: auto;
 `;
 
-export { SearchContainer, SpinnerContainer };
+const ButtonWrapper = styled.div`
+  justify-self: flex-end;
+`;
+
+export { SearchContainer, SpinnerContainer, ButtonWrapper };

@@ -7,11 +7,15 @@ import { S2 } from "../../ui/typography";
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
-  width: 230px;
-  height: 400px;
-  padding: 10px;
+  width: 266px;
+  height: 433px;
   ${MEDIA.MD} {
-    width: 250px;
+    width: 208px;
+    height: 379px;
+  }
+  ${MEDIA.SM}{
+    width: 272px;
+    height: 437px;
   }
 `;
 
@@ -22,18 +26,28 @@ const TextContainer = styled.div`
 `;
 
 const Poster = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 266px;
+  height: 357px;
   padding-bottom: 10px;
   border-radius: 20px;
+  ${MEDIA.MD} {
+    width: 208px;
+    height: 279px;
+  }
+  ${MEDIA.SM}{
+    width: 272px;
+    height: 365px;
+  }
 `;
 
 const Title = styled.h1`
+  flex-grow: 3;
   ${S2}
   color: ${Color.White};
 `;
 
 const Type = styled.p`
+  justify-self: flex-end;
   padding-right: 15px;
   ${S2}
   font-weight: 500;

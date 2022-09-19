@@ -4,20 +4,22 @@ import {
   AvatarName,
   ProfileName,
   StyledContainer,
-  LinkContainer,
   ProfileContainer,
 } from "./styles";
 import { ArrowIcon } from "../../assets";
-import { ROUTE } from "../../router/routes";
-import { useToggle } from "../../hooks/useToggle";
-import { CustomLink } from "../CustomLink/CustomLink";
+import { ModalProfile } from "components/ModalProfile/ModalProfile";
+import { useState } from "react";
 
 interface IProps {
   name?: string | null;
 }
 
 export const ProfileForm = ({ name }: IProps) => {
-  const [isToggle, toggleIsOpen] = useToggle(false);
+  const [isOpen, toggleModal] = useState<boolean>(false);
+
+  const handleModal = () => {
+    toggleModal((isOpen) => !isOpen);
+  };
 
   return (
     <StyledContainer>
@@ -26,20 +28,11 @@ export const ProfileForm = ({ name }: IProps) => {
           <AvatarName>N S</AvatarName>
         </Avatar>
         <ProfileName>{name ? name : "Sign in"}</ProfileName>
-        <ArrowBtn onClick={toggleIsOpen as () => void}>
+        <ArrowBtn onClick={handleModal}>
           <ArrowIcon />
         </ArrowBtn>
       </ProfileContainer>
-      {isToggle && (
-        <LinkContainer>
-          <CustomLink to={name ? ROUTE.SETTINGS : ROUTE.SIGN_IN}>
-            {name ? "Edit profile" : "Sign In"}
-          </CustomLink>
-          <CustomLink to={name ? ROUTE.LOG_OUT : ROUTE.SIGN_UP}>
-            {name ? "Log Out" : "Sign Up"}
-          </CustomLink>
-        </LinkContainer>
-      )}
+      {isOpen && <ModalProfile isOpen={isOpen} handleModal={handleModal} />}
     </StyledContainer>
   );
 };

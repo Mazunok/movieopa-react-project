@@ -15,12 +15,6 @@ const StyledHeader = styled.div`
     padding-left: 30px;
   }
   ${MEDIA.SM} {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center;
-    align-items: center;
-    gap: 20px; */
     display: flex;
     flex-direction: column;
     max-width: 275px;
@@ -29,6 +23,7 @@ const StyledHeader = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-
+  width: 160px;
+  padding-top: 10px;
 `;
-export { StyledHeader, LogoWrapper};
+export { StyledHeader, LogoWrapper };

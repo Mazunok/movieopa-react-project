@@ -21,7 +21,7 @@ import { Spinner } from "components/Spinner";
 export const MovieDetails = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const { results, isLoading, error } = useAppSelector(getmovieDetails);
+  const { results, isLoading } = useAppSelector(getmovieDetails);
 
   useEffect(() => {
     if (id) {
@@ -48,14 +48,14 @@ export const MovieDetails = () => {
         <Subtitle>{results.Genre}</Subtitle>
         <Title>{results.Title}</Title>
         <Descriprion>{results.Plot}</Descriprion>
-        <StyledText>Year: {results.Year}</StyledText>
-        <StyledText>Released:{results.Released}</StyledText>
-        <StyledText>BoxOffice:{results.BoxOffice}</StyledText>
-        <StyledText>Country:{results.Country}</StyledText>
-        <StyledText>Production:{results.Production}</StyledText>
-        <StyledText>Actors:{results.Actors}</StyledText>
-        <StyledText>Director:{results.Director}</StyledText>
-        <StyledText>Writers:{results.Writer}</StyledText>
+        <StyledText>Year : {" "} {results.Year}</StyledText>
+        <StyledText>Released : {" "} {results.Released}</StyledText>
+        <StyledText>BoxOffice : {" "} {results.BoxOffice}</StyledText>
+        <StyledText>Country : {" "} {results.Country}</StyledText>
+        <StyledText>Production : {" "} {results.Production}</StyledText>
+        <StyledText>Actors : {" "} {results.Actors}</StyledText>
+        <StyledText>Director : {" "} {results.Director}</StyledText>
+        <StyledText>Writers : {" "} {results.Writer}</StyledText>
       </InfoContainer>
     </StyledWrapper>
   );

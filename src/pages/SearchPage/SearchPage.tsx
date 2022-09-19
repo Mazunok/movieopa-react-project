@@ -6,7 +6,7 @@ import { transformMovieData } from "services";
 import { getSearch, useAppDispatch, useAppSelector } from "store";
 import { fetchSearch } from "store/features/searchSlice/searchSlice";
 import { countPages } from "utils/countPages";
-import { SearchContainer, SpinnerContainer } from "./styles";
+import { ButtonWrapper, SearchContainer, SpinnerContainer } from "./styles";
 
 export const SearchPage = () => {
   const dispatch = useAppDispatch();
@@ -58,10 +58,14 @@ export const SearchPage = () => {
           isLoading={isLoading}
           errorMessage={error}
         />
-        <div>
-          <PaginateButton onClick={handlePrevious} type="button" />
-          <PaginateButton onClick={handleNext} type="button" />
-        </div>
+        <ButtonWrapper>
+          <PaginateButton onClick={handlePrevious} type="button">
+            Previous
+          </PaginateButton>
+          <PaginateButton onClick={handleNext} type="button">
+            Next
+          </PaginateButton>
+        </ButtonWrapper>
       </SearchContainer>
     </>
   );

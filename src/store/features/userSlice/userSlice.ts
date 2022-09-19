@@ -16,12 +16,14 @@ interface UserState {
   isLoading: boolean;
   error: string | null;
   result: IUser | null;
+  isDarkTheme: true;
 }
 
 const initialState: UserState = {
   isLoading: false,
   error: null,
   result: null,
+  isDarkTheme: true,
 };
 
 type FormValues = {
@@ -96,7 +98,16 @@ export const forgotPassword = createAsyncThunk<void, FormValues, { rejectValue: 
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    // setTheme: (state, { payload }) => {
+    //   state.isDarkTheme = payload;
+    //   return state;
+    // },
+    // changeTheme: ({ isDarkTheme }) => {
+    //   const htmlTag = document.documentElement;
+    //   htmlTag.setAttribute("theme", isDarkTheme ? "dark" : "light");
+    // },
+  },
   extraReducers(builder) {
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true;
@@ -160,4 +171,5 @@ export const userSlice = createSlice({
   },
 });
 
+// export const { setTheme, changeTheme } = userSlice.actions;
 export default userSlice.reducer;

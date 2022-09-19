@@ -6,18 +6,19 @@ import { H1, S3 } from "../../ui/typography";
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 30px;
-  width: 100%;
+  gap: 20px;
+  max-width: 1150px;
   height: 100%;
-  padding-left: 100px;
+  padding-left: 50px;
   padding-top: 30px;
   ${MEDIA.SM} {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 20px;
-    margin: 0%, auto;
+    padding: 20px;
+    margin: 20px, auto;
   }
 `;
 
@@ -25,6 +26,7 @@ const PosterContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-left: 20px;
 `;
 
 const Poster = styled.img`
@@ -58,27 +60,35 @@ const InfoContainer = styled.div`
   gap: 20px;
   max-width: 878px;
   height: 492px;
+  padding: 30px;
+  ${MEDIA.SM} {
+    height: 100%;
+  }
 `;
 
 const Subtitle = styled.h2`
   ${S3};
+  font-family: "Exo 2";
   font-weight: 500;
   color: ${Color.Light};
 `;
 
 const Title = styled.h1`
   ${H1}
-  color: ${Color.White};
+  font-family: "Exo 2";
+  color: ${Color.Light};
 `;
 
 const Descriprion = styled.p`
   ${S3}
+  font-family: "Exo 2";
   font-weight: 500;
-  color: ${Color.White};
+  color: ${Color.Light};
 `;
 
 const StyledText = styled.p`
   ${S3}
+  font-family: "Exo 2";
   color: ${Color.Light};
 `;
 
