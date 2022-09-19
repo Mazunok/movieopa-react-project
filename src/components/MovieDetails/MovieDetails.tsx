@@ -41,21 +41,23 @@ export const MovieDetails = () => {
     <StyledWrapper>
       <PosterContainer>
         <Poster src={results.Poster}></Poster>
-        <LikeButton onClick={() => dispatch(addFavorite(results))}>❤️</LikeButton>
+        <LikeButton whileTap={{ scale: 0.9 }} onClick={() => dispatch(addFavorite(results))}>
+          ❤️
+        </LikeButton>
         <LikeButton onClick={() => dispatch(removeFavorite(results))}>💔</LikeButton>
       </PosterContainer>
       <InfoContainer>
         <Subtitle>{results.Genre}</Subtitle>
         <Title>{results.Title}</Title>
         <Descriprion>{results.Plot}</Descriprion>
-        <StyledText>Year : {" "} {results.Year}</StyledText>
-        <StyledText>Released : {" "} {results.Released}</StyledText>
-        <StyledText>BoxOffice : {" "} {results.BoxOffice}</StyledText>
-        <StyledText>Country : {" "} {results.Country}</StyledText>
-        <StyledText>Production : {" "} {results.Production}</StyledText>
-        <StyledText>Actors : {" "} {results.Actors}</StyledText>
-        <StyledText>Director : {" "} {results.Director}</StyledText>
-        <StyledText>Writers : {" "} {results.Writer}</StyledText>
+        <StyledText>Year : {results.Year}</StyledText>
+        <StyledText>Released : {results.Released}</StyledText>
+        <StyledText>BoxOffice : {results.BoxOffice}</StyledText>
+        <StyledText>Country : {results.Country}</StyledText>
+        <StyledText>Production : {results.Production}</StyledText>
+        <StyledText>Actors : {results.Actors}</StyledText>
+        <StyledText>Director : {results.Director}</StyledText>
+        <StyledText>Writers : {results.Writer}</StyledText>
       </InfoContainer>
     </StyledWrapper>
   );

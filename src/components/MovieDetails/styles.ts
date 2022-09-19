@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MEDIA } from "ui";
 import { Color } from "../../ui/colors";
@@ -44,7 +45,7 @@ const SpinnerContainer = styled.div`
   margin: auto;
 `;
 
-const LikeButton = styled.button`
+const LikeButton = styled(motion.button)`
   width: 250px;
   height: 56px;
   background-color: ${Color.Graphite};

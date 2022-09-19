@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { MEDIA } from "../../ui/media";
 
 const SettingsContainer = styled.div`
-  position: relative;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+  gap: 20px;
   width: 100%;
-  height: 100%;
-  padding-left: 100px;
+  padding-top: 30px;
   ${MEDIA.SM} {
     height: 100%;
     padding: 0;

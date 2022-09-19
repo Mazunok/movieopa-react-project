@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Color } from "../../ui/colors";
 import { S2, S3 } from "../../ui/typography";
 
@@ -11,6 +11,11 @@ const StyledContainer = styled.div`
   gap: 10px;
   width: 260px;
   background-color: ${Color.Graphite};
+  ${(props: { isDarkTheme: boolean }) =>
+    !props.isDarkTheme &&
+    css`
+      background-color: ${Color.Light};
+    `}
   border-radius: 10px;
 `;
 

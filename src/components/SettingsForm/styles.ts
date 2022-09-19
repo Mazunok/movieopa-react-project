@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Color } from "../../ui/colors";
 import { MEDIA } from "../../ui/media";
 import { H2, S3 } from "../../ui/typography";
 
 const StyledWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 70%;
+  gap: 50px;
   height: 100%;
   ${MEDIA.MD} {
     width: 688px;
@@ -18,13 +18,18 @@ const StyledWrapper = styled.div`
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
-  width: 100%;
-  height: 168px;
-  padding-left: 40px;
+  max-width: 400px;
+  height: 200px;
+  padding: 50px;
   background-color: ${Color.Dark};
+  ${(props: { isDarkTheme: boolean }) =>
+    !props.isDarkTheme &&
+    css`
+      background-color: ${Color.Light};
+    `}
   border-radius: 10px;
   ${MEDIA.SM} {
     flex-direction: column;
@@ -41,9 +46,9 @@ const InfoContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   gap: 30px;
-  width: 100%;
-  height: 220px;
-  padding: 40px 20px 0 0;
+  max-width: 400px;
+  height: 100%;
+  padding: 40px 20px 0 100px;
   ${MEDIA.SM} {
     justify-content: center;
     align-items: center;
@@ -55,8 +60,14 @@ const InfoContainer = styled.div`
 
 const StyledTitle = styled.h2`
   padding-top: 20px;
+  padding-left: 20px;
   ${H2}
-  color:${Color.White};
+  color:${Color.Light};
+  ${(props: { isDarkTheme: boolean }) =>
+    !props.isDarkTheme &&
+    css`
+      color: ${Color.Graphite};
+    `}
   ${MEDIA.SM} {
     padding-top: 40px;
   }

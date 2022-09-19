@@ -1,5 +1,11 @@
-import React from "react";
+import { Message, Page, Wrapper } from "./styles";
 
 export const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <Wrapper>
+      <Message>
+        <Page>PAGE</Page> NOT FOUND
+      </Message>
+    </Wrapper>
+  );
 };

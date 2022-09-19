@@ -15,7 +15,8 @@ export const fetchMovies = createAsyncThunk<
   { rejectValue: string }
 >("movies/fetchMovies", async (_, { rejectWithValue }) => {
   try {
-    return await movieAPI.getAll();
+    const result = await movieAPI.getAll();
+    return result.Search ? result : rejectWithValue(result.Error);
   } catch (error) {
     const axiosError = error as AxiosError;
     return rejectWithValue(axiosError.message);
@@ -25,7 +26,7 @@ export const fetchMovies = createAsyncThunk<
 const initialState: MoviesState = {
   isLoading: false,
   error: null,
-  results: { Response: "False", totalResults: "0", Search: [], Error: "" },
+  results: { Response: "False", totalResults: "10", Search: [], Error: "" },
 };
 
 export const moviesSlice = createSlice({

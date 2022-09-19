@@ -52,7 +52,7 @@ export const Nav = () => {
           <ImgWrapper>
             <RiSettings4Line />
           </ImgWrapper>
-          <StyledText>Settings</StyledText>
+          <StyledText>Account</StyledText>
         </CustomLink>
       </StyledNav>
       {width < 768 && <BurgerButton onClick={() => setIsOpen((isOpen) => !isOpen)} />}

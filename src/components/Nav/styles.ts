@@ -14,9 +14,8 @@ const StyledNav = styled(motion.nav)`
   justify-content: start;
   gap: 40px;
   width: 160px;
-  height: 100%;
+  height: 100vh;
   padding: 50px 30px 0px 30px;
-  background-color: ${Color.Black};
   ${MEDIA.MD} {
     display: flex;
     gap: 30px;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Color } from "ui";
 
 const FavoritesContainer = styled.div`
   display: flex;
@@ -7,15 +6,7 @@ const FavoritesContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding-top: 30px;
 `;
 
-const LikeButton = styled.button`
-  width: 250px;
-  height: 56px;
-  background-color: ${Color.Graphite};
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-`;
-
-export { FavoritesContainer, LikeButton };
+export { FavoritesContainer };

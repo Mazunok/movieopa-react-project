@@ -16,7 +16,7 @@ interface UserState {
   isLoading: boolean;
   error: string | null;
   result: IUser | null;
-  isDarkTheme: true;
+  isDarkTheme: boolean;
 }
 
 const initialState: UserState = {
@@ -99,14 +99,11 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    // setTheme: (state, { payload }) => {
-    //   state.isDarkTheme = payload;
-    //   return state;
-    // },
-    // changeTheme: ({ isDarkTheme }) => {
-    //   const htmlTag = document.documentElement;
-    //   htmlTag.setAttribute("theme", isDarkTheme ? "dark" : "light");
-    // },
+    toggleTheme: (state) => {
+      state.isDarkTheme = !state.isDarkTheme;
+
+      return state;
+    },
   },
   extraReducers(builder) {
     builder.addCase(registerUser.pending, (state) => {
@@ -171,5 +168,5 @@ export const userSlice = createSlice({
   },
 });
 
-// export const { setTheme, changeTheme } = userSlice.actions;
+export const { toggleTheme } = userSlice.actions;
 export default userSlice.reducer;

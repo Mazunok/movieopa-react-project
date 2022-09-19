@@ -10,12 +10,11 @@ const ModalWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const ModalContainer = styled.div`
   position: absolute;
-  right: 52px;
+  right: 40px;
   top: 120px;
   z-index: 1;
   display: flex;

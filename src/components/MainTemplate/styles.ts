@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { MEDIA } from "ui";
-import { Color } from "../../ui/colors";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: ${Color.Black};
   overflow-x: hidden;
+  overflow-y:scroll;
 `;
 
 const Container = styled.div`

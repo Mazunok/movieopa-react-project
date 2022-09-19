@@ -9,6 +9,7 @@ import {
 import { ArrowIcon } from "../../assets";
 import { ModalProfile } from "components/ModalProfile/ModalProfile";
 import { useState } from "react";
+import { getUser, useAppSelector } from "store";
 
 interface IProps {
   name?: string | null;
@@ -16,13 +17,14 @@ interface IProps {
 
 export const ProfileForm = ({ name }: IProps) => {
   const [isOpen, toggleModal] = useState<boolean>(false);
+  const { isDarkTheme } = useAppSelector(getUser);
 
   const handleModal = () => {
     toggleModal((isOpen) => !isOpen);
   };
 
   return (
-    <StyledContainer>
+    <StyledContainer isDarkTheme={isDarkTheme} className={isDarkTheme ? "dark" : "light"}>
       <ProfileContainer>
         <Avatar>
           <AvatarName>N S</AvatarName>
