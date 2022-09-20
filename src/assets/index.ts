@@ -8,6 +8,10 @@ import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
 import Background from "./img/background.png";
 import Poster from "./img/sign-up-background.png";
 import NoImage from "./img/no-image-found.png";
+import ChangePassword from "./readMe/chanhe-password.png";
+import HomeScrin from "./readMe/home-scrin.png";
+import Movie from "./readMe/movie.png";
+import SignInScrin from "./readMe/sign-in.png";
 
 export {
   ArrowIcon,
@@ -19,4 +23,8 @@ export {
   Background,
   Poster,
   NoImage,
+  ChangePassword,
+  HomeScrin,
+  Movie,
+  SignInScrin,
 };

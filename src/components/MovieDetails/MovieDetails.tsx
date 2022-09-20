@@ -44,7 +44,9 @@ export const MovieDetails = () => {
         <LikeButton whileTap={{ scale: 0.9 }} onClick={() => dispatch(addFavorite(results))}>
           ❤️
         </LikeButton>
-        <LikeButton onClick={() => dispatch(removeFavorite(results))}>💔</LikeButton>
+        <LikeButton whileTap={{ scale: 0.9 }} onClick={() => dispatch(removeFavorite(results))}>
+          💔
+        </LikeButton>
       </PosterContainer>
       <InfoContainer>
         <Subtitle>{results.Genre}</Subtitle>
