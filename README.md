@@ -1,46 +1,112 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   ![logo](src/assets/readMe/movie-opa.png)
+  </a>
 
-## Available Scripts
+  <h3 align="center">MovieOpa React Project </h3>
 
-In the project directory, you can run:
+  <p align="center">
+    The app for searching movies!
+    <br />
+    <a href="https://github.com/Mazunok/movieopa-react-project"><strong>Explore the docs »</strong></a>
+    <br />
+</div>
 
-### `npm start`
+____
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+![Home page](src/assets/readMe/home-scrin.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The are a lot of movie's search apps nowadays, and mine isn't the best one from technical side, but it's special because that's the project my way in programing starts from.
 
-### `npm run build`
+That's some points you would probably like my site:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Positive name if you understand my sence of humor
+2. We all starts from something unperfect and this project is a good one to motivate you and don't let you to give up
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project wasn't easy for me but I starter to understand much more deeper how to work with API, learned some new libraries which makes the life of programmer much more easier and understood that I like writing code no matter how much stress it gives to me.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Probably it's not the final version of it, so in near future I'll give you an opportunity to see how my skills are growing.
 
-### `npm run eject`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+____
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The libraries I used to create my project:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* [Styled Components](https://styled-components.com/)
+* [React.js](https://reactjs.org/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [React Icons](https://react-icons.github.io/react-icons/)
+* [Redux](https://react-redux.js.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Framer Motion](https://www.framer.com/motion/)
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is an example how you can download my project
+
+### Clone repository
+
+   ```sh
+   git clone https://github.com/Mazunok/movieopa-react-project.git
+   ```
+
+   Install NPM packages
+
+   ```sh
+   npm install
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+___
+
+## Usage
+
+Using this app you can Sign In and Sign Up, Log Out, search movie and read details about every of them, you also can add or remove movies from favorites and some of the pages are private, so don't forget to sign Up.
+
+![Usage screens](src/assets/readMe/chanhe-password.png)
+</br>
+
+![Usage screens](src/assets/readMe/sign-in.png)
+
+</br>
+
+![Usage screens](src/assets/readMe/movie.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+____
+
+## Contact
+
+Project Link: [https://github.com/Mazunok/movieopa-react-project](https://github.com/Mazunok/movieopa-react-project)
+
+* [LinkediN](https://www.linkedin.com/in/anastasia-mazun-4681751bb/)
+* [Email](mazun.1999@icloud.com)
+* [Telegram](@mazunokN)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
