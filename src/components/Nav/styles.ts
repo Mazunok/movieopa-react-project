@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const StyledNav = styled(motion.nav)`
   position: sticky;
+  z-index: 1;
   top: 0;
   left: 0;
   display: flex;
@@ -17,6 +18,7 @@ const StyledNav = styled(motion.nav)`
   height: 100vh;
   padding: 50px 30px 0px 30px;
   ${MEDIA.MD} {
+    z-index: 1;
     display: flex;
     gap: 30px;
     position: fixed;

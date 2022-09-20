@@ -24,7 +24,6 @@ export const BurgerButton = ({ onClick }: IProps) => {
             <div></div>
             <div></div>
           </StyledButton>
-          {/* <BurgerRightNav open={isOpen} close={handleClose} /> */}
         </>
       )}
     </>

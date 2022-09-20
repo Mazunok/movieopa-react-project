@@ -2,7 +2,15 @@ import { NoImage } from "assets";
 import React from "react";
 import { getUser, useAppSelector } from "store";
 import { IMovie } from "../../types";
-import { Poster, StyledLink, TextContainer, Title, Type, Year, GlobalStyle } from "./styles";
+import {
+  Poster,
+  StyledLink,
+  TextContainer,
+  StyledTitle,
+  StyledType,
+  Year,
+  GlobalStyle,
+} from "./styles";
 
 interface IProps {
   movie: IMovie;
@@ -17,13 +25,13 @@ export const MovieItem = ({ movie }: IProps) => {
       <StyledLink to={`/movie/${movie.imdbID}`}>
         <Poster
           src={movie.poster !== "N/A" ? movie.poster : NoImage}
-          alt={`poster: ${movie.title}`}
+          alt={`poster: ${movie.imdbID}`}
         ></Poster>
-        <Title>{movie.title}</Title>
+        <StyledTitle>{movie.title}</StyledTitle>
         <TextContainer>
-          <Type isDarkTheme={isDarkTheme} className={isDarkTheme ? "dark" : "light"}>
+          <StyledType isDarkTheme={isDarkTheme} className={isDarkTheme ? "dark" : "light"}>
             {movie.type}
-          </Type>
+          </StyledType>
           <Year isDarkTheme={isDarkTheme} className={isDarkTheme ? "dark" : "light"}>
             {movie.year}
           </Year>

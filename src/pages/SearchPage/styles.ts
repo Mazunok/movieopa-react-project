@@ -21,6 +21,7 @@ const SpinnerContainer = styled.div`
 
 const ButtonWrapper = styled.div`
   justify-self: flex-end;
+  padding-top: 20px;
 `;
 
 export { SearchContainer, SpinnerContainer, ButtonWrapper };

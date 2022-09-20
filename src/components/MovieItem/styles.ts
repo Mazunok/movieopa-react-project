@@ -40,12 +40,13 @@ const Poster = styled.img`
   }
 `;
 
-const Title = styled.h1`
+const StyledTitle = styled.h1`
   flex-grow: 3;
   ${S2}
+  ${Color.Light}
 `;
 
-const Type = styled.p`
+const StyledType = styled.p`
   justify-self: flex-end;
   padding-right: 15px;
   ${S2}
@@ -79,4 +80,4 @@ color: ${Color.Black};
 }
 `;
 
-export { Title, Type, Poster, Year, StyledLink, TextContainer, GlobalStyle };
+export { StyledTitle, StyledType, Poster, Year, StyledLink, TextContainer, GlobalStyle };

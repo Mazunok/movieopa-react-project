@@ -1,5 +1,5 @@
 import { toggleTheme } from "../../store/features/userSlice/userSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks";
 import { Toggle } from "./styles";
 
 export default function ThemeToggle(props: { isDarkTheme: boolean }) {
