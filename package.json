@@ -1,6 +1,7 @@
 {
   "name": "movieopa-react-project",
   "version": "0.1.0",
+  "homepage": "https://mazunok.github.io/movieopa-react-project/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -41,6 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy":"gh-pages -d build",
     "lint": "eslint -c .eslintrc --ext .ts,.tsx ."
   },
   "eslintConfig": {
