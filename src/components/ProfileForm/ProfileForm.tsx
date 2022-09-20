@@ -34,7 +34,7 @@ export const ProfileForm = ({ name }: IProps) => {
           <ArrowIcon />
         </ArrowBtn>
       </ProfileContainer>
-      {isOpen && <ModalProfile isOpen={isOpen} handleModal={handleModal} />}
+      {isOpen && <ModalProfile name={name} isOpen={isOpen} handleModal={handleModal} />}
     </StyledContainer>
   );
 };

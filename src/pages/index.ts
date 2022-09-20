@@ -8,6 +8,7 @@ import { SignUp } from "./SignUpPage/index";
 import { Trands } from "./TrandsPage/index";
 import { ChangePasswordPage } from "./ChangePasswordPage";
 import { LogOutPage } from "./LogOutPage";
+import { SearchPage } from "./SearchPage";
 
 export {
   LogOutPage,
@@ -20,4 +21,5 @@ export {
   SignIn,
   SignUp,
   Trands,
+  SearchPage,
 };
