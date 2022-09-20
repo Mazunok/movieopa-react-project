@@ -1,17 +1,6 @@
-<div id="top"></div>
-
-
-
-
-
-
-
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="https://github.com/Mazunok/movieopa-react-project/blob/develop/src/assets/readMe/movie-opa.png">
-    <img src="assets/readMe/movie-opa.png" alt="Logo" width="80" height="80">
+
+   ![logo](src/assets/readMe/movie-opa.png)
   </a>
 
   <h3 align="center">MovieOpa React Project </h3>
@@ -25,7 +14,6 @@
 
 ____
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -43,14 +31,11 @@ ____
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Home page](https://github.com/Mazunok/movieopa-react-project/blob/develop/src/assets/readMe/home-scrin.png, "miracle")
+![Home page](src/assets/readMe/home-scrin.png)
 
-The are a lot of movie's search apps nowadays, and mine isn't the best one from technical side, but it's special because that's the project my way in programing starts from. 
+The are a lot of movie's search apps nowadays, and mine isn't the best one from technical side, but it's special because that's the project my way in programing starts from.
 
 That's some points you would probably like my site:
 
@@ -60,7 +45,6 @@ That's some points you would probably like my site:
 This project wasn't easy for me but I starter to understand much more deeper how to work with API, learned some new libraries which makes the life of programmer much more easier and understood that I like writing code no matter how much stress it gives to me.
 
 Probably it's not the final version of it, so in near future I'll give you an opportunity to see how my skills are growing.
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -78,10 +62,7 @@ The libraries I used to create my project:
 * [Typescript](https://www.typescriptlang.org/)
 * [Framer Motion](https://www.framer.com/motion/)
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ## Getting Started
 
@@ -92,11 +73,12 @@ This is an example how you can download my project
    ```sh
    git clone https://github.com/Mazunok/movieopa-react-project.git
    ```
+
    Install NPM packages
+
    ```sh
    npm install
    ```
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -104,40 +86,27 @@ ___
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Using this app you can Sign In and Sign Up, Log Out, search movie and read details about every of them, you also can add or remove movies from favorites and some of the pages are private, so don't forget to sign Up.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+![Usage screens](src/assets/readMe/chanhe-password.png)
+</br>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+![Usage screens](src/assets/readMe/sign-in.png)
 
-__________
+</br>
 
+![Usage screens](src/assets/readMe/movie.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ____
 
-<!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Project Link: [https://github.com/Mazunok/movieopa-react-project](https://github.com/Mazunok/movieopa-react-project)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [LinkediN](https://www.linkedin.com/in/anastasia-mazun-4681751bb/)
+* [Email](mazun.1999@icloud.com)
+* [Telegram](@mazunokN)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-[product-screenshot]: images/screenshot.png

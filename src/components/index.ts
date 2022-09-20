@@ -14,14 +14,18 @@ import { ChangePasswordForm } from "./ChangePasswordForm";
 import { Modal } from "./Modal";
 import { MovieDetails } from "./MovieDetails";
 import { Portal } from "./Portal";
-import { CustomSelect } from "./Select";
 import { SettingsForm } from "./SettingsForm";
 import { ShowMoreButton } from "./ShowMoreButton";
+import { BurgerButton } from "./BurgerButton";
+import { ModalProfile } from "./ModalProfile";
+import { PaginateButton } from "./PaginateButton";
 
 export {
+  PaginateButton,
+  ModalProfile,
+  BurgerButton,
   ShowMoreButton,
   SettingsForm,
-  CustomSelect,
   Portal,
   MovieDetails,
   Modal,
