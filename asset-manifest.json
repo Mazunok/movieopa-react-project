@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/movieopa-react-project/static/js/main.03e49262.js",
+    "main.js": "/movieopa-react-project/static/js/main.3a91dcc5.js",
     "static/media/sign-up-background.png": "/movieopa-react-project/static/media/sign-up-background.54f3ae9bc550aaff427e.png",
     "static/media/home-scrin.png": "/movieopa-react-project/static/media/home-scrin.4f76cb6cbf925354696d.png",
     "static/media/sign-in.png": "/movieopa-react-project/static/media/sign-in.1c574492cba170c377eb.png",
@@ -14,9 +14,9 @@
     "static/media/home.svg": "/movieopa-react-project/static/media/home.2e46636a96a233b7b9f29ef5189c0c67.svg",
     "static/media/favorites.svg": "/movieopa-react-project/static/media/favorites.693e8898ef23de166fb502928ce8f283.svg",
     "static/media/arrow.svg": "/movieopa-react-project/static/media/arrow.868a34c0bea5ed0db087f1cc17f6a146.svg",
-    "main.03e49262.js.map": "/movieopa-react-project/static/js/main.03e49262.js.map"
+    "main.3a91dcc5.js.map": "/movieopa-react-project/static/js/main.3a91dcc5.js.map"
   },
   "entrypoints": [
-    "static/js/main.03e49262.js"
+    "static/js/main.3a91dcc5.js"
   ]
 }
