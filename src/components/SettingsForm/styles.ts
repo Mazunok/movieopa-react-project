@@ -9,9 +9,14 @@ const StyledWrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 50px;
+  max-width: 906px;
   height: 100%;
   ${MEDIA.MD} {
-    width: 688px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    gap:20px
   }
 `;
 
@@ -21,7 +26,7 @@ const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30px;
-  max-width: 400px;
+  max-width: 300px;
   height: 200px;
   padding: 50px;
   background-color: ${Color.Dark};
@@ -31,13 +36,13 @@ const StyledContainer = styled.div`
       background-color: ${Color.Light};
     `}
   border-radius: 10px;
-  ${MEDIA.SM} {
+  ${MEDIA.MD} {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 275px;
     height: 100%;
-    padding-top: 50px;
+    padding:15px;
   }
 `;
 
@@ -49,11 +54,11 @@ const InfoContainer = styled.div`
   max-width: 400px;
   height: 100%;
   padding: 40px 20px 0 100px;
-  ${MEDIA.SM} {
+  ${MEDIA.MD} {
     justify-content: center;
     align-items: center;
     height: 400px;
-    padding: 60px 20px 40px 30px;
+    padding: 0 40px 0 0;
     margin-bottom: 30px;
   }
 `;
@@ -68,7 +73,7 @@ const StyledTitle = styled.h2`
     css`
       color: ${Color.Graphite};
     `}
-  ${MEDIA.SM} {
+  ${MEDIA.MD} {
     padding-top: 40px;
   }
 `;

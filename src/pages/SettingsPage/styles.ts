@@ -9,7 +9,7 @@ const SettingsContainer = styled.div`
   gap: 20px;
   width: 100%;
   padding-top: 30px;
-  ${MEDIA.SM} {
+  ${MEDIA.MD} {
     height: 100%;
     padding: 0;
   }
