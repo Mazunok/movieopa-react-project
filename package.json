@@ -39,11 +39,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "npm run build && npm run build-gh-pages",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build",
-    "lint": "eslint -c .eslintrc --ext .ts,.tsx ."
+    "lint": "eslint -c .eslintrc --ext .ts,.tsx .",
+    "build-gh-pages": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
